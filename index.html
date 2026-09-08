@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101f29">
+  <meta name="description" content="Перепись: большая экспедиция. Исследуйте шесть регионов, знакомьтесь с жителями и заполняйте переписные листы.">
+  <title>Перепись · Большая экспедиция</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiNlZGNlNzAiLz48cGF0aCBkPSJNMTggNDhWMTZoMjh2MzJoLThWMjRIMjZ2MjRaIiBmaWxsPSIjMTUyNzMwIi8+PC9zdmc+Cg==" type="image/svg+xml"><style>
+:root{color-scheme:dark;--bg:#101f29;--panel:#172933;--line:#2b3d45;--muted:#9aacb3;--white:#eff4ef;--yellow:#edce70;--mint:#bce3c6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;font-size:16px}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,canvas:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}button:disabled{cursor:default}button{color:inherit}button:hover{filter:brightness(1.08)}button:active{transform:translateY(1px)}.app{max-width:1600px;margin:auto;padding:0 42px}.topbar{height:100px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;gap:13px;align-items:center;text-decoration:none;color:var(--white)}.brand-mark{width:44px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:38px;font-weight:900;position:relative}.brand-mark>span{font-size:26px;position:absolute;bottom:1px;right:-3px}.brand strong{display:block;font-size:21px;letter-spacing:3px}.brand small{font-size:10px;letter-spacing:1.95px;display:block;margin-top:7px;color:var(--muted)}.expedition-label{font-size:12px;letter-spacing:2px;color:var(--mint);text-align:center}.expedition-label span{font-size:13px;letter-spacing:0;color:var(--muted);display:block;margin-top:8px}.header-actions{display:flex;gap:9px}.icon-button{width:39px;height:39px;background:transparent;border:1px solid var(--line);border-radius:50%;font-size:18px;position:relative}.sound-slash{position:absolute;left:17px;top:7px;font-size:20px}main{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:30px;padding-top:28px}.stage-header{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px;margin-bottom:15px}.eyebrow{font-size:11px;letter-spacing:1.8px;font-weight:600;color:var(--muted)}.region-name .eyebrow{color:var(--yellow)}h1{font-size:29px;line-height:1.2;letter-spacing:-.8px;font-weight:500;margin:10px 0}.shift-clock{text-align:right;font-variant-numeric:tabular-nums}.shift-clock>span{font-size:10px;letter-spacing:1.6px;color:var(--muted);display:block;margin-bottom:9px}.shift-clock strong{font-size:23px;font-weight:400}.game-frame{height:clamp(470px,calc(100vh - 275px),760px);position:relative;border:1px solid #4c6754;border-radius:13px;overflow:hidden;background:#69925d;isolation:isolate;box-shadow:0 18px 70px #040c142c}canvas{width:100%;height:100%;display:block;image-rendering:pixelated;touch-action:none;outline-offset:-4px!important}.map-tags{position:absolute;top:20px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;gap:10px}.map-tags>span{background:#152f2ddb;backdrop-filter:blur(10px);padding:9px 12px;border:1px solid #d6eacc25;border-radius:5px;font-size:10px;letter-spacing:1.7px;color:#eaf2d9}.map-tags .connection{font-size:9px;letter-spacing:1px}.connection::before{content:'▂▄▆';color:var(--mint);margin-right:7px;font-size:11px}.connection.offline::before{content:'×';color:var(--yellow)}.map-caption{position:absolute;bottom:14px;left:19px;color:#f0f3d9b0;font-size:9px;letter-spacing:1.3px;pointer-events:none;text-shadow:1px 1px #304330}.control-strip{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:20px 1px;color:var(--muted);font-size:12px;flex-wrap:wrap}.control-strip>div{display:flex;align-items:center;gap:8px}kbd{font:11px Arial;background:#22343d;border:1px solid #4a5b62;border-bottom-width:2px;border-radius:4px;min-width:25px;height:24px;padding:5px;text-align:center;color:#ecf1ef}.wasd{font-size:9px;letter-spacing:1px;max-width:35px;line-height:1.7}.or{color:#536974}.legend-marker{color:var(--yellow);font-weight:800;border:1px solid #b39a56;border-radius:3px;width:19px;height:21px;text-align:center;line-height:20px}.sidebar{padding-top:8px;display:flex;flex-direction:column;gap:24px}.assignment{padding:23px 21px 20px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.side-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}.side-heading>span:last-child:not(.eyebrow){font-size:12px;color:var(--muted)}.paper-icon{font-size:21px!important;color:var(--yellow)!important}h2{font-size:20px;font-weight:500;letter-spacing:-.4px;line-height:1.3}.assignment h2{margin:19px 0 10px}.assignment p{font-size:14px;color:var(--muted);line-height:1.65;margin:0 0 24px}.progress-line{display:flex;justify-content:space-between;font-size:14px}.progress-line strong{font-weight:500}.muted{color:var(--muted)}.progress-track{height:5px;background:#36474e;border-radius:4px;margin:13px 0 23px;overflow:hidden}.progress-track>span{display:block;background:var(--yellow);height:100%;width:0;transition:width .35s}.task{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:12px;color:#c9d4d8}.task-check{display:grid;place-items:center;border:1px solid #5b6b71;color:#a9babe;width:20px;height:20px;border-radius:50%;font-size:10px;flex-shrink:0}.task.completed .task-check{background:var(--mint);border-color:var(--mint);color:var(--bg)}.bag{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);margin-top:23px;padding-top:19px}.bag-symbol{font-size:30px;color:var(--mint)}.bag strong{font-size:14px;font-weight:500}.bag small{display:block;color:var(--muted);font-size:10px;margin-top:6px}.journey{padding:0 7px}.regions{list-style:none;margin:20px 0 0;padding:0}.regions li{display:flex;gap:12px;position:relative;padding-bottom:20px;align-items:center;font-size:14px;color:#9aaeb6}.regions li:last-child{padding-bottom:0}.regions li:not(:last-child)::after{content:'';position:absolute;left:10px;top:25px;bottom:4px;border-left:1px solid #384a52}.region-index{width:23px;height:23px;border:1px solid #3d5059;border-radius:50%;font-size:10px;display:grid;place-items:center;flex-shrink:0}.regions li.current{color:var(--yellow)}.regions li.current .region-index{background:var(--yellow);border-color:var(--yellow);color:var(--bg)}.regions li.done{color:var(--mint)}.regions li.done .region-index{border-color:var(--mint);color:var(--mint)}.region-label{flex:1}.region-badge{font-size:9px;letter-spacing:1px;color:var(--yellow)}.score-card{border-top:1px solid var(--line);padding:20px 6px 0;display:flex;align-items:center;justify-content:space-between}.score-card strong{font-size:33px;font-weight:400;display:block;margin-top:8px;font-variant-numeric:tabular-nums}.score-star{font-size:47px;line-height:1;color:var(--yellow)}.field-note{font-family:Georgia,serif;font-size:16px;line-height:1.5;color:var(--muted);margin:0 5px;font-style:italic}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:22px 0;margin-top:17px;color:#80949d;font-size:10px;letter-spacing:1px}footer span:last-child{letter-spacing:0}.start-screen{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(0deg,#071c2266,#12322a14);backdrop-filter:blur(1px)}.start-card{background:#13282bec;border:1px solid #88a18d66;border-radius:10px;padding:35px 40px;text-align:center;box-shadow:0 18px 40px #0d24214d;max-width:90%}.start-card .eyebrow{color:var(--yellow)}.start-card h2{font-family:Georgia,serif;font-size:38px;line-height:1.15;letter-spacing:-1.5px;font-weight:400;margin:19px 0}.start-card p{color:#b9ceca;font-size:15px;line-height:1.6;margin-bottom:24px}.primary{background:var(--yellow);color:#1c302e;border:0;border-radius:5px;padding:14px 19px;font-size:14px;line-height:1.4;font-weight:600;width:100%;display:flex;justify-content:space-between;gap:20px;align-items:center}.primary span{font-size:21px;font-weight:400}.start-card small{display:block;font-size:11px;color:#99b3a9;margin-top:18px}.interaction-prompt{position:absolute;bottom:45px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#142b2bef;border:1px solid #9bb79e;padding:9px 13px;border-radius:7px;font-size:13px;display:flex;gap:9px;align-items:center;pointer-events:none}.interaction-prompt[hidden]{display:none}.interaction-prompt kbd{background:var(--yellow);color:#1c302e;border-color:var(--yellow)}.mission-toast{position:absolute;left:50%;top:72px;transform:translate(-50%,-8px);background:#122c2aee;color:#e8f2db;border:1px solid #8fb49780;font-size:14px;text-align:center;line-height:1.4;padding:11px 17px;border-radius:7px;max-width:85%;width:max-content;opacity:0;pointer-events:none;transition:.2s;z-index:4}.mission-toast.show{opacity:1;transform:translate(-50%,0)}dialog{color:var(--white);background:#172c35;border:1px solid #50656c;border-radius:13px;padding:0;width:min(470px,calc(100% - 28px));box-shadow:0 30px 150px #07101699;max-height:calc(100dvh - 32px)}dialog::backdrop{background:#05141dcc;backdrop-filter:blur(4px)}#dialog-content{padding:30px}.dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.dialog-heading .eyebrow{color:var(--yellow)}.close-button{border:0;background:transparent;color:#bac8ce;font-size:25px;line-height:25px;padding:0 3px}.dialog-kicker{color:var(--mint);font-size:13px;line-height:1.5}.dialog-title{font-size:27px;line-height:1.25;margin:12px 0}.dialog-text{font-size:16px;line-height:1.6;color:#c3d0d2;white-space:pre-line}.answer-list{display:flex;flex-direction:column;gap:10px;margin-top:24px}.answer{background:#223a43;border:1px solid #435b63;border-radius:6px;padding:13px 15px;text-align:left;font-size:14px;line-height:1.5}.answer:hover{border-color:var(--yellow)}.answer.correct{background:#284f40;border-color:var(--mint)}.answer.wrong{border-color:#d49471;background:#493f37}.answer:disabled{opacity:.7}.feedback{font-size:14px;line-height:1.6;margin:19px 0 0;color:var(--yellow)}.dialog-next{margin-top:22px}.dialog-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}.dialog-stat{background:#203640;padding:14px 9px;text-align:center;border:1px solid var(--line);border-radius:5px}.dialog-stat strong{display:block;font-size:25px;font-weight:500;color:var(--yellow)}.dialog-stat span{font-size:11px;color:var(--muted);display:block;margin-top:7px}.help-controls{display:grid;grid-template-columns:auto 1fr;gap:13px 20px;font-size:14px;align-items:center;margin:24px 0}.help-controls kbd{width:max-content}.secondary{background:transparent;border:1px solid #48606a;color:#d6e0e2;padding:13px 18px;border-radius:5px;font-size:14px;width:100%;margin-top:11px}.touch-controls{display:none;position:absolute;inset:auto 15px 26px;justify-content:space-between;align-items:end;pointer-events:none}.touch-controls button{pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;background:#162d34bc;border:1px solid #adbfaf80;border-radius:9px;width:42px;height:42px;color:#eef4dc;font-size:22px}.dpad{display:grid;grid-template-columns:repeat(3,42px);gap:4px}.dpad button:first-child{grid-column:2}.dpad button:nth-child(2){grid-column:1}.touch-controls .touch-action{width:59px;height:59px;border-radius:50%;background:#ecd176e8;color:#192f2c;font-size:22px;font-weight:700}.touch-controls button.pressed{background:#a3c9a5cc;color:#183b32}@media(min-width:1450px){main{grid-template-columns:minmax(0,1fr) 300px;gap:34px}.assignment{padding:24px}h1{font-size:33px}.sidebar{gap:27px}}@media(max-width:1100px){.app{padding:0 24px}main{grid-template-columns:minmax(0,1fr) 246px;gap:20px}.expedition-label{display:none}.assignment{padding:20px 16px}.control-strip{font-size:11px;justify-content:flex-start;gap:16px}.control-strip>div:last-child{display:none}h1{font-size:25px}.shift-clock>span{display:none}.sidebar{gap:21px}.game-frame{height:560px}.field-note{display:none}}@media(max-width:760px){.app{padding:0 16px}.topbar{height:80px}.brand strong{font-size:17px}.brand small{font-size:8px;letter-spacing:1.5px}.brand-mark{font-size:31px;width:30px}.header-actions{gap:6px}.icon-button{width:34px;height:34px}main{display:block;padding-top:13px}.stage-header{height:61px;margin-bottom:13px}h1{font-size:23px;letter-spacing:-.5px;margin-top:8px}.eyebrow{font-size:10px}.shift-clock strong{font-size:19px}.game-frame{height:clamp(430px,calc(100dvh - 255px),680px)}.map-tags{top:12px;left:12px;right:12px}.map-tags>span{font-size:9px;padding:7px 9px}.map-tags .connection{font-size:8px}.start-card{padding:27px 24px}.start-card h2{font-size:33px}.control-strip{padding:16px 0;gap:14px}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:4px}.assignment{grid-row:span 2}.assignment p{font-size:13px}.assignment h2{font-size:18px}.journey{padding:10px 0 0}.regions li{font-size:12px;gap:8px;padding-bottom:15px}.region-badge{display:none}.regions{margin-top:15px}.score-card{padding-top:15px;align-self:start}.score-card .eyebrow{font-size:9px;letter-spacing:1px}.score-card strong{font-size:27px}.score-star{font-size:36px}.side-heading .eyebrow{font-size:9px;letter-spacing:1px}.side-heading>span:last-child{font-size:10px}footer{font-size:9px;line-height:1.5;display:block}footer span{display:block}footer span+span{margin-top:7px}.map-caption{font-size:8px;bottom:10px;left:12px}.interaction-prompt{bottom:168px;font-size:12px}.task{font-size:11px;gap:7px}.bag small{font-size:9px}.bag{gap:6px}.bag-symbol{font-size:24px}.bag strong{font-size:12px}#dialog-content{padding:24px}.dialog-title{font-size:24px}}@media(pointer:coarse){.touch-controls{display:flex}.control-strip>div:first-child{display:none}.control-strip>div:nth-child(3){display:none}.control-strip:before{content:'Стрелки на экране — движение';font-size:12px}.interaction-prompt{bottom:170px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+[hidden]{display:none!important}.task{font-size:14px}.bag small{font-size:12px}.control-strip{font-size:13px}@media(max-width:760px){.task{font-size:12px}.bag small{font-size:10px}.control-strip{font-size:12px}}
+
+</style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a href="index.html" class="brand" aria-label="Перепись — главная"><span class="brand-mark" aria-hidden="true">П<span>•</span></span><span><strong>ПЕРЕПИСЬ</strong><small>БОЛЬШАЯ ЭКСПЕДИЦИЯ</small></span></a>
+      <div class="expedition-label">ОТ ВЛАДИМИРА ДО КАМЧАТКИ <span>6 регионов · одна экспедиция</span></div>
+      <div class="header-actions"><button id="sound" class="icon-button" aria-label="Включить звук" title="Звук">♪<span class="sound-slash">/</span></button><button id="help" class="icon-button" aria-label="Как играть" title="Как играть">?</button><button id="pause" class="icon-button" aria-label="Пауза" title="Пауза (Esc)">Ⅱ</button></div>
+    </header>
+    <main>
+      <section class="play-column" aria-label="Игровое поле">
+        <div class="stage-header"><div class="region-name"><span class="eyebrow" id="chapter">РЕГИОН 01 / 06</span><h1 id="region-title">Владимирская область</h1></div><div class="shift-clock"><span>ВРЕМЯ В ПУТИ</span><strong id="clock">00:00</strong></div></div>
+        <div class="game-frame" id="game-frame">
+          <canvas id="game" tabindex="0" aria-label="Игровое поле. Стрелки или WASD — движение, E или пробел — разговор. Esc — пауза.">Для игры нужен браузер с поддержкой Canvas.</canvas>
+          <div class="map-tags"><span id="terrain-label">СРЕДНЯЯ ПОЛОСА</span><span class="connection" id="connection">СВЯЗЬ ЕСТЬ</span></div>
+          <div class="mission-toast" id="toast" role="status" aria-live="polite"></div>
+          <div class="interaction-prompt" id="interaction" hidden><kbd>E</kbd><span>Поговорить</span></div>
+          <div class="start-screen" id="start-screen"><div class="start-card"><span class="eyebrow">ВАША ПЕРВАЯ СМЕНА</span><h2>Каждый человек<br>имеет значение.</h2><p>Наденьте жилет, возьмите планшет<br>и познакомьтесь со страной.</p><button class="primary" id="start">Отправиться на обход <span>↗</span></button><small>Без спешки. Исследуйте в своём темпе.</small></div></div>
+          <div class="touch-controls" id="touch-controls"><div class="dpad"><button data-dir="up" aria-label="Идти вверх">↑</button><button data-dir="left" aria-label="Идти влево">←</button><button data-dir="down" aria-label="Идти вниз">↓</button><button data-dir="right" aria-label="Идти вправо">→</button></div><button id="touch-action" class="touch-action" aria-label="Поговорить или передать анкеты">E</button></div>
+          <span class="map-caption">УЧЕБНЫЙ МАРШРУТ · УСЛОВНАЯ КАРТА</span>
+        </div>
+        <div class="control-strip"><div><kbd>W</kbd><span class="wasd">A S D</span><span class="or">/</span><kbd>↑</kbd><span class="wasd">← ↓ →</span><span>Двигаться</span></div><div><kbd>E</kbd><span>Общаться</span></div><div><kbd>Shift</kbd><span>Бежать</span></div><div><span class="legend-marker">!</span><span>Ждёт переписчика</span></div></div>
+      </section>
+      <aside class="sidebar">
+        <section class="assignment"><div class="side-heading"><span class="eyebrow">МАРШРУТНЫЙ ЛИСТ</span><span class="paper-icon" aria-hidden="true">▤</span></div><h2 id="mission-title">Начнём со знакомства</h2><p id="mission-description">Обойдите посёлок, поговорите с жителями и вернитесь в штаб.</p><div class="progress-line"><span>Жители</span><strong><span id="done-count">0</span><span class="muted"> / <span id="goal-count">8</span></span></strong></div><div class="progress-track" role="progressbar" aria-label="Учёт жителей" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" id="progress"><span></span></div><div class="task" id="task-residents"><span class="task-check">1</span><span>Поговорить с каждым</span></div><div class="task" id="task-hq"><span class="task-check">2</span><span>Передать результаты в штаб</span></div><div class="bag"><span class="bag-symbol">▱</span><div><strong id="bag-count">0 анкет</strong><small>В планшете · ждут передачи</small></div></div></section>
+        <section class="journey"><div class="side-heading"><span class="eyebrow">ВАША ЭКСПЕДИЦИЯ</span><span id="journey-count">0 / 6</span></div><ol class="regions" id="regions"></ol></section>
+        <div class="score-card"><div><span class="eyebrow">ОЧКИ ЭКСПЕДИЦИИ</span><strong id="score">0</strong></div><span class="score-star">✳</span></div>
+        <p class="field-note" id="field-note">В большом путешествии<br>не бывает маленьких посёлков.</p>
+      </aside>
+    </main>
+    <footer><span>ПЕРЕПИСЬ: БОЛЬШАЯ ЭКСПЕДИЦИЯ</span><span>Игровые ситуации по мотивам концепции переписи до 2030 года</span></footer>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <script>
+'use strict';
+(()=>{
+const REGIONS = [
+ {name:'Владимирская область',short:'Владимирская обл.',terrain:'СРЕДНЯЯ ПОЛОСА',place:'Тихий посёлок',mission:'Начнём со знакомства',description:'Обойдите посёлок, поговорите с жителями и вернитесь в штаб.',goal:8,grass:['#73935c','#779760','#70905a','#7c9b64'],path:'#ccb887',water:'#619ba0',roof:'#9e5644',wall:'#d5c18c',tree:'#375e45',accent:'#edce70',note:'В большом путешествии\nне бывает маленьких посёлков.',offline:false},
+ {name:'Республика Карелия',short:'Карелия',terrain:'ОЗЁРНЫЙ КРАЙ',place:'Посёлок у озера',mission:'Связь есть не везде',description:'Работайте на планшете без сети. Передайте накопленные анкеты в штабе.',goal:9,grass:['#73947a','#799981','#6e8e75','#7e9b83'],path:'#c2ba9e',water:'#538eaa',roof:'#805749',wall:'#b9a381',tree:'#315e52',accent:'#cae1bf',note:'Даже если связь пропала,\nобход продолжается.',offline:true},
+ {name:'Республика Татарстан',short:'Татарстан',terrain:'БЕРЕГА ВОЛГИ',place:'Городской квартал',mission:'Онлайн и на пороге',description:'Помогите с онлайн-переписью и проверьте, кто уже заполнил анкету.',goal:10,grass:['#8c9d68','#90a16c','#869963','#94a671'],path:'#d3c29e',water:'#62999c',roof:'#3e8b79',wall:'#e3d3ac',tree:'#52754b',accent:'#f3da8f',note:'Один человек — одна запись.\nВнимательность важнее скорости.',offline:false},
+ {name:'Иркутская область',short:'Иркутская обл.',terrain:'ПРИБАЙКАЛЬЕ',place:'Прибрежный посёлок',mission:'За каждым поворотом',description:'Исследуйте оба берега. Найдите всех жителей и уточните сведения.',goal:10,grass:['#7d9771','#829c75','#77916a','#879f7a'],path:'#c6b998',water:'#4d9eb1',roof:'#735b53',wall:'#c4a57b',tree:'#355e4b',accent:'#cce3c3',note:'Перепись начинается\nс простого «Здравствуйте».',offline:true},
+ {name:'Республика Саха (Якутия)',short:'Якутия',terrain:'СЕВЕРНЫЕ ПРОСТОРЫ',place:'Снежный посёлок',mission:'Тёплый приём',description:'Обойдите заснеженный посёлок. Помогите жителям пройти перепись.',goal:11,grass:['#d4e0dd','#d9e4e0','#cddbd8','#dce7e3'],path:'#b0c1be',water:'#90b9c4',roof:'#666d76',wall:'#b3a294',tree:'#658d83',accent:'#ebd383',note:'На севере особенно ценят\nвнимание и добрый разговор.',offline:true},
+ {name:'Камчатский край',short:'Камчатский край',terrain:'У ТИХОГО ОКЕАНА',place:'Посёлок у вулкана',mission:'Последний рывок',description:'Завершите обход у Тихого океана и передайте последние анкеты в штаб.',goal:12,grass:['#7e9980','#849e85','#78937b','#89a28a'],path:'#bbb7a1',water:'#648f9f',roof:'#706461',wall:'#c6b7a4',tree:'#365d4d',accent:'#ebd383',note:'От первого дома\nдо другого края страны.',offline:true}
+];
+
+// Ситуации адаптированы для игры из разделов 4.1–4.3 пользовательской
+// концепции подходов к переписи до 2030 года; это не официальная анкета.
+const SCENARIOS = [
+ {type:'interview',line:'Здравствуйте! Я ещё не участвовал в переписи. Что нужно сделать?',answers:['Предложить онлайн-анкету или помочь заполнить её на планшете','Заполнить всё самостоятельно, не задавая вопросов','Отметить, что по этому адресу никто не живёт'],correct:0,feedback:'Сначала предложим удобный способ участия. Если нужна помощь, проведём опрос на планшете.'},
+ {type:'online',line:'Я уже заполнила анкету онлайн. Нужно проходить перепись ещё раз?',answers:['Да, заполним ещё одну для надёжности','Проверим подтверждение участия, чтобы избежать повторного учёта','Просто уйдём, ничего не проверяя'],correct:1,feedback:'Участие подтверждено. Житель учтён один раз — повторная анкета не нужна.'},
+ {type:'offline',line:'У нас снова нет интернета. Перепись откладывается?',answers:['Да, без интернета ничего не получится','Запишем сведения в открытый общий чат','Проведём опрос на планшете без сети, передадим данные после восстановления связи'],correct:2,feedback:'Анкета сохранена на планшете. В этой игре передадим результаты в штабе.'},
+ {type:'trust',line:'Как понять, что вы переписчик? Сейчас столько подозрительных звонков.',answers:['Представиться, показать удостоверение и спокойно объяснить цель визита','Попросить код из СМС для проверки личности','Сказать, что на объяснения нет времени'],correct:0,feedback:'Спокойное объяснение и удостоверение помогают установить доверие. Теперь можно предложить участие.'},
+ {type:'help',line:'Хочу пройти перепись онлайн, но не знаю, с чего начать.',answers:['Попросить пароль от личного кабинета','Объяснить шаги, оставив вход в личный кабинет самому жителю','Переписать жителя со слов соседей'],correct:1,feedback:'Помощь с онлайн-анкетой оказана. Житель самостоятельно отправил её; участие подтверждено.'},
+ {type:'review',line:'В предзаполненной анкете старые сведения. Можно их исправить?',answers:['Нет, предзаполненные сведения всегда верны','Удалим анкету и забудем про неё','Предложим проверить сведения и уточнить их со слов жителя'],correct:2,feedback:'Предзаполнение помогает, а житель проверяет и уточняет сведения. Анкета обновлена.'},
+ {type:'interview',line:'Я не очень дружу с телефонами. Вы можете мне помочь с переписью?',answers:['Конечно. Задам вопросы и внесу ваши ответы на планшете','Попросим соседей ответить за вас','Участвовать могут только те, кто умеет пользоваться интернетом'],correct:0,feedback:'Личный опрос остаётся способом помочь тем, кому неудобно участвовать онлайн.'},
+ {type:'trust',line:'Мне для участия нужно назвать вам пароль от Госуслуг?',answers:['Да, так будет быстрее','Нет. Входите в свой кабинет самостоятельно, а я объясню дальнейшие шаги','Можно вместо пароля сообщить код из СМС'],correct:1,feedback:'Пароли и коды остаются у жителя. Помочь пройти перепись можно без доступа к его аккаунту.'},
+ {type:'review',line:'Я здесь живу, но в вашем списке моего дома нет. Меня пропустят?',answers:['Если дома нет в списке, перепись невозможна','Сначала попросим соседей проголосовать','Уточним адрес и факт проживания, затем предложим участие'],correct:2,feedback:'Контроль полноты помогает найти людей, которых пока нет в маршрутном списке.'},
+ {type:'online',line:'Я переписался вчера онлайн, а сегодня вы пришли с планшетом.',answers:['Проверим участие и не будем создавать вторую анкету','Создадим ещё одну, чтобы получить больше записей','Сотрем онлайн-анкету и начнём заново'],correct:0,feedback:'Проверка завершена: повторной записи нет. Полнота и качество важнее числа созданных анкет.'},
+ {type:'offline',line:'Мы далеко от города. Сможете записать ответы здесь?',answers:['Только после поездки в районный центр','Да, проведём опрос на планшете; он работает и без сети','Перепишем только тех, кто сам приедет в штаб'],correct:1,feedback:'Офлайн-режим помогает провести обход и там, где связь нестабильна.'},
+ {type:'help',line:'Я начал заполнять анкету, но запутался. Давайте вместе?',answers:['Выберите ответы наугад','Лучше вообще не участвовать','Объясню непонятные шаги, а ответы вы укажете сами'],correct:2,feedback:'Помогли разобраться и завершить участие. Ответы определяет сам житель.'}
+];
+const NAMES=['Алексей','Мария','Виктор','Анна','Ирина','Михаил','Ольга','Сергей','Елена','Николай','Татьяна','Дмитрий'];
+
+const WIDTH=1152, HEIGHT=768;
+const HQ={x:164,y:466};
+const POSITIONS=[[350,246],[655,246],[953,246],[472,474],[655,492],[963,477],[351,659],[654,664],[961,659],[1060,477],[1070,661],[513,245]];
+const clothes=['#b95045','#dfb65d','#627c9e','#9c6690','#669589','#a67957'];
+const skins=['#e3b78e','#bf906b','#e9c9a3','#bf926e'];
+function random(seed){return()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};}
+function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),w,h);}
+function poly(c,points,color){c.fillStyle=color;c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();c.fill();}
+function label(c,text,x,y,color='#f7f0d4',size=12){c.font=`600 ${size}px Arial`;c.textAlign='center';c.fillStyle=color;c.fillText(text,Math.round(x),Math.round(y));}
+
+class World{
+ constructor(region,index){
+  this.region=region;this.index=index;this.snow=index===4;this.objects=[];this.obstacles=[];
+  this.ground=document.createElement('canvas');this.ground.width=WIDTH;this.ground.height=HEIGHT;
+  this.makeGround(this.ground.getContext('2d'));
+  this.house(115,418,100,83,true);
+  [[318,205,96,76],[594,205,117,84],[923,205,99,78],[434,418,92,72],[603,418,102,78],[925,418,98,79],[315,616,105,74],[595,616,112,82],[922,616,106,76],[1025,413,78,68]].forEach(h=>this.house(...h));
+  const rng=random(529+index);
+  for(let i=0;i<170;i++){
+   const x=28+rng()*(WIDTH-56),y=65+rng()*(HEIGHT-88);
+   if(this.nearRoad(x,y)||this.obstacles.some(o=>x>o.x-38&&x<o.x+o.w+38&&y>o.y-95&&y<o.y+o.h+45)||x>778&&x<884||POSITIONS.some(p=>Math.hypot(x-p[0],y-p[1])<58))continue;
+   const pine=index===1||index===3||index===4||index===5||rng()>.7;
+   const tree={kind:'tree',x,y,pine,size:.75+rng()*.5,variant:Math.floor(rng()*3)};
+   this.objects.push(tree);this.obstacles.push({x:x-7,y:y-7,w:14,h:14});
+  }
+  // A visible departure vehicle, picnic spots, fences and route signposts.
+  this.objects.push({kind:'van',x:74,y:491},{kind:'sign',x:279,y:443},{kind:'sign',x:890,y:223},{kind:'bench',x:553,y:548});
+ }
+ house(x,y,w,h,hq=false){this.objects.push({kind:'house',x,y,w,h,hq});this.obstacles.push({x:x-2,y:y-45,w:w+4,h:52});}
+ nearRoad(x,y){return [236,466,656].some(n=>Math.abs(y-n)<48)||[282,573,902].some(n=>Math.abs(x-n)<43);}
+ blocked(x,y,r=10){
+  if(x<r+8||x>WIDTH-r-8||y<r+30||y>HEIGHT-r-8)return true;
+  if(x+r>794&&x-r<874&&![236,466,656].some(v=>Math.abs(y-v)<25-r))return true;
+  return this.obstacles.some(o=>x+r>o.x&&x-r<o.x+o.w&&y+r>o.y&&y-r<o.y+o.h);
+ }
+ makeGround(c){
+  const rng=random(9231+this.index),p=this.region;
+  for(let y=0;y<HEIGHT;y+=24)for(let x=0;x<WIDTH;x+=24){rect(c,x,y,24,24,p.grass[Math.floor(rng()*p.grass.length)]);}
+  for(let i=0;i<6000;i++){const x=rng()*WIDTH,y=rng()*HEIGHT;rect(c,x,y,rng()>.8?3:2,1,this.snow?'#eff3e9':rng()>.5?'#adc17b66':'#466b3c42');}
+  [236,466,656].forEach(y=>{rect(c,0,y-32,WIDTH,64,this.snow?'#a7b8b1':'#8b8c58');rect(c,0,y-28,WIDTH,56,p.path);});
+  [282,573,902].forEach(x=>{rect(c,x-31,60,62,HEIGHT-95,this.snow?'#adbdba':'#929362');rect(c,x-27,58,54,HEIGHT-88,p.path);});
+  for(let i=0;i<1600;i++){const x=rng()*WIDTH,y=rng()*HEIGHT;if([236,466,656].some(v=>Math.abs(y-v)<26)||[282,573,902].some(v=>Math.abs(x-v)<25)){rect(c,x,y,2+rng()*3,1,rng()>.5?'#efe2b452':'#7b78563e');}}
+  // Water and its three walkable bridges are part of the collision map.
+  rect(c,783,0,102,HEIGHT,this.snow?'#eaf0e8':'#aeb17d');rect(c,791,0,86,HEIGHT,'#487b76');rect(c,796,0,77,HEIGHT,p.water);
+  for(let y=5;y<HEIGHT;y+=18){const x=805+rng()*49;rect(c,x,y,8+rng()*20,2,this.snow?'#cee4e7':'#9dc5be70');}
+  [236,466,656].forEach(y=>{
+   rect(c,777,y-31,115,65,'#3a5d4b60');rect(c,779,y-27,108,54,'#846d4d');
+   for(let x=781;x<887;x+=9){rect(c,x,y-24,7,48,'#b8a078');rect(c,x,y-21,7,2,'#d2bc90');}
+   rect(c,776,y-29,115,5,'#6b5b45');rect(c,776,y+24,115,5,'#6b5b45');
+   for(let x=778;x<892;x+=27){rect(c,x,y-35,5,11,'#b4a17d');rect(c,x,y+23,5,9,'#b4a17d');}
+  });
+  // Little vegetable gardens and fences set apart the homesteads.
+  for(const [x,y] of [[360,305],[681,535],[78,574],[1000,310]]){
+   rect(c,x,y,53,52,this.snow?'#a9b7ae':'#816e49');
+   for(let row=0;row<4;row++)for(let col=0;col<5;col++){rect(c,x+4+col*10,y+5+row*12,5,7,this.snow?'#d6e2d9':row%2?'#7ba160':'#9eaf65');rect(c,x+6+col*10,y+4+row*12,2,3,this.snow?'#eef0e8':'#bdba6f');}
+   this.fence(c,x-5,y-6,64);
+  }
+  for(let i=0;i<90;i++){
+   const x=25+rng()*1100,y=90+rng()*630;if(this.nearRoad(x,y)||x>775&&x<887)continue;
+   rect(c,x,y,3,5,this.snow?'#acbdb2':'#5f8350');rect(c,x-2,y-2,3,3,this.snow?'#eef1e8':rng()>.5?'#e7ce84':'#dbba98');
+  }
+  if(this.index===5){
+   poly(c,[[985,148],[1060,23],[1137,148]],'#526b66');poly(c,[[1060,23],[1137,148],[1093,139]],'#3f5c58');poly(c,[[1040,57],[1060,23],[1084,62],[1070,55],[1063,66],[1052,55]],'#dee4d9');
+  }
+  if(this.index===2){
+   rect(c,100,99,84,58,'#d7c79f');rect(c,93,94,98,11,'#417c70');poly(c,[[102,94],[142,68],[181,94]],'#538e7b');rect(c,105,51,10,54,'#cecca8');rect(c,103,45,14,9,'#488874');poly(c,[[102,45],[110,30],[118,45]],'#488874');
+  }
+ }
+ fence(c,x,y,w){rect(c,x,y+5,w,3,'#b8aa7c');rect(c,x,y+14,w,3,'#b8aa7c');for(let i=0;i<w;i+=11)rect(c,x+i,y,4,22,'#d6c494');}
+ drawHouse(c,o){
+  const p=this.region,{x,y,w,h,hq}=o,wall=hq?'#d5c69e':p.wall,roof=hq?'#466e74':p.roof;
+  rect(c,x+7,y-29,w+5,43,'#203c3438');
+  rect(c,x,y-h+25,w,h-25,wall);rect(c,x+w-11,y-h+25,11,h-25,'#30433926');rect(c,x,y-6,w,8,'#766c52');
+  for(let i=0;i<3;i++)rect(c,x+2,y-h+40+i*13,w-14,1,'#564b381c');
+  poly(c,[[x-8,y-h+30],[x+10,y-h-7],[x+w-12,y-h-7],[x+w+6,y-h+30]],roof);
+  poly(c,[[x+w-12,y-h-7],[x+w+6,y-h+30],[x+w-5,y-h+30],[x+w-20,y-h-7]],'#233a2b26');
+  for(let i=0;i<6;i++)rect(c,x+8+i*(w-13)/6,y-h+4,2,22,'#101d2516');
+  rect(c,x-8,y-h+28,w+15,5,hq?'#31545b':'#514e3c');
+  if(this.snow){poly(c,[[x-7,y-h+26],[x+10,y-h-9],[x+w-12,y-h-9],[x+w+4,y-h+25],[x+w-18,y-h+19],[x+w-23,y-h+25],[x+20,y-h+19]],'#eff1e8');}
+  rect(c,x+w-25,y-h-17,10,24,'#96836a');rect(c,x+w-27,y-h-19,14,5,'#d1bfa0');
+  for(const wx of [x+12,x+w-31]){rect(c,wx-3,y-36,20,22,hq?'#8caa9b':'#eee0bb');rect(c,wx,y-33,14,16,'#557b7b');rect(c,wx+3,y-31,7,5,'#a8ccc0');rect(c,wx+6,y-34,2,19,'#e9d6a9');rect(c,wx-1,y-26,16,2,'#e9d6a9');rect(c,wx-4,y-14,23,3,'#f0dab0');}
+  rect(c,x+w/2-8,y-32,17,32,hq?'#3f6466':'#765f47');rect(c,x+w/2-6,y-30,13,16,'#8d997d');rect(c,x+w/2+4,y-13,2,3,'#ead287');rect(c,x+w/2-14,y+1,29,5,'#b3ad8a');
+  if(hq){rect(c,x+12,y-h-6,w-26,21,'#f1cf75');label(c,'ШТАБ',x+w/2,y-h+9,'#243d39',12);rect(c,x-15,y-59,3,63,'#e2d9b6');rect(c,x-12,y-59,21,14,'#77b7ca');}
+  else{rect(c,x+w-13,y-27,10,9,'#e9deba');label(c,String(Math.floor(x/50)),x+w-8,y-20,'#555e52',6);}
+ }
+ drawTree(c,o){
+  const {x,y,size:s,pine}=o;rect(c,x-17*s,y-5,42*s,12*s,'#1d403033');rect(c,x-3*s,y-23*s,6*s,24*s,'#746347');
+  if(pine){for(let i=0;i<3;i++){const yy=y-20*s-i*15*s;poly(c,[[x-(24-i*4)*s,yy],[x,yy-(34-i*3)*s],[x+(24-i*4)*s,yy]],i%2?'#48715a':this.region.tree);if(this.snow)poly(c,[[x-(15-i*2)*s,yy-13*s],[x,yy-(34-i*3)*s],[x+(15-i*2)*s,yy-13*s]],'#cadcd1');}}
+  else{rect(c,x-22*s,y-43*s,45*s,25*s,this.region.tree);rect(c,x-16*s,y-57*s,34*s,43*s,this.region.tree);rect(c,x-22*s,y-43*s,34*s,20*s,'#62864f');rect(c,x-13*s,y-54*s,28*s,25*s,'#769552');rect(c,x-8*s,y-56*s,13*s,8*s,'#91aa61');}
+ }
+ drawPerson(c,p,time,player=false){
+  const x=Math.round(p.x),y=Math.round(p.y),walk=p.moving?Math.sin(time*15)*3:0,body=player?'#f0ce68':clothes[p.id%clothes.length],skin=player?'#edc99e':skins[p.id%skins.length];
+  c.fillStyle='#213d3840';c.beginPath();c.ellipse(x,y+2,13,5,0,0,Math.PI*2);c.fill();
+  rect(c,x-7,y-12,5,12+walk,'#344e5a');rect(c,x+2,y-12,5,12-walk,'#344e5a');rect(c,x-8,y-1+walk,7,3,'#273f45');rect(c,x+1,y-1-walk,8,3,'#273f45');
+  rect(c,x-10,y-28,20,19,body);rect(c,x-12,y-24+walk,4,13,body);rect(c,x+8,y-24-walk,4,13,body);rect(c,x-12,y-12+walk,4,4,skin);rect(c,x+8,y-12-walk,4,4,skin);
+  if(player){rect(c,x-7,y-22,14,3,'#fcf2c2');rect(c,x-7,y-13,14,2,'#fcf2c2');rect(c,x-1,y-28,2,19,'#ad9549');rect(c,x+5,y-20,8,11,'#284b5b');rect(c,x+6,y-18,5,6,'#8abfc1');}
+  rect(c,x-7,y-39,14,14,skin);rect(c,x-8,y-40,16,5,player?'#427c8a':'#665c49');
+  if(player){rect(c,x-10,y-37,20,3,'#3b6574');}else if(p.id%3===0){rect(c,x-8,y-38,3,13,'#625749');}
+  if(p.dir!=='up'){rect(c,x-4+(p.dir==='right'?3:0),y-32,2,2,'#3f4d45');rect(c,x+3+(p.dir==='left'?-3:0),y-32,2,2,'#3f4d45');}
+  if(player){label(c,'ВЫ',x,y-52,'#ffedb4',10);}
+  else{
+   const yy=y-63+(p.done?0:Math.sin(time*2+p.id)*2);rect(c,x-9,yy,18,19,p.done?'#bce3c6':'#f0d278');rect(c,x-2,yy+19,4,3,p.done?'#bce3c6':'#f0d278');label(c,p.done?'✓':'!',x,yy+14,p.done?'#355e4b':'#4b553d',14);
+  }
+ }
+ render(c,view,player,npcs,time,nearest,allDone,reduced,coarse=false){
+  const {w,h,zoom,camX,camY}=view;c.imageSmoothingEnabled=false;c.clearRect(0,0,w,h);
+  c.save();c.scale(zoom,zoom);c.translate(-camX,-camY);c.drawImage(this.ground,0,0);
+  const items=[...this.objects,...npcs.map(n=>({...n,kind:'person'})),{...player,kind:'player'}].sort((a,b)=>a.y-b.y);
+  for(const o of items){
+   if(o.x<camX-150||o.x>camX+w/zoom+150||o.y<camY-90||o.y>camY+h/zoom+140)continue;
+   if(o.kind==='house')this.drawHouse(c,o);
+   if(o.kind==='tree')this.drawTree(c,o);
+   if(o.kind==='person'||o.kind==='player')this.drawPerson(c,o,reduced?0:time,o.kind==='player');
+   if(o.kind==='sign'){rect(c,o.x-2,o.y-31,4,33,'#726f4d');rect(c,o.x-17,o.y-34,34,14,'#d9c998');label(c,'→',o.x,o.y-22,'#687355',13);}
+   if(o.kind==='bench'){rect(c,o.x-16,o.y-15,35,8,'#b39c71');rect(c,o.x-16,o.y-5,35,7,'#c6b388');rect(c,o.x-13,o.y,4,8,'#6c7154');rect(c,o.x+13,o.y,4,8,'#6c7154');}
+   if(o.kind==='van'){rect(c,o.x-27,o.y-15,54,22,'#27412f40');rect(c,o.x-26,o.y-38,51,33,'#e9dab0');rect(c,o.x-21,o.y-36,25,28,'#466d74');rect(c,o.x+6,o.y-33,14,13,'#8bb2aa');rect(c,o.x-27,o.y-9,54,5,'#d1b254');rect(c,o.x-19,o.y-5,9,7,'#34483c');rect(c,o.x+14,o.y-5,9,7,'#34483c');label(c,'П',o.x-9,o.y-17,'#f0d171',16);}
+  }
+  if(nearest){const target=nearest==='hq'?HQ:nearest;c.strokeStyle='#f6e6a7';c.lineWidth=2;c.setLineDash([4,4]);c.beginPath();c.ellipse(target.x,target.y+4,23,10,0,0,Math.PI*2);c.stroke();c.setLineDash([]);}
+  if(allDone){const y=340+(reduced?0:Math.sin(time*3)*5);label(c,'↓ В ШТАБ',165,y,'#fff3b1',14);}
+  if(!reduced){
+   for(let i=0;i<(this.snow?48:10);i++){const x=(i*137+time*(this.snow?7:13))%WIDTH,y=(i*93+time*(this.snow?19:9))%HEIGHT;rect(c,x,y,this.snow?2:3,2,this.snow?'#ffffffa0':'#e8e8bd60');}
+   for(let i=0;i<18;i++){const y=(i*49+time*8)%HEIGHT;if(![236,466,656].some(v=>Math.abs(y-v)<34))rect(c,805+(i*11)%49,y,10,1,'#d8e9d238');}
+  }
+  c.restore();
+  // A live minimap keeps every resident discoverable on small screens.
+  const mw=116,mh=78,mx=w-mw-15,my=coarse?58:h-mh-28,scale=mw/WIDTH;
+  rect(c,mx-5,my-5,mw+10,mh+10,'#16362bd9');c.globalAlpha=.68;c.drawImage(this.ground,mx,my,mw,mh);c.globalAlpha=1;
+  for(const p of npcs){rect(c,mx+p.x*scale-2,my+p.y*(mh/HEIGHT)-2,4,4,p.done?'#b8ddad':'#f4d169');}
+  rect(c,mx+HQ.x*scale-3,my+HQ.y*mh/HEIGHT-3,6,6,'#c6e6df');rect(c,mx+player.x*scale-3,my+player.y*mh/HEIGHT-3,6,6,'#ffffff');
+  c.strokeStyle='#ffffdd80';c.lineWidth=1;c.strokeRect(mx+camX*scale,my+camY*mh/HEIGHT,Math.min(mw,w/zoom*scale),Math.min(mh,h/zoom*mh/HEIGHT));
+ }
+}
+
+function movePlayer(world,player,dx,dy,dt,fast=false){
+ const length=Math.hypot(dx,dy);if(!length){player.moving=false;return;}
+ const speed=fast?225:145,delta=Math.min(dt,.05)*speed;dx=dx/length*delta;dy=dy/length*delta;
+ // Small substeps keep collision reliable during sprinting and slow frames.
+ const steps=Math.max(1,Math.ceil(delta/4));let moved=false;
+ for(let i=0;i<steps;i++){if(!world.blocked(player.x+dx/steps,player.y)){player.x+=dx/steps;moved=true;}if(!world.blocked(player.x,player.y+dy/steps)){player.y+=dy/steps;moved=true;}}
+ player.moving=moved;player.dir=Math.abs(dx)>Math.abs(dy)?dx>0?'right':'left':dy>0?'down':'up';
+}
+
+
+const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d'),dialog=$('dialog');
+const state={region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,pending:0,stageMistakes:0,mode:'ready'};
+let world,npcs,player,nearest=null,last=0,toastTimer,dialogReturn='running',soundEnabled=false,audioCtx;
+const keys=new Set(),touch=new Set(),view={w:960,h:640,zoom:1,camX:0,camY:0};
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const coarse=window.matchMedia('(pointer: coarse)').matches;
+const number=n=>n.toLocaleString('ru-RU');
+function plural(n,forms){return forms[n%10===1&&n%100!==11?0:n%10>=2&&n%10<=4&&(n%100<12||n%100>14)?1:2];}
+function timeString(t){return `${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;}
+
+function loadRegion(index){
+ state.region=index;state.pending=0;state.stageMistakes=0;world=new World(REGIONS[index],index);
+ player={x:HQ.x,y:HQ.y+14,dir:'down',moving:false};
+ npcs=POSITIONS.slice(0,REGIONS[index].goal).map(([x,y],id)=>({id,x,y,dir:'down',done:false,moving:false,name:NAMES[(id+index*2)%NAMES.length],scenario:SCENARIOS[(id+index*3)%SCENARIOS.length]}));
+ nearest=null;keys.clear();touch.clear();
+ $('region-title').textContent=REGIONS[index].name;$('chapter').textContent=`РЕГИОН ${String(index+1).padStart(2,'0')} / 06`;
+ $('terrain-label').textContent=REGIONS[index].terrain;$('mission-title').textContent=REGIONS[index].mission;
+ $('mission-description').textContent=REGIONS[index].description;$('field-note').innerText=REGIONS[index].note;
+ $('goal-count').textContent=REGIONS[index].goal;$('connection').textContent=REGIONS[index].offline?'ОФЛАЙН-РЕЖИМ':'СВЯЗЬ ЕСТЬ';
+ $('connection').classList.toggle('offline',REGIONS[index].offline);$('task-hq').classList.remove('completed');
+ $('task-hq').querySelector('.task-check').textContent='2';resize();updateUI();
+}
+function updateUI(){
+ const done=npcs.filter(n=>n.done).length,goal=npcs.length;
+ $('done-count').textContent=done;$('score').textContent=number(state.score);$('journey-count').textContent=`${state.completed} / 6`;
+ $('bag-count').textContent=`${state.pending} ${plural(state.pending,['анкета','анкеты','анкет'])}`;
+ $('progress').setAttribute('aria-valuenow',done);$('progress').setAttribute('aria-valuemax',goal);$('progress').firstElementChild.style.width=`${done/goal*100}%`;
+ $('task-residents').classList.toggle('completed',done===goal);$('task-residents').querySelector('.task-check').textContent=done===goal?'✓':'1';
+ $('regions').innerHTML=REGIONS.map((r,i)=>`<li class="${i<state.completed?'done':i===state.region?'current':''}"><span class="region-index">${i<state.completed?'✓':String(i+1).padStart(2,'0')}</span><span class="region-label">${r.short}</span>${i===state.region&&i>=state.completed?'<span class="region-badge">В ПУТИ</span>':''}</li>`).join('');
+ if(done===goal){$('mission-title').textContent='Все жители учтены';$('mission-description').textContent='Отличная работа! Вернитесь в штаб с синим флагом и передайте результаты.';}
+}
+function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),4500);}
+function tone(kind='success'){
+ if(!soundEnabled)return;
+ try{audioCtx??=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const now=audioCtx.currentTime;
+ const notes=kind==='complete'?[523,659,784,1047]:kind==='error'?[220,196]:[659,880];
+ notes.forEach((freq,i)=>{const oscillator=audioCtx.createOscillator(),gain=audioCtx.createGain();oscillator.type='sine';oscillator.frequency.value=freq;gain.gain.setValueAtTime(0,now+i*.12);gain.gain.linearRampToValueAtTime(.065,now+i*.12+.015);gain.gain.exponentialRampToValueAtTime(.001,now+i*.12+.19);oscillator.connect(gain);gain.connect(audioCtx.destination);oscillator.start(now+i*.12);oscillator.stop(now+i*.12+.2);});
+ }catch{soundEnabled=false;}
+}
+function clearInputs(){keys.clear();touch.clear();document.querySelectorAll('.pressed').forEach(b=>b.classList.remove('pressed'));if(player)player.moving=false;}
+function openDialog(html,returnMode=state.mode){clearInputs();dialogReturn=returnMode;state.mode='dialog';$('dialog-content').innerHTML=html;if(!dialog.open)dialog.showModal();$('dialog-content').querySelector('.close-button')?.addEventListener('click',closeDialog);}
+function closeDialog(){dialog.close();state.mode=dialogReturn;clearInputs();if(state.mode==='running')canvas.focus({preventScroll:true});}
+function dialogHead(kicker,close=true){return `<div class="dialog-heading"><span class="eyebrow">${kicker}</span>${close?'<button class="close-button" aria-label="Закрыть">×</button>':''}</div>`;}
+
+function talk(npc){
+ if(npc.done){toast(`${npc.name}: «Спасибо! Хорошего вам обхода!»`);return;}
+ const s=npc.scenario;let mistakes=0,answered=false;
+ openDialog(`${dialogHead('РАЗГОВОР С ЖИТЕЛЕМ')}<span class="dialog-kicker">${REGIONS[state.region].place} · житель ${npc.id+1}</span><h2 id="dialog-title" class="dialog-title">${npc.name}</h2><p class="dialog-text">«${s.line}»</p><div class="answer-list">${s.answers.map((a,i)=>`<button class="answer" data-answer="${i}">${a}</button>`).join('')}</div><p class="feedback" id="feedback" role="status" aria-live="polite" hidden></p><button class="primary dialog-next" id="continue-walk" hidden>Продолжить обход <span>→</span></button>`,'running');
+ // The user agent's [hidden] rule must win over the primary button's flex layout.
+ $('continue-walk').style.display='none';
+ document.querySelectorAll('[data-answer]').forEach(button=>button.addEventListener('click',()=>{
+  if(answered)return;const answer=Number(button.dataset.answer);$('feedback').hidden=false;
+  if(answer!==s.correct){mistakes++;state.errors++;state.stageMistakes++;button.classList.add('wrong');button.disabled=true;$('feedback').textContent='Попробуйте ещё раз. Помогаем жителю участвовать, проверяем сведения и бережём его доступ к личному кабинету.';tone('error');return;}
+  answered=true;npc.done=true;state.total++;state.score+=mistakes?100:120;
+  if(['online','help'].includes(s.type)){state.confirmed++;}else{state.questionnaires++;state.pending++;}
+  button.classList.add('correct');document.querySelectorAll('[data-answer]').forEach(b=>b.disabled=true);
+  $('feedback').textContent=`${s.feedback} +${mistakes?100:120} очков.`;$('continue-walk').hidden=false;$('continue-walk').style.display='flex';$('continue-walk').focus();updateUI();tone();
+ }));
+ $('continue-walk').addEventListener('click',()=>{closeDialog();if(npcs.every(n=>n.done))toast('Все жители учтены. Пора вернуться в штаб!');});
+}
+function visitHQ(){
+ const done=npcs.filter(n=>n.done).length;
+ if(done<npcs.length){
+  const transferred=state.pending;state.pending=0;updateUI();
+  toast(transferred?`Передано: ${transferred} ${plural(transferred,['анкета','анкеты','анкет'])}. Ещё ${npcs.length-done} ${plural(npcs.length-done,['житель ждёт','жителя ждут','жителей ждут'])} вас.`:`Штаб на связи. Найдите жителей со знаком ! — осталось ${npcs.length-done}.`);if(transferred)tone();return;
+ }
+ state.pending=0;state.completed=state.region+1;state.score+=200;updateUI();$('task-hq').classList.add('completed');$('task-hq').querySelector('.task-check').textContent='✓';tone('complete');
+ if(state.completed===REGIONS.length){finish();return;}
+ openDialog(`${dialogHead('МАРШРУТ ЗАВЕРШЁН',false)}<span class="dialog-kicker">${REGIONS[state.region].name}</span><h2 id="dialog-title" class="dialog-title">Здесь все на счету.</h2><p class="dialog-text">Результаты переданы в штаб. Можно собираться в следующий регион.</p><div class="dialog-stats"><div class="dialog-stat"><strong>${npcs.length}</strong><span>жителей учтено</span></div><div class="dialog-stat"><strong>+200</strong><span>за маршрут</span></div><div class="dialog-stat"><strong>${state.completed}/6</strong><span>регионов</span></div></div><button id="next-region" class="primary">Дальше: ${REGIONS[state.region+1].short} <span>→</span></button>`,'stage-complete');
+ $('next-region').addEventListener('click',()=>{dialog.close();loadRegion(state.region+1);state.mode='running';canvas.focus({preventScroll:true});toast(REGIONS[state.region].offline?'Связь нестабильна. Планшет работает офлайн.':'Новый регион, новые знакомства. В путь!');});
+}
+function finish(){
+ state.mode='finished';
+ openDialog(`${dialogHead('ЭКСПЕДИЦИЯ ЗАВЕРШЕНА',false)}<span class="dialog-kicker">Владимир → Камчатка</span><h2 id="dialog-title" class="dialog-title">Страна начинается<br>с людей.</h2><p class="dialog-text">Шесть регионов позади. Вы помогли ${state.total} жителям принять участие в переписи и передали все результаты.</p><div class="dialog-stats"><div class="dialog-stat"><strong>${number(state.score)}</strong><span>очков</span></div><div class="dialog-stat"><strong>${state.total}</strong><span>жителей</span></div><div class="dialog-stat"><strong>${timeString(state.elapsed)}</strong><span>время в пути</span></div></div><p class="dialog-text" style="font-size:14px">${state.questionnaires} ${plural(state.questionnaires,['анкета заполнена','анкеты заполнены','анкет заполнено'])} с вашей помощью, ${state.confirmed} ${plural(state.confirmed,['участие подтверждено','участия подтверждены','участий подтверждено'])} онлайн. Ни одной повторной записи.</p><button id="restart" class="primary">Новая экспедиция <span>↻</span></button>`,'finished');
+ $('restart').addEventListener('click',restart);
+}
+function restart(){dialog.close();Object.assign(state,{region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,pending:0,stageMistakes:0,mode:'running'});loadRegion(0);$('clock').textContent='00:00';canvas.focus({preventScroll:true});toast('Новый маршрут. Удачного обхода!');}
+function showHelp(){
+ if(dialog.open)return;
+ openDialog(`${dialogHead('ПАМЯТКА ПЕРЕПИСЧИКА')}<h2 id="dialog-title" class="dialog-title">Как играть</h2><p class="dialog-text">Найдите жителей с жёлтым знаком <strong>!</strong>, подойдите ближе и начните разговор. Выберите подходящий ответ. Когда все жители учтены, вернитесь в штаб.</p><div class="help-controls"><kbd>W A S D / ↑ ← ↓ →</kbd><span>Движение</span><kbd>E / Пробел</kbd><span>Разговор, передача анкет</span><kbd>Shift</kbd><span>Бег</span><kbd>Esc</kbd><span>Пауза / закрыть разговор</span></div><p class="dialog-text" style="font-size:14px">На телефоне используйте кнопки на карте. Белый квадрат на мини-карте — вы, жёлтые — жители. Штаб расположен слева, у машины.</p><p class="dialog-text" style="font-size:14px">За верный ответ — 100 очков, ещё 20 — с первой попытки. За завершённый регион — 200. Время не ограничено.</p><p class="dialog-kicker">Ситуации вдохновлены разделами 4.1–4.3 концепции новых подходов к переписи до 2030 года. Карты и персонажи вымышлены, вопросы упрощены для игры.</p>`);
+}
+function pause(){
+ if(state.mode==='ready'){showHelp();return;}
+ if(dialog.open){if(dialogReturn==='running'||dialogReturn==='ready')closeDialog();return;}
+ if(state.mode==='finished'){finish();return;}
+ openDialog(`${dialogHead('МОЖНО ПЕРЕВЕСТИ ДУХ')}<h2 id="dialog-title" class="dialog-title">Небольшой привал</h2><p class="dialog-text">Жители подождут. Время остановлено.</p><button id="resume" class="primary">Продолжить обход <span>→</span></button>`,'running');$('resume').addEventListener('click',closeDialog);
+}
+function act(){if(state.mode!=='running')return;if(nearest==='hq')visitHQ();else if(nearest)talk(nearest);else toast('Подойдите к жителю со знаком ! или ко входу в штаб.');}
+
+function resize(){
+ const bounds=canvas.getBoundingClientRect();view.w=Math.max(1,bounds.width);view.h=Math.max(1,bounds.height);
+ const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(view.w*dpr);canvas.height=Math.round(view.h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+ view.zoom=view.w<600?Math.max(view.w/580,view.h/HEIGHT):Math.max(view.w/WIDTH,view.h/HEIGHT);
+}
+function frame(t){
+ const dt=last?Math.min((t-last)/1000,.05):0;last=t;
+ if(state.mode==='running'){
+  let dx=0,dy=0;if(keys.has('KeyA')||keys.has('ArrowLeft')||touch.has('left'))dx--;if(keys.has('KeyD')||keys.has('ArrowRight')||touch.has('right'))dx++;
+  if(keys.has('KeyW')||keys.has('ArrowUp')||touch.has('up'))dy--;if(keys.has('KeyS')||keys.has('ArrowDown')||touch.has('down'))dy++;
+  movePlayer(world,player,dx,dy,dt,keys.has('ShiftLeft')||keys.has('ShiftRight'));state.elapsed+=dt;
+  $('clock').textContent=timeString(state.elapsed);
+  let min=57;nearest=null;
+  for(const n of npcs){const d=Math.hypot(player.x-n.x,player.y-n.y);if(d<min){min=d;nearest=n;}}
+  if(!nearest&&Math.hypot(player.x-HQ.x,player.y-HQ.y)<58)nearest='hq';
+  $('interaction').hidden=!nearest;$('interaction').lastElementChild.textContent=nearest==='hq'?'Передать результаты':nearest?.done?'Поблагодарить жителя':'Поговорить';
+ }else{$('interaction').hidden=true;player.moving=false;}
+ view.camX=Math.max(0,Math.min(WIDTH-view.w/view.zoom,player.x-view.w/view.zoom/2));view.camY=Math.max(0,Math.min(HEIGHT-view.h/view.zoom,player.y-view.h/view.zoom/2));
+ world.render(ctx,view,player,npcs,t/1000,nearest,npcs.every(n=>n.done),reduced,coarse);requestAnimationFrame(frame);
+}
+
+$('start').addEventListener('click',()=>{state.mode='running';$('start-screen').remove();canvas.focus({preventScroll:true});tone();toast('Найдите жителя со знаком !. Стрелки или WASD — движение, E — разговор.');});
+$('help').addEventListener('click',showHelp);$('pause').addEventListener('click',pause);$('touch-action').addEventListener('click',act);
+$('sound').addEventListener('click',()=>{soundEnabled=!soundEnabled;$('sound').setAttribute('aria-label',soundEnabled?'Выключить звук':'Включить звук');$('sound').setAttribute('aria-pressed',soundEnabled);$('sound').title=soundEnabled?'Выключить звук':'Включить звук';$('sound').querySelector('span').style.display=soundEnabled?'none':'inline';if(soundEnabled)tone();});
+window.addEventListener('keydown',e=>{
+ if(e.code==='Escape'){e.preventDefault();if(dialog.open){if(['running','ready'].includes(dialogReturn))closeDialog();}else pause();return;}
+ if(state.mode!=='running')return;
+ if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD','KeyE','ShiftLeft','ShiftRight'].includes(e.code)){e.preventDefault();keys.add(e.code);}
+ if((e.code==='KeyE'||e.code==='Space')&&!e.repeat)act();
+});
+window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',clearInputs);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInputs();if(state.mode==='running')pause();}});
+dialog.addEventListener('cancel',e=>{e.preventDefault();if(['running','ready'].includes(dialogReturn))closeDialog();});
+document.querySelectorAll('[data-dir]').forEach(button=>{
+ button.addEventListener('pointerdown',e=>{e.preventDefault();button.setPointerCapture(e.pointerId);touch.add(button.dataset.dir);button.classList.add('pressed');});
+ const release=()=>{touch.delete(button.dataset.dir);button.classList.remove('pressed');};button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('lostpointercapture',release);
+});
+canvas.addEventListener('pointerdown',()=>canvas.focus({preventScroll:true}));
+new ResizeObserver(resize).observe(canvas);loadRegion(0);requestAnimationFrame(frame);
+
+})();
+</script>
+</body>
+</html>
