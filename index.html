@@ -114,6 +114,61 @@
 }
 </style>
 
+<style id="v12-features">
+/* Expedition v12: extend the existing dark map interface. */
+.profile-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}
+.profile-fields>div{min-width:0}.profile-fields .player-input{width:100%;font-size:14px!important;min-height:36px!important}
+.profile-fields .player-label{font-size:13px!important;letter-spacing:0!important;line-height:1.3}
+.start-options{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 9px;flex-wrap:wrap}
+.audio-toggle{display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+.audio-toggle input{width:18px;height:18px;accent-color:var(--yellow)}
+.start-card .save-notice{font-size:12px!important;line-height:1.35!important;letter-spacing:0;margin:4px 0 8px!important;color:#c0d3cc}
+.start-details{text-align:left;margin:8px 0 14px;font-size:14px;line-height:1.4;color:#c5d5ce}
+.start-details>summary{padding:8px 0;cursor:pointer;color:var(--mint);font-size:14px}
+.start-details .start-brief{display:grid!important}.start-details .start-route,.start-details .start-mission{display:block!important}
+.start-details .start-brief-card p,.start-details ol{font-size:14px!important;line-height:1.4!important}
+.start-details strong,.start-details .start-route-item{font-size:13px!important;line-height:1.35!important}
+.monitor-button{width:100%;display:flex;align-items:center;gap:9px;padding:8px 13px;background:#203b3d;border:1px solid #57786d;border-radius:7px;color:var(--mint);font-size:14px;position:relative;overflow:hidden;text-align:left;min-height:36px}
+.monitor-button strong{margin-left:auto;color:var(--white);font-variant-numeric:tabular-nums}
+.monitor-button>i{position:absolute;bottom:0;left:0;height:2px;background:var(--mint);transition:width .35s}
+.stage-header .monitor-button{width:auto;min-width:174px}.stage-header .shift-clock{margin-left:auto}
+.stage-tools{display:flex;align-items:center;gap:14px}
+dialog.wide-dialog{width:min(860px,calc(100vw - 28px));overflow:auto}
+.wide-dialog #dialog-content{padding:24px}.wide-dialog .dialog-title{font-size:clamp(24px,3vw,32px)}
+.report-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+.report-kpi{padding:14px 12px;border:1px solid var(--line);border-radius:7px;background:#203840;min-width:0}
+.report-kpi strong{font-size:26px;display:block;font-weight:500;color:var(--yellow);font-variant-numeric:tabular-nums}
+.report-kpi span{font-size:14px;line-height:1.35;display:block;color:#c5d3d5;margin-top:5px}
+.board-tabs{display:flex;gap:8px;margin:16px 0}.board-tabs .secondary{margin:0;min-height:44px;padding:9px 12px;font-size:14px}
+.board-tabs .selected{border-color:var(--yellow);color:var(--yellow);background:#343d39}
+.report-callout,.report-lock{padding:17px 18px;margin:16px 0;border:1px solid #52756a;border-radius:8px;background:#1d383b;line-height:1.5}
+.report-callout strong,.report-lock strong{color:var(--mint);font-size:17px;display:block}
+.report-callout p,.report-lock p{margin:8px 0 0;font-size:15px;color:#cad7d7}
+.report-lock{text-align:center;padding:28px 20px}.report-lock>span{display:block;font-size:35px;color:var(--yellow);margin-bottom:12px}
+.monitor-table-wrap{overflow-x:auto}.monitor-table,.wide-dialog .leader-table{border-collapse:collapse;width:100%;font-size:14px;margin:18px 0;text-align:left}
+.monitor-table th,.monitor-table td,.wide-dialog .leader-table th,.wide-dialog .leader-table td{padding:11px 9px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.4;text-align:left}
+.monitor-table thead th,.wide-dialog .leader-table thead th{font-size:13px;color:var(--muted);font-weight:400}
+.monitor-table tbody th{font-weight:400}.monitor-table td{font-variant-numeric:tabular-nums}
+.monitor-table caption,.leader-table caption{text-align:left;font-size:18px;margin-bottom:8px;color:var(--mint)}
+.leader-table td small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.census-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.census-chart{border:1px solid var(--line);border-radius:8px;padding:16px;background:#1c343d;min-width:0}
+.census-chart h3{font-size:18px;font-weight:500;margin:0 0 18px;color:var(--mint);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.census-chart h3 small{font-size:13px;color:var(--muted);font-weight:400;white-space:nowrap}
+.census-bar-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;margin:12px 0;font-size:14px;line-height:1.35}
+.census-bar-row>strong{font-size:15px;font-weight:400;font-variant-numeric:tabular-nums}.census-bar-row small{font-size:13px;color:var(--muted)}
+.census-bar{grid-column:1/-1;height:6px;border-radius:3px;background:#31464b;overflow:hidden}.census-bar i{display:block;height:100%;background:var(--yellow);border-radius:3px}
+.sync-status{font-size:14px;line-height:1.45;color:var(--mint);padding:10px 12px;border:1px solid var(--line);border-radius:6px;margin:16px 0}
+.audio-slider{display:grid;grid-template-columns:1fr auto;gap:10px;margin:22px 0;font-size:16px}.audio-slider input{grid-column:1/-1;width:100%;accent-color:var(--yellow);height:22px}.audio-slider output{font-variant-numeric:tabular-nums;color:var(--yellow)}
+.music-credits{border-top:1px solid var(--line);margin-top:20px;padding-top:15px;color:var(--muted);font-size:14px;line-height:1.5}.music-credits summary{cursor:pointer;color:var(--mint);min-height:30px}.music-credits p{margin:14px 0}
+.wide-dialog .dialog-hint{font-size:14px!important;line-height:1.5!important;color:#adbec3}
+@media(min-width:761px){.stage-header{gap:12px}.stage-tools{flex-shrink:0}.start-card{max-height:100%;overflow:auto}}
+@media(min-width:761px) and (max-height:760px){.stage-tools .monitor-button{font-size:13px;min-width:162px;padding:6px 9px;min-height:32px}.stage-tools{gap:10px}.profile-fields .player-input{margin-bottom:5px!important}.start-card .save-notice{font-size:12px!important}.start-options{margin-bottom:5px}.start-card .player-label{font-size:13px!important}}
+@media(max-width:1050px) and (min-width:761px){.stage-header h1{font-size:22px}.stage-tools .shift-clock{display:none}}
+@media(max-width:760px){.stage-header{height:auto;min-height:70px}.stage-header h1{font-size:20px}.stage-tools{flex-direction:column;align-items:flex-end;gap:5px}.stage-tools .monitor-button{min-width:148px;font-size:13px;padding:7px 8px}.stage-tools .shift-clock{display:none}.report-kpis{grid-template-columns:1fr 1fr}.census-charts{grid-template-columns:1fr}.wide-dialog #dialog-content{padding:18px}.monitor-table{min-width:610px}.profile-fields{gap:8px}.start-card{max-height:100%;overflow:auto}}
+@media(max-width:430px){.profile-fields{grid-template-columns:1fr}.stage-header h1{font-size:18px}.stage-tools .monitor-button{min-width:140px;font-size:12px}.board-tabs{flex-wrap:wrap}.board-tabs button{flex:1 1 150px}}
+
+</style>
 </head>
 <body>
   <div class="app">
@@ -124,13 +179,13 @@
     </header>
     <main>
       <section class="play-column" aria-label="Игровое поле">
-        <div class="stage-header"><div class="region-name"><span class="eyebrow" id="chapter">РЕГИОН 01 / 06</span><h1 id="region-title">Владимирская область</h1></div><div class="shift-clock"><span>ВРЕМЯ В ПУТИ</span><strong id="clock">00:00</strong></div></div>
+        <div class="stage-header"><div class="region-name"><span class="eyebrow" id="chapter">РЕГИОН 01 / 06</span><h1 id="region-title">Владимирская область</h1></div><div class="stage-tools"><button id="monitor" class="monitor-button"><span id="monitor-label">Ход переписи</span><strong id="monitor-count">0/60</strong><i id="expedition-meter"></i></button><div class="shift-clock"><span>ВРЕМЯ В ПУТИ</span><strong id="clock">00:00</strong></div></div></div>
         <div class="game-frame" id="game-frame">
           <canvas id="game" tabindex="0" aria-label="Игровое поле. Стрелки или WASD — движение, E или пробел — разговор, R — навигатор. Esc — пауза.">Для игры нужен браузер с поддержкой Canvas.</canvas>
           <div class="map-tags"><span id="terrain-label">СРЕДНЯЯ ПОЛОСА</span><span id="theme-map-label">ТЕМА · ПОЛНОТА УЧЁТА</span><span class="connection" id="connection">СВЯЗЬ ЕСТЬ</span></div>
           <div class="mission-toast" id="toast" role="status" aria-live="polite"></div><div id="achievement-popup" class="achievement-popup" role="status" aria-live="polite"><div id="achievement-popup-icon" class="achievement-popup-icon">★</div><div><small>ДОСТИЖЕНИЕ ОТКРЫТО</small><strong id="achievement-popup-title"></strong><span id="achievement-popup-text"></span></div></div><div id="concept-popup" class="concept-popup" role="status" aria-live="polite"><div class="concept-popup-icon">i</div><div><small>СПРАВКА · КОНЦЕПЦИЯ 2030</small><strong id="concept-popup-title"></strong><span id="concept-popup-text"></span></div></div>
           <div class="interaction-prompt" id="interaction" hidden><kbd>E</kbd><span>Поговорить</span></div>
-          <div class="start-screen" id="start-screen"><div class="start-card"><span class="eyebrow">УЧЕБНАЯ ЭКСПЕДИЦИЯ · ПЕРЕПИСЬ 2030</span><h2>Каждый человек<br>имеет значение</h2><p class="start-lead"><strong>Всероссийская перепись населения — сплошное федеральное статистическое наблюдение, которое должно обеспечить полный учёт жителей страны.</strong> Она показывает, где люди фактически живут, как устроены домохозяйства и каковы основные социально-демографические характеристики населения.</p><div class="start-brief"><div class="start-brief-card"><strong>КТО ВЫ В ЭТОЙ ИГРЕ</strong><p>Полевой переписчик новой модели — «аудитор-мотиватор». Вы проверяете полноту учёта, помогаете людям пройти цифровую перепись и при необходимости проводите опрос на планшете.</p></div><div class="start-brief-card"><strong>ВАЖНЫЙ ПРИНЦИП</strong><p>Перепись ориентируется на фактическое проживание и фактический состав домохозяйства. Регистрация по адресу сама по себе не заменяет ответы человека.</p></div></div><div class="start-mission"><strong>ВАША ЗАДАЧА</strong><ol><li>Выбирайте регионы в любом порядке и находите жителей на карте.</li><li>Разбирайте ситуации по концепции. Если опрос нужен — извлекайте ответы из рассказа человека. Если житель уже отправил анкету в Личном кабинете ГИС ЦАП — подтвердите участие и не создавайте дубль.</li><li>Передавайте анкеты в штаб, следите за полнотой учёта и пройдите босса в 3-м регионе.</li></ol></div><div class="start-route"><strong>6 РЕГИОНОВ · 6 ТЕМ</strong><div class="start-route-grid"><div class="start-route-item"><b>01 · Владимир</b>Полнота учёта</div><div class="start-route-item"><b>02 · Карелия</b>Офлайн-сбор</div><div class="start-route-item"><b>03 · Татарстан</b>Домохозяйства</div><div class="start-route-item"><b>04 · Иркутск</b>Адреса и маршруты</div><div class="start-route-item"><b>05 · Якутия</b>Новая роль переписчика</div><div class="start-route-item"><b>06 · Камчатка</b>Динамическая модель</div></div></div><label class="player-label" for="player-name">Имя для таблицы рекордов</label><input id="player-name" class="player-input" maxlength="20" autocomplete="nickname" placeholder="Например, Андрей"><button class="primary" id="start">Отправиться на обход <span>↗</span></button><small>Игра упрощает реальные процессы и не воспроизводит официальный переписной лист.</small></div></div>
+          <div class="start-screen" id="start-screen"><div class="start-card"><span class="eyebrow">УЧЕБНАЯ ЭКСПЕДИЦИЯ · ПЕРЕПИСЬ 2030</span><h2>Каждый человек<br>имеет значение</h2><p class="start-lead"><strong>Всероссийская перепись населения — сплошное федеральное статистическое наблюдение, которое должно обеспечить полный учёт жителей страны.</strong> Она показывает, где люди фактически живут, как устроены домохозяйства и каковы основные социально-демографические характеристики населения.</p><details class="start-details"><summary>Роль переписчика, правила и шесть регионов</summary><div class="start-brief"><div class="start-brief-card"><strong>КТО ВЫ В ЭТОЙ ИГРЕ</strong><p>Полевой переписчик новой модели — «аудитор-мотиватор». Вы проверяете полноту учёта, помогаете людям пройти цифровую перепись и при необходимости проводите опрос на планшете.</p></div><div class="start-brief-card"><strong>ВАЖНЫЙ ПРИНЦИП</strong><p>Перепись ориентируется на фактическое проживание и фактический состав домохозяйства. Регистрация по адресу сама по себе не заменяет ответы человека.</p></div></div><div class="start-mission"><strong>ВАША ЗАДАЧА</strong><ol><li>Выбирайте регионы в любом порядке и находите жителей на карте.</li><li>Разбирайте ситуации по концепции. Если опрос нужен — извлекайте ответы из рассказа человека. Если житель уже отправил анкету в Личном кабинете ГИС ЦАП — подтвердите участие и не создавайте дубль.</li><li>Передавайте анкеты в штаб, следите за полнотой учёта и сдайте региональные зачёты.</li></ol></div><div class="start-route"><strong>6 РЕГИОНОВ · 6 ТЕМ</strong><div class="start-route-grid"><div class="start-route-item"><b>01 · Владимир</b>Полнота учёта</div><div class="start-route-item"><b>02 · Карелия</b>Офлайн-сбор</div><div class="start-route-item"><b>03 · Татарстан</b>Домохозяйства</div><div class="start-route-item"><b>04 · Иркутск</b>Адреса и маршруты</div><div class="start-route-item"><b>05 · Якутия</b>Новая роль переписчика</div><div class="start-route-item"><b>06 · Камчатка</b>Динамическая модель</div></div></div></details><div class="profile-fields"><div><label class="player-label" for="player-name">Имя или псевдоним</label><input id="player-name" class="player-input" maxlength="20" autocomplete="nickname" placeholder="Например, Андрей" required></div><div><label class="player-label" for="player-team">Команда / подразделение</label><input id="player-team" class="player-input" maxlength="40" autocomplete="organization" placeholder="Необязательно"></div></div><div class="start-options"><label class="audio-toggle"><input type="checkbox" id="start-audio" checked> Музыка и звуки</label></div><p id="save-notice" class="save-notice"></p><button class="primary" id="start">Отправиться на обход <span>↗</span></button><small>Игра упрощает реальные процессы и не воспроизводит официальный переписной лист.</small></div></div>
           <div class="touch-controls" id="touch-controls"><div class="dpad"><button data-dir="up" aria-label="Идти вверх">↑</button><button data-dir="left" aria-label="Идти влево">←</button><button data-dir="down" aria-label="Идти вниз">↓</button><button data-dir="right" aria-label="Идти вправо">→</button></div><button id="touch-action" class="touch-action" aria-label="Поговорить или передать анкеты">E</button></div>
           <span class="map-caption">УЧЕБНЫЙ МАРШРУТ · УСЛОВНАЯ КАРТА</span>
         </div>
@@ -512,7 +567,7 @@ function movePlayer(world,player,dx,dy,dt,fast=false){
 
 const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d'),dialog=$('dialog');
 const regionData=REGIONS.map(()=>({npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));
-const state={region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'ready',playerName:'Переписчик',lastRecord:null,visitedRegions:new Set([0]),goodEvents:0,badEvents:0,fieldWins:0,educationSeen:new Set(),regionIntroSeen:new Set(),streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false};
+const state={region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'ready',playerName:'Переписчик',playerTeam:'',lastRecord:null,visitedRegions:new Set([0]),goodEvents:0,badEvents:0,fieldWins:0,educationSeen:new Set(),regionIntroSeen:new Set(),streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false};
 let world,npcs,player,nearest=null,last=0,toastTimer,achievementTimer,conceptTimer,dialogReturn='running',soundEnabled=false,audioCtx,mouseTarget=null,pathPoints=[],importedRecordName='';
 const keys=new Set(),touch=new Set(),view={w:960,h:640,zoom:1,camX:0,camY:0};
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -646,6 +701,7 @@ function switchRegion(index){
 }
 function updateUI(){
  const data=regionData[state.region],done=npcs.filter(n=>n.done).length,goal=npcs.length;
+ updateMonitorButton();
  state.completed=regionData.filter(r=>r.completed).length;
  $('done-count').textContent=done;$('score').textContent=number(state.score);$('journey-count').textContent=`${state.completed} / 6`;$('questionnaire-count').textContent=state.questionnaires;
  $('bag-count').textContent=`${data.pending} ${plural(data.pending,['анкета','анкеты','анкет'])}`;
@@ -657,6 +713,7 @@ function updateUI(){
  document.querySelectorAll('[data-region]').forEach(b=>b.addEventListener('click',()=>switchRegion(Number(b.dataset.region))));
  if(data.completed){$('mission-title').textContent='Регион завершён';$('mission-description').textContent='Можно осмотреть карту ещё раз или выбрать любой другой регион в списке справа.';}
  else if(done===goal){$('mission-title').textContent='Все жители переписаны';$('mission-description').textContent=state.region===2&&!data.bossCleared?'Осмотрите карту: остался необычный контакт.':'Вернитесь в штаб с синим флагом и передайте результаты.';}
+ updateMonitorButton();captureProgress();
 }
 function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),4500);}
 function conceptNoteHTML(id,mark=true){const f=EDU_FACTS[id];if(!f)return '';if(mark)state.educationSeen.add(id);return `<div class="concept-note"><small>СПРАВКА · КОНЦЕПЦИЯ 2030</small><strong>${esc(f.title)}</strong><p>${esc(f.text)}</p></div>`;}
@@ -683,21 +740,343 @@ function routeAssist(){
  const target=targets.reduce((best,n)=>Math.hypot(player.x-n.x,player.y-n.y)<Math.hypot(player.x-best.x,player.y-best.y)?n:best,targets[0]);const data=regionData[state.region];data.guideUses++;const cost=data.guideUses===1?0:10;if(cost)state.score=Math.max(0,state.score-cost);setDestination(target.x-25,target.y+18,24,target);updateUI();toast(cost?`Навигатор строит путь к ${target.name}. Повторная подсказка: −10 очков.`:`Навигатор ведёт к ближайшему непройденному дому. Первая подсказка в регионе бесплатна.`);
 }
 
-function tone(kind='success'){
- if(!soundEnabled)return;
- try{audioCtx??=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const now=audioCtx.currentTime;
- const notes=kind==='complete'?[523,659,784,1047]:kind==='error'?[220,196]:[659,880];
- notes.forEach((freq,i)=>{const oscillator=audioCtx.createOscillator(),gain=audioCtx.createGain();oscillator.type='sine';oscillator.frequency.value=freq;gain.gain.setValueAtTime(0,now+i*.12);gain.gain.linearRampToValueAtTime(.065,now+i*.12+.015);gain.gain.exponentialRampToValueAtTime(.001,now+i*.12+.19);oscillator.connect(gain);gain.connect(audioCtx.destination);oscillator.start(now+i*.12);oscillator.stop(now+i*.12+.2);});
- }catch{soundEnabled=false;}
+// Built-in music is synthesized locally: no audio files or external requests.
+// The first theme quotes the traditional melody "Во поле берёза стояла".
+// The other five themes are original game miniatures, not archival regional music.
+const MUSIC = [
+ {title:'Во поле берёза стояла',credit:'Народная тема · игровое переложение',bpm:82,root:45,
+  notes:'76:1 76:1 76:1 76:1 74:2 72:2 71:2 69:2 76:1 76:1 79:1 76:1 74:1 74:1 72:1 72:1 71:2 69:2 71:3 72:1 74:2 72:2 71:2 69:2',chords:[0,0,5,7]},
+ {title:'Тихие озёра',credit:'Мелодия игры · щипковые тембры',bpm:72,root:50,
+  notes:'74:2 69:1 67:1 65:2 69:2 72:2 69:2 67:4 0:2 65:1 67:1 69:2 74:2 72:2 69:2 67:2 65:2 62:4 0:4',chords:[0,5,3,0]},
+ {title:'Вечер над Волгой',credit:'Мелодия игры · пентатоника',bpm:84,root:48,
+  notes:'72:1 74:1 76:2 79:2 76:2 74:1 72:1 69:2 67:4 0:2 69:1 72:1 74:2 76:2 79:1 81:1 79:2 76:2 74:2 72:4 0:4',chords:[0,5,9,0]},
+ {title:'Байкальская волна',credit:'Мелодия игры · плавный трёхдольный ритм',bpm:76,root:45,
+  notes:'69:2 72:1 76:3 74:2 72:1 71:3 69:2 67:1 64:3 0:3 64:2 69:1 72:3 74:2 76:1 74:3 72:2 71:1 69:6 0:3',chords:[0,5,7,0],meter:6},
+ {title:'Северное сияние',credit:'Мелодия игры · мягкий бас и колокольчики',bpm:66,root:42,
+  notes:'66:2 73:2 78:4 0:2 76:2 73:2 71:2 66:4 0:4 69:2 71:2 73:4 78:2 76:2 73:4 66:4 0:4',chords:[0,0,5,0]},
+ {title:'У Тихого океана',credit:'Мелодия игры · просторный финальный мотив',bpm:78,root:48,
+  notes:'72:2 76:2 79:4 77:2 76:2 74:4 0:2 72:2 69:2 67:2 72:4 0:4 76:2 79:2 84:4 81:2 79:2 76:4 72:4 0:4',chords:[0,5,9,7]}
+].map(t=>({...t,notes:t.notes.split(' ').map(s=>s.split(':').map(Number))}));
+
+function localRead(key,fallback){try{const x=localStorage.getItem(key);return x===null?fallback:JSON.parse(x);}catch{return fallback;}}
+function localWrite(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}}
+const Sound = (()=>{
+ const saved=localRead('censusSoundV12',{});
+ const volume={music:.28,effects:.55,home:.25,...saved.volume};
+ Object.keys(volume).forEach(k=>volume[k]=Number.isFinite(volume[k])?Math.max(0,Math.min(1,volume[k])):.25);
+ let enabled=saved.enabled!==false,started=false,ctx,master,musicBus,effectBus,homeBus,clock;
+ let musicAt=0,bassAt=0,step=0,bar=0,region=-1,variation=0,lastMix='',lastHome=-1,homeAt=0;
+ let homeActive=false,stepAt=0;const nodes=new Set(),musicNodes=new Map();
+ const midi=n=>440*Math.pow(2,(n-69)/12);
+ function remember(){localWrite('censusSoundV12',{enabled,volume});}
+ function ramp(param,value,seconds=.35){param.cancelScheduledValues(ctx.currentTime);param.setTargetAtTime(value,ctx.currentTime,seconds/3);}
+ function boot(){
+  if(ctx){if(ctx.state==='suspended')ctx.resume().catch(()=>{});return true;}
+  try{
+   const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+   ctx=new AC();master=ctx.createGain();master.gain.value=0;
+   const limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-14;limiter.knee.value=10;limiter.ratio.value=6;
+   musicBus=ctx.createGain();effectBus=ctx.createGain();homeBus=ctx.createGain();
+   const warmth=ctx.createBiquadFilter();warmth.type='lowpass';warmth.frequency.value=2100;
+   musicBus.connect(warmth);warmth.connect(master);effectBus.connect(master);homeBus.connect(master);master.connect(limiter);limiter.connect(ctx.destination);
+   clock=setInterval(tick,120);ctx.resume().catch(()=>{});return true;
+  }catch{return false;}
+ }
+ function voice(note,at,duration=.3,level=.12,type='triangle',bus=effectBus,slide=0){
+  if(!ctx||!bus||!note||nodes.size>80)return;
+  const osc=ctx.createOscillator(),amp=ctx.createGain();osc.type=type;
+  osc.frequency.setValueAtTime(midi(note),at);if(slide)osc.frequency.exponentialRampToValueAtTime(midi(note+slide),at+duration);
+  amp.gain.setValueAtTime(0,at);amp.gain.linearRampToValueAtTime(level,at+.012);amp.gain.exponentialRampToValueAtTime(.0001,at+Math.max(.03,duration));
+  osc.connect(amp);amp.connect(bus);nodes.add(osc);if(bus===musicBus)musicNodes.set(osc,amp);
+  osc.onended=()=>{nodes.delete(osc);musicNodes.delete(osc);osc.disconnect();amp.disconnect();};osc.start(at);osc.stop(at+duration+.02);
+ }
+ function noise(at,duration,level,frequency,bus=effectBus){
+  if(!ctx||!bus||nodes.size>80)return;
+  const buffer=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*duration),ctx.sampleRate),data=buffer.getChannelData(0);
+  for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*(1-i/data.length);
+  const src=ctx.createBufferSource(),filter=ctx.createBiquadFilter(),gain=ctx.createGain();src.buffer=buffer;
+  filter.type='bandpass';filter.frequency.value=frequency;filter.Q.value=.6;gain.gain.value=level;
+  src.connect(filter);filter.connect(gain);gain.connect(bus);nodes.add(src);src.onended=()=>{nodes.delete(src);src.disconnect();filter.disconnect();gain.disconnect();};src.start(at);
+ }
+ function music(){
+  const theme=MUSIC[state.region],now=ctx.currentTime,unit=30/theme.bpm;
+  if(region!==state.region){
+   for(const [osc,amp] of musicNodes){amp.gain.cancelScheduledValues(now);amp.gain.setTargetAtTime(.0001,now,.035);try{osc.stop(now+.12);}catch{}}
+   musicNodes.clear();region=state.region;step=0;bar=0;variation=0;musicAt=now+.35;bassAt=now+.35;
+  }
+  if(musicAt<now-.2){musicAt=now+.1;bassAt=now+.1;}
+  while(musicAt<now+.35){
+   const [note,length]=theme.notes[step];
+   voice(note, musicAt,unit*length*.88,.14,variation%3===1?'sine':'triangle',musicBus);
+   if(variation%3===2&&note)voice(note-12,musicAt+.025,unit*length*.8,.033,'sine',musicBus);
+   musicAt+=unit*length;step++;
+   if(step>=theme.notes.length){step=0;variation++;musicAt+=unit*4;}
+  }
+  const meter=theme.meter||8;
+  while(bassAt<now+.35){
+   const root=theme.root+theme.chords[bar%theme.chords.length];
+   voice(root,bassAt,unit*meter*.7,.18,'sine',musicBus);
+   for(let j=1;j<4;j++)voice(root+[12,19,24][(j+bar)%3],bassAt+unit*j*meter/4,unit*.85,.042,'triangle',musicBus);
+   bassAt+=unit*meter;bar++;
+  }
+ }
+ function home(){
+  const now=ctx.currentTime;
+  if(lastHome===0){noise(now,.08,.1,2800,homeBus);noise(now+.8,.05,.07,2200,homeBus);}
+  if(lastHome===1){voice(83,now,.3,.06,'sine',homeBus);voice(90,now+.17,.4,.04,'sine',homeBus);}
+  if(lastHome===2){voice(52,now,.5,.04,'triangle',homeBus);noise(now+.3,.4,.045,1200,homeBus);}
+  if(lastHome===3){voice(89,now,.14,.03,'sine',homeBus,4);voice(94,now+.19,.17,.025,'sine',homeBus,-5);}
+  if(lastHome===4){noise(now,.6,.06,650,homeBus);noise(now+1,.22,.03,950,homeBus);}
+  homeAt=now+5+Math.random()*5;
+ }
+ function tick(){
+  if(!ctx)return;
+  const audible=enabled&&started&&!document.hidden;
+  const mode=state.mode==='running'?'walk':homeActive&&state.mode==='dialog'?'home':state.mode==='finished'||state.completed===6?'finish':'quiet';
+  const mix=[audible,mode,volume.music,volume.effects,volume.home].join('|');
+  if(mix!==lastMix){lastMix=mix;ramp(master.gain,audible?.68:0);ramp(musicBus.gain,volume.music*(mode==='walk'?1:mode==='home'?.1:mode==='finish'?.32:.05));ramp(effectBus.gain,volume.effects,.1);ramp(homeBus.gain,mode==='home'?volume.home:0);}
+  if(!audible){musicAt=ctx.currentTime+.15;bassAt=ctx.currentTime+.15;return;}
+  music();if(mode==='home'&&ctx.currentTime>=homeAt)home();
+ }
+ function begin(value=enabled){started=true;enabled=!!value;if(enabled&&!boot()){enabled=false;toast('Браузер не смог включить звук. Игра продолжится.');}remember();tick();updateSoundButton();}
+ function effect(kind='success'){
+  if(!enabled||!started||document.hidden||!boot())return;tick();const at=ctx.currentTime+.01;
+  const patterns={success:[76,81],error:[52,49],complete:[72,76,79,84],save:[76,79,84],upload:[60,67,72,79],dog:[42,39,44],rain:[69],police:[74,77,74],good:[72,76,79],paper:[67,72],boss:[45,52,57]};
+  (patterns[kind]||patterns.success).forEach((n,i)=>voice(n,at+i*.11,kind==='dog'?.17:.22,kind==='dog'?.17:.12,kind==='dog'?'sawtooth':'triangle',effectBus,kind==='dog'?-8:0));
+  if(kind==='rain')noise(at,1.5,.12,1900);
+  if(kind==='paper'||kind==='save')noise(at,.16,.06,2900);
+ }
+ function enterHome(){
+  homeActive=true;if(!enabled||!started||!boot())return;
+  lastHome=(lastHome+1+Math.floor(Math.random()*4))%5;homeAt=ctx.currentTime+1.4;
+  const at=ctx.currentTime+.03,hello=[[67,72,76],[72,69,74],[64,69,72],[69,76,72],[67,74,71]][lastHome];
+  noise(at,.06,.08,320);noise(at+.16,.05,.07,350);
+  hello.forEach((n,i)=>voice(n,at+.3+i*.1,.16,.09,'triangle'));
+  tick();
+ }
+ function leaveHome(){homeActive=false;tick();}
+ function footsteps(){if(!enabled||!started||!ctx||!player?.moving||state.mode!=='running'||document.hidden)return;if(ctx.currentTime-stepAt<.43)return;stepAt=ctx.currentTime;noise(stepAt,.045,.018,state.region===4?1500:550);}
+ function event(ev){leaveHome();effect(/собак|п[её]с|🐕/i.test(ev.title+' '+ev.icon)?'dog':/дожд|ливен|ливн/i.test(ev.title)?'rain':/полиц/i.test(ev.title)?'police':ev.kind==='good'?'good':'error');}
+ function setVolume(key,v){volume[key]=Math.min(1,Math.max(0,v));remember();tick();}
+ function updateSoundButton(){const el=$('sound');el.setAttribute('aria-label','Настройки музыки и звуков');el.title='Музыка и звуки';el.querySelector('span').style.display=enabled?'none':'inline';}
+ return {begin,effect,enterHome,leaveHome,footsteps,event,tick,setVolume,updateSoundButton,get enabled(){return enabled;},get volume(){return {...volume};}};
+})();
+
+function tone(kind='success'){Sound.effect(kind);}
+function showSoundSettings(){
+ if(dialog.open)return;
+ const theme=MUSIC[state.region];
+ openDialog(`${dialogHead('МУЗЫКА И ЗВУКИ')}<h2 id="dialog-title" class="dialog-title">Звуки экспедиции</h2><label class="audio-toggle"><input id="audio-enabled" type="checkbox" ${Sound.enabled?'checked':''}> Включить звук</label><p class="dialog-text">${esc(theme.title)}<br><small>${esc(theme.credit)}</small></p>${[['music','Музыка на маршруте'],['effects','События и действия'],['home','Домашние звуки']].map(([key,label])=>`<label class="audio-slider" for="volume-${key}"><span>${label}</span><output id="volume-out-${key}">${Math.round(Sound.volume[key]*100)}%</output><input id="volume-${key}" type="range" min="0" max="100" value="${Math.round(Sound.volume[key]*100)}"></label>`).join('')}<p class="dialog-hint">При разговоре музыка стихает. В домах чередуются часы, посуда, чайник, птицы за окном и шорохи. На скрытой вкладке звук выключается.</p><details class="music-credits"><summary>Мелодии регионов</summary>${MUSIC.map((t,i)=>`<p><strong>${esc(REGIONS[i].short)} — ${esc(t.title)}</strong><br>${esc(t.credit)}</p>`).join('')}<p>Кроме народной темы «Во поле берёза стояла», это новые игровые мелодии. Они не выдаются за традиционную музыку народов России.</p></details>`,state.mode);
+ $('audio-enabled').addEventListener('change',e=>Sound.begin(e.target.checked));
+ ['music','effects','home'].forEach(key=>$(`volume-${key}`).addEventListener('input',e=>{const v=Number(e.target.value);Sound.setVolume(key,v/100);$(`volume-out-${key}`).textContent=v+'%';}));
 }
+
+// Optional server connection. Fill these three values after running server.sql.
+// Use ONLY a publishable key (or legacy anon key). Never put a secret/service_role key here.
+const CENSUS_SERVER = Object.freeze({
+ url: 'https://ecnyesvlqukmbjuivucq.supabase.co',
+ publicKey: 'sb_publishable_CVQXmDciR6Sy_TIK0ALNpQ___6AA4nb',
+ tournament: 'colleagues-2026'
+});
+const GAME_VERSION='expedition-12.1';
+function uid(){if(crypto.randomUUID)return crypto.randomUUID();const a=crypto.getRandomValues(new Uint8Array(16));a[6]=(a[6]&15)|64;a[8]=(a[8]&63)|128;const h=Array.from(a,n=>n.toString(16).padStart(2,'0')).join('');return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`;}
+const profile=localRead('censusProfileV12',{});
+const playerIdentity=typeof profile.id==='string'?profile.id:uid();
+let currentRun=null,runFinished=false,runActiveSeconds=0;
+
+const CensusCloud=(()=>{
+ const configured=!!(CENSUS_SERVER.url&&CENSUS_SERVER.publicKey);
+ const prefix='censusCloudV12:'+CENSUS_SERVER.url+':'+CENSUS_SERVER.tournament;
+ let session=localRead(prefix+':auth',null),authTask=null,busy=false;
+ let queue=localRead(prefix+':queue',{}),status=configured?'Результаты отправятся после старта':'Результаты в этом браузере';
+ if(!queue||typeof queue!=='object'||Array.isArray(queue))queue={};
+ const base=CENSUS_SERVER.url.replace(/\/$/,'');
+ const count=()=>Object.keys(queue).length;
+ function setStatus(message){status=message;document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message);}
+ async function request(path,body,token){
+  const control=new AbortController(),timer=setTimeout(()=>control.abort(),12000);
+  try{
+   const headers={'Content-Type':'application/json',apikey:CENSUS_SERVER.publicKey};
+   if(token)headers.Authorization='Bearer '+token;
+   const response=await fetch(base+path,{method:'POST',headers,body:JSON.stringify(body),signal:control.signal});
+   if(!response.ok){const error=new Error('server-'+response.status);error.status=response.status;throw error;}
+   return response.status===204?null:await response.json();
+  }finally{clearTimeout(timer);}
+ }
+ async function auth(){
+  if(session?.access_token&&session.expires_at>Date.now()/1000+90)return session;
+  if(authTask)return authTask;
+  authTask=(async()=>{
+   const next=session?.refresh_token?await request('/auth/v1/token?grant_type=refresh_token',{refresh_token:session.refresh_token}):await request('/auth/v1/signup',{});
+   if(!next.access_token||!next.user?.id)throw new Error('missing-session');
+   session={access_token:next.access_token,refresh_token:next.refresh_token,expires_at:next.expires_at||Date.now()/1000+next.expires_in,userId:next.user.id};
+   localWrite(prefix+':auth',session);return session;
+  })();
+  try{return await authTask;}finally{authTask=null;}
+ }
+ function persist(){return localWrite(prefix+':queue',queue);}
+ function enqueue(snapshot){
+  if(!configured||!snapshot)return;
+  // One latest snapshot per run: retries cannot add a second finish or roll progress back.
+  queue[snapshot.run_id]=snapshot;
+  if(!persist())setStatus('Отправляем сейчас; браузер не сохраняет очередь');
+ }
+ async function flush(){
+  if(!configured||busy||!count())return;
+  busy=true;let newerPending=false;setStatus('Отправка результатов…');
+  try{
+   const identity=await auth();
+   for(const id of Object.keys(queue)){
+    const item=queue[id];if(!item)continue;
+    await request('/rest/v1/rpc/census_save_run',{p_payload:item},identity.access_token);
+    if(queue[id]===item){delete queue[id];persist();}
+   }
+   newerPending=count()>0;setStatus(newerPending?'Есть результаты к отправке':'Результаты на сервере ✓');
+  }catch(error){setStatus(error.status===429?'Сервер занят. Повторим отправку позже':error.status===400||error.status===401||error.status===403||error.status===404?'Сервер не принял данные. Результат ожидает отправки':'Нет связи с сервером. Повторим отправку');}
+  finally{busy=false;if(newerPending)setTimeout(flush,0);}
+ }
+ async function board(){
+  if(!configured)return null;
+  return request('/rest/v1/rpc/census_leaderboard',{p_tournament:CENSUS_SERVER.tournament});
+ }
+ return {configured,enqueue,flush,board,get status(){return status;},get pending(){return count();}};
+})();
+
+function expeditionSnapshot(){
+ if(!currentRun)return null;
+ return {
+  run_id:currentRun,version:GAME_VERSION,tournament:CENSUS_SERVER.tournament,
+  nickname:state.playerName,team:state.playerTeam||'',score:state.score,
+  elapsed:Math.round(state.elapsed),active_seconds:Math.round(runActiveSeconds),
+  questionnaires:state.questionnaires,online_forms:state.autoForms,errors:state.errors,
+  spoiled_forms:state.spoiledForms,perfect_forms:state.perfectForms,best_streak:state.bestStreak,
+  completed_regions:state.completed,status:runFinished?'finished':'playing',
+  regions:regionData.map((d,i)=>({index:i,done:d.stageQuestionnaires,pending:d.pending,errors:d.mistakes,completed:d.completed}))
+ };
+}
+function captureProgress(){
+ if(!currentRun)return;
+ CensusCloud.enqueue(expeditionSnapshot());updateMonitorButton();
+}
+function beginRun(){
+ currentRun=uid();runFinished=false;runActiveSeconds=0;
+ localWrite('censusProfileV12',{id:playerIdentity,name:state.playerName,team:state.playerTeam||''});
+ captureProgress();CensusCloud.flush();
+}
+setInterval(()=>{if(currentRun&&!runFinished&&!document.hidden)captureProgress();CensusCloud.flush();},30000);
+window.addEventListener('online',()=>CensusCloud.flush());
+window.addEventListener('pagehide',()=>{captureProgress();});
+document.addEventListener('visibilitychange',()=>{Sound.tick();if(document.hidden){captureProgress();CensusCloud.flush();}});
+
+function localBestRecords(){
+ const best=new Map();
+ recordStore().filter(r=>r.version===GAME_VERSION&&r.finished&&r.playerId&&r.tournament===CENSUS_SERVER.tournament).forEach(r=>{
+  const prev=best.get(r.playerId);
+  if(!prev||r.score>prev.score||(r.score===prev.score&&r.time<prev.time))best.set(r.playerId,r);
+ });
+ return [...best.values()].sort((a,b)=>b.score-a.score||a.time-b.time);
+}
+function localTeams(records){
+ const groups=new Map();
+ records.forEach(r=>{const name=(r.team||'').trim();if(!name)return;const key=name.toLocaleLowerCase('ru');let g=groups.get(key);if(!g){g={team:name,players:0,total:0,elapsed:0};groups.set(key,g);}g.players++;g.total+=r.score;g.elapsed+=r.time;});
+ return [...groups.values()].map(g=>({...g,score:Math.round(g.total/g.players),elapsed:Math.round(g.elapsed/g.players)})).sort((a,b)=>b.score-a.score||a.elapsed-b.elapsed);
+}
+function leaderboardTables(players,teams){
+ const rows=players.length?players.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.nickname||r.name)}<small>${esc(r.team||'Личный зачёт')}</small></td><td>${number(r.score)}</td><td>${timeString(r.elapsed??r.time)}</td></tr>`).join(''):'<tr><td colspan="4">Завершённых экспедиций пока нет. Ваш результат может стать первым.</td></tr>';
+ const teamRows=teams.length?teams.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.team)}<small>${r.players} ${plural(Number(r.players),['финишёр','финишёра','финишёров'])}</small></td><td>${number(Number(r.score))}</td></tr>`).join(''):'<tr><td colspan="3">Укажите команду на старте и дойдите до финиша.</td></tr>';
+ return `<div class="monitor-table-wrap"><table class="leader-table"><caption>Личный зачёт</caption><thead><tr><th>№</th><th>Игрок / команда</th><th>Очки</th><th>Время в пути</th></tr></thead><tbody>${rows}</tbody></table><table class="leader-table"><caption>Командный зачёт</caption><thead><tr><th>№</th><th>Команда</th><th>Средний балл</th></tr></thead><tbody>${teamRows}</tbody></table></div>`;
+}
+async function showLeaderboard(){
+ if(dialog.open)return;
+ const previous=state.mode;
+ openDialog(`${dialogHead('ТАБЛИЦА РЕКОРДОВ')}<h2 id="dialog-title" class="dialog-title">Соревнование переписчиков</h2><div class="board-tabs"><button class="secondary selected" id="board-global">Общий рейтинг</button><button class="secondary" id="board-local">В этом браузере</button></div><p class="dialog-hint">В зачёт идёт лучший финиш каждого игрока в этой версии. При равных очках выше тот, кто быстрее прошёл маршрут. Время чтения вопросов не ограничено.</p><div id="board-content" aria-live="polite"></div><p class="dialog-hint">Командный балл — среднее лучших результатов финишёров. Число финишёров показано отдельно; незавершённые попытки не участвуют.</p><p class="sync-status" data-cloud-status>${esc(CensusCloud.status)}</p>`,previous);
+ dialog.classList.add('wide-dialog');
+ let view=0;
+ const showLocal=()=>{view++;$('board-global').classList.remove('selected');$('board-local').classList.add('selected');const records=localBestRecords();$('board-content').innerHTML=leaderboardTables(records,localTeams(records));};
+ const showGlobal=async()=>{
+  const requestId=++view;$('board-global')?.classList.add('selected');$('board-local')?.classList.remove('selected');
+  if(!CensusCloud.configured){$('board-content').innerHTML='<div class="report-lock"><strong>Общий рейтинг ещё не подключён</strong><p>Организатор подключит сервер — результаты начнут отправляться автоматически. Сейчас можно посмотреть рекорды этого браузера.</p></div>';return;}
+  $('board-content').textContent='Загрузка общего рейтинга…';
+  try{await CensusCloud.flush();const data=await CensusCloud.board();if(!dialog.open||requestId!==view||!$('board-content'))return;$('board-content').innerHTML=leaderboardTables(data.players||[],data.teams||[]);}
+  catch{if(requestId!==view||!$('board-content'))return;$('board-content').innerHTML='<p class="feedback">Не удалось загрузить общий рейтинг. Ваши новые результаты остаются в очереди отправки.</p><button id="retry-board" class="secondary">Повторить</button>';$('retry-board').addEventListener('click',showGlobal);}
+ };
+ $('board-global').addEventListener('click',showGlobal);$('board-local').addEventListener('click',showLocal);
+ if(CensusCloud.configured)showGlobal();else showLocal();
+}
+
+const EXPEDITION_GOAL=REGIONS.reduce((sum,r)=>sum+r.goal,0);
+const REPORT_FIELDS=[['age','Возраст'],['employment','Занятость'],['education','Образование'],['household','Размер домохозяйства'],['housing','Жильё'],['migration','Переезды']];
+function censusReport(){
+ const contacts=regionData.flatMap((d,i)=>(d.npcs||[]).filter(n=>n.done).map(n=>({region:i,npc:n})));
+ const manual=contacts.filter(c=>!c.npc.census.auto);
+ const charts=REPORT_FIELDS.map(([key,title])=>{
+  const values=manual.flatMap(c=>c.npc.census.questions.filter(q=>q.key===key).map(q=>q.answer));
+  const groups=CENSUS_FIELDS[key].options.map(label=>({label,count:values.filter(x=>x===label).length}));
+  return {key,title,total:values.length,groups};
+ });
+ return {
+  total:contacts.length,manual:manual.length,online:contacts.length-manual.length,
+  pending:regionData.reduce((s,d)=>s+d.pending,0),
+  perfect:manual.filter(c=>(c.npc.formMistakes||0)===0).length,
+  cleanContacts:contacts.filter(c=>!(c.npc.formMistakes||c.npc.conceptMistakes||c.npc.complexMistakes)).length,
+  answers:manual.reduce((sum,c)=>sum+c.npc.census.questions.length,0),charts
+ };
+}
+function updateMonitorButton(){
+ const count=state.questionnaires||0;
+ if($('monitor-count'))$('monitor-count').textContent=`${count}/${EXPEDITION_GOAL}`;
+ if($('monitor-label'))$('monitor-label').textContent=state.completed===6?'Итоги переписи':'Ход переписи';
+ if($('expedition-meter'))$('expedition-meter').style.width=`${count/EXPEDITION_GOAL*100}%`;
+}
+function chartHTML(chart){
+ return `<section class="census-chart"><h3>${esc(chart.title)} <small>${chart.total} ${plural(chart.total,['ответ','ответа','ответов'])}</small></h3>${chart.total?chart.groups.map(g=>`<div class="census-bar-row"><span>${esc(g.label)}</span><strong>${g.count} <small>· ${Math.round(g.count/chart.total*100)}%</small></strong><div class="census-bar"><i style="width:${g.count/chart.total*100}%"></i></div></div>`).join(''):'<p class="dialog-hint">В сохранённых мини-анкетах этот вопрос пока не задавался.</p>'}</section>`;
+}
+function regionStatisticsHTML(){
+ return `<div class="monitor-table-wrap"><table class="monitor-table"><caption>Маршруты экспедиции</caption><thead><tr><th>Регион</th><th>Учтено</th><th>В планшете</th><th>Ошибки</th><th>Статус</th></tr></thead><tbody>${REGIONS.map((r,i)=>{const d=regionData[i];return `<tr><th>${esc(r.short)}</th><td>${d.stageQuestionnaires}/${r.goal}</td><td>${d.pending}</td><td>${d.mistakes}</td><td>${d.completed?'Принят штабом':d.stageQuestionnaires===r.goal?'Завершить в штабе':d.stageQuestionnaires?'Идёт обход':'Ждёт обхода'}</td></tr>`;}).join('')}</tbody></table></div>`;
+}
+function showMonitoring(tab='progress'){
+ if(dialog.open)return;
+ const completed=state.completed===6,report=censusReport(),returnMode=state.mode;
+ const kpi=(value,label)=>`<div class="report-kpi"><strong>${value}</strong><span>${label}</span></div>`;
+ openDialog(`${dialogHead(completed?'ИТОГИ ИГРОВОЙ ПЕРЕПИСИ':'ХОД ПЕРЕПИСИ')}<h2 id="dialog-title" class="dialog-title">${completed?'За анкетами — люди':'Соберём картину вместе'}</h2><p class="dialog-kicker">${esc(state.playerName)}${state.playerTeam?' · '+esc(state.playerTeam):''}</p><div class="report-kpis">${kpi(`${report.total}/${EXPEDITION_GOAL}`,'жителей учтено')}${kpi(`${state.completed}/6`,'маршрутов принято')}${kpi(report.manual,'личных опросов')}${kpi(report.online,'онлайн-анкет подтверждено')}</div><div class="board-tabs"><button id="report-progress" class="secondary">Мониторинг</button><button id="report-population" class="secondary">${completed?'Статистика жителей':'Итоги после финиша'}</button></div><div id="report-body"></div><p class="sync-status" data-cloud-status>${esc(CensusCloud.status)}</p>${CensusCloud.configured?'<button id="retry-sync" class="secondary">Отправить результаты сейчас</button>':''}`,returnMode);
+ dialog.classList.add('wide-dialog');
+ const progress=()=>{
+  $('report-progress').classList.add('selected');$('report-population').classList.remove('selected');
+  const remaining=6-state.completed;
+  $('report-body').innerHTML=`<div class="report-callout"><strong>${completed?'Экспедиция завершена — подробные итоги открыты':`До итогов — ${remaining} ${plural(remaining,['регион','региона','регионов'])}`}</strong><p>${completed?'Посмотрите, что удалось узнать о жителях, и сравните результат с коллегами.':'Пройдите все шесть маршрутов и сдайте зачёты в штабе. На финише откроются диаграммы возраста, занятости, образования и жилья по вашим мини-анкетам.'}</p></div>${regionStatisticsHTML()}<div class="report-kpis">${kpi(report.total-report.pending,'записей передано в штаб')}${kpi(report.pending,'записей ждут передачи')}${kpi(state.errors,'ошибок за экспедицию')}${kpi(state.spoiledForms,'испорченных бланков')}</div><p class="dialog-hint">Штаб и передача анкет — механика игры. Отправка вашего результата на настоящий сервер показана отдельно ниже.</p>`;
+ };
+ const population=()=>{
+  $('report-population').classList.add('selected');$('report-progress').classList.remove('selected');
+  if(!completed){$('report-body').innerHTML='<div class="report-lock"><span aria-hidden="true">▤</span><strong>Итоговый портрет ещё собирается</strong><p>Кто здесь живёт? Чем занимается? В каких домах? Завершите все регионы, чтобы увидеть ответы в диаграммах.</p></div>';return;}
+  $('report-body').innerHTML=`<div class="report-callout"><strong>Это жители учебной игры</strong><p>Диаграммы описывают сохранённые ответы в ваших мини-анкетах. У каждого графика свой набор ответивших. Это не статистика реальных регионов и не представительная выборка населения.</p></div><div class="report-kpis">${kpi(report.answers,'сохранённых ответов на вопросы')}${kpi(`${report.perfect}/${report.manual}`,'мини-анкет без исправлений')}${kpi(`${report.cleanContacts}/${report.total}`,'контактов без ошибок')}${kpi(state.bestStreak+'×','лучшая серия')}</div><p class="dialog-hint">Онлайн-участие проверялось по статусу, без повторного опроса. Поэтому ${report.online} подтверждённых онлайн-анкет учтены в охвате, но не включены в диаграммы ответов. Размер домохозяйства — ответ одного респондента; складывать эти размеры как число жителей нельзя.</p><div class="census-charts">${report.charts.map(chartHTML).join('')}</div>`;
+ };
+ $('report-progress').addEventListener('click',progress);$('report-population').addEventListener('click',population);
+ $('retry-sync')?.addEventListener('click',()=>{captureProgress();CensusCloud.flush();});
+ if(tab==='population')population();else progress();
+}
+
+function finish(){
+ state.mode='finished';runFinished=true;checkAchievements('finish');
+ const rec={runId:currentRun,playerId:playerIdentity,name:state.playerName||'Переписчик',team:state.playerTeam||'',score:state.score,time:Math.round(state.elapsed),questionnaires:state.questionnaires,date:new Date().toISOString().slice(0,10),version:GAME_VERSION,tournament:CENSUS_SERVER.tournament,finished:true};
+ state.lastRecord=rec;saveRecord(rec);captureProgress();CensusCloud.flush();Sound.leaveHome();tone('complete');
+ const report=censusReport();
+ openDialog(`${dialogHead('ЭКСПЕДИЦИЯ ЗАВЕРШЕНА',false)}<span class="dialog-kicker">${esc(state.playerName)}${state.playerTeam?' · '+esc(state.playerTeam):''}</span><h2 id="dialog-title" class="dialog-title">Перепись завершена.<br>Посмотрим на людей?</h2><p class="dialog-text">Учтены все ${report.total} жителей: ${report.manual} личных опросов и ${report.online} подтверждений онлайн-участия. Результаты шести регионов приняты штабом.</p><div class="dialog-stats"><div class="dialog-stat"><strong>${number(state.score)}</strong><span>очков экспедиции</span></div><div class="dialog-stat"><strong>${timeString(state.elapsed)}</strong><span>время в пути</span></div><div class="dialog-stat"><strong>${state.errors}</strong><span>ошибок</span></div></div><p class="dialog-kicker">Открыта итоговая статистика — возраст, занятость, образование, жильё и переезды.</p><button id="population-finish" class="primary dialog-action" data-enter="true">Открыть итоги переписи <span>▥</span></button><p class="sync-status" data-cloud-status>${esc(CensusCloud.status)}</p><div class="leader-actions"><button id="records-finish" class="secondary">Таблица рекордов</button><button id="achievements-finish" class="secondary">Достижения</button></div><button id="restart" class="secondary">Новая экспедиция</button>`,'finished');
+ const moveTo=fn=>{dialog.close();state.mode='finished';fn();};
+ $('population-finish').addEventListener('click',()=>moveTo(()=>showMonitoring('population')));
+ $('records-finish').addEventListener('click',()=>moveTo(showLeaderboard));
+ $('achievements-finish').addEventListener('click',()=>moveTo(showAchievements));
+ $('restart').addEventListener('click',restart);
+}
+
 function clearInputs(){keys.clear();touch.clear();mouseTarget=null;pathPoints=[];document.querySelectorAll('.pressed').forEach(b=>b.classList.remove('pressed'));if(player)player.moving=false;}
-function openDialog(html,returnMode=state.mode){clearInputs();dialogReturn=returnMode;state.mode='dialog';$('dialog-content').innerHTML=html;if(!dialog.open)dialog.showModal();$('dialog-content').querySelector('.close-button')?.addEventListener('click',closeDialog);setTimeout(()=>$('dialog-content').querySelector('.answer,.census-select,.dialog-action')?.focus({preventScroll:true}),0);}
-function closeDialog(){dialog.close();state.mode=dialogReturn;clearInputs();if(state.mode==='running')canvas.focus({preventScroll:true});}
+function openDialog(html,returnMode=state.mode){dialog.classList.remove('wide-dialog');clearInputs();dialogReturn=returnMode;state.mode='dialog';$('dialog-content').innerHTML=html;if(!dialog.open)dialog.showModal();$('dialog-content').querySelector('.close-button')?.addEventListener('click',closeDialog);setTimeout(()=>$('dialog-content').querySelector('.answer,.census-select,.dialog-action')?.focus({preventScroll:true}),0);}
+function closeDialog(){dialog.close();dialog.classList.remove('wide-dialog');state.mode=dialogReturn;Sound.leaveHome();clearInputs();if(state.mode==='running')canvas.focus({preventScroll:true});}
 function dialogHead(kicker,close=true){return `<div class="dialog-heading"><span class="eyebrow">${kicker}</span>${close?'<button class="close-button" aria-label="Закрыть">×</button>':''}</div>`;}
 function answerButtons(s){return s.answers.map((a,i)=>`<button class="answer" data-answer="${i}" data-hotkey="${i+1}">${esc(a)}<span class="answer-hotkey">${i+1}</span></button>`).join('');}
 
 function talk(npc){
  if(npc.done){toast(`${npc.name}: «Спасибо! Анкета уже учтена.»`);return;}
+ Sound.enterHome();
  if(npc.conceptPassed){if(npc.census.auto)showAutomaticQuestionnaire(npc);else if(npc.census.complex&&!npc.complexPassed)showComplexCase(npc);else showQuestionnaire(npc);return;}
  const s=npc.scenario;let mistakes=npc.conceptMistakes||0,answered=false;
  const nextLabel=npc.census.auto?'Проверить онлайн-анкету':npc.census.complex?'Разобрать данные':'Перейти к мини-анкете';
@@ -751,6 +1130,7 @@ function showQuestionnaire(npc){
 }
 
 function completeQuestionnaire(npc,formMistakes,source='manual'){
+ if(npc.done)return;Sound.leaveHome();
  const data=regionData[state.region],isAuto=source==='auto';npc.done=true;state.total++;state.questionnaires++;data.pending++;data.stageQuestionnaires++;
  if(npc.scenario.type==='household'&&(npc.conceptMistakes||0)===0)unlockAchievement('household');
  if(isAuto||['online','help'].includes(npc.scenario.type))state.confirmed++;if(isAuto)state.autoForms++;
@@ -759,7 +1139,7 @@ function completeQuestionnaire(npc,formMistakes,source='manual'){
  const comboBonus=!isAuto&&perfect?Math.min(state.streak,5)*20:0;
  const decodeBonus=!isAuto&&formMistakes===0?npc.census.questions.length*15:0;
  const baseEarned=isAuto?140:Math.max(120,200-(npc.conceptMistakes||0)*20-formMistakes*10);
- const earned=baseEarned+comboBonus+decodeBonus;state.score+=earned;checkAchievements();updateUI();tone();
+ const earned=baseEarned+comboBonus+decodeBonus;state.score+=earned;checkAchievements();updateUI();tone('save');
  const title=isAuto?'Онлайн-участие подтверждено':'Человек переписан';
  const detail=isAuto?`Переписной лист из Личного кабинета ГИС ЦАП учтён без повторного опроса. +${earned} очков.`:`Мини-анкета сохранена на планшете. +${earned} очков.${decodeBonus?` +${decodeBonus} за точную расшифровку.`:''}${comboBonus?` +${comboBonus} за серию ${state.streak}×.`:''}`;
  openDialog(`${dialogHead('АНКЕТА СОХРАНЕНА',false)}<span class="dialog-kicker">${esc(npc.name)} · № ${state.questionnaires}</span><h2 id="dialog-title" class="dialog-title">${title}</h2><p class="dialog-text">${detail}</p><div class="dialog-stats"><div class="dialog-stat"><strong>${state.questionnaires}</strong><span>анкет собрано</span></div><div class="dialog-stat"><strong>${isAuto?'AUTO':state.streak+'×'}</strong><span>${isAuto?'цифровой канал':'серия'}</span></div><div class="dialog-stat"><strong>${npcs.filter(n=>n.done).length}/${npcs.length}</strong><span>в регионе</span></div></div><button id="continue-walk" class="primary dialog-action" data-enter="true">Продолжить обход <span>→</span></button>`,'running');
@@ -806,12 +1186,14 @@ function eventTeleport(){
 }
 function showFieldEvent(ev){
  if(ev.interactive){showInteractiveFieldEvent(ev);return;}
+ Sound.event(ev);
  state.score=Math.max(0,state.score+ev.score);state.elapsed+=ev.time||0;if(ev.kind==='good')state.goodEvents++;else state.badEvents++;checkAchievements();updateUI();
  openDialog(`${dialogHead('СОБЫТИЕ НА МАРШРУТЕ',false)}<div class="event-sign ${ev.kind==='good'?'event-positive':'event-negative'}">${ev.icon}</div><h2 id="dialog-title" class="dialog-title">${esc(ev.title)}</h2><p class="dialog-text">${esc(ev.text)}</p><div class="dialog-stats"><div class="dialog-stat"><strong>${ev.score>0?'+':''}${ev.score}</strong><span>очки</span></div><div class="dialog-stat"><strong>${ev.time?`+${ev.time} с`:'—'}</strong><span>время</span></div><div class="dialog-stat"><strong>${ev.kind==='good'?'УДАЧА':'СОБЫТИЕ'}</strong><span>тип</span></div></div><button id="event-continue" class="primary dialog-action" data-enter="true">Продолжить маршрут <span>→</span></button>`,'running');
  $('event-continue').addEventListener('click',()=>{if(ev.teleport)eventTeleport();closeDialog();});
  if(ev.kind==='bad')tone('error');else tone();
 }
 function showInteractiveFieldEvent(ev){
+ Sound.event(ev);
  if(ev.kind==='good')state.goodEvents++;else state.badEvents++;
  openDialog(`${dialogHead('СИТУАЦИЯ НА МАРШРУТЕ',false)}<div class="event-sign ${ev.kind==='good'?'event-positive':'event-negative'}">${ev.icon}</div><span class="dialog-kicker">Полевое решение</span><h2 id="dialog-title" class="dialog-title">${esc(ev.title)}</h2><p class="dialog-text">${esc(ev.text)}</p><div class="answer-list">${ev.choices.map((c,i)=>`<button class="answer" data-event-choice="${i}" data-hotkey="${i+1}">${esc(c.text)}<span class="answer-hotkey">${i+1}</span></button>`).join('')}</div><p class="feedback" id="event-feedback" role="status" aria-live="polite" hidden></p><div id="event-result" class="dialog-stats" hidden></div><button id="event-next" class="primary dialog-next dialog-action" data-enter="true" hidden>Продолжить маршрут <span>→</span></button><p class="dialog-hint">1–3 — выбрать действие, Enter — продолжить</p>`,'running');
  let resolved=false,teleport=false;
@@ -834,6 +1216,7 @@ const BOSS_ROUNDS=[
  {line:'Последний вопрос: школьник стесняется отвечать, а отец предлагает ответить за всех, не уточняя ничего. Как поступить?',answers:['Спокойно пройти вопросы по каждому человеку и уточнять сведения там, где это требуется','Заполнить всё одинаково, чтобы быстрее закончить','Пропустить ребёнка из анкеты'],correct:0,feedback:'Готово. Главное — полнота, точность и уважительный опрос, а не скорость любой ценой.'}
 ];
 function startBoss(round=0,mistakes=0){
+ if(round===0)tone('boss');
  const data=regionData[state.region];if(data.bossCleared){visitHQ();return;}const q=BOSS_ROUNDS[round];
  const bossNote=round===0&&!state.educationSeen.has('household')?conceptNoteHTML('household'):'';
  openDialog(`${dialogHead('БОСС · ДОМОХОЗЯЙСТВО 12А',false)}<span class="dialog-kicker">3 уровень · сложное домохозяйство</span><h2 id="dialog-title" class="dialog-title">Раунд ${round+1} из ${BOSS_ROUNDS.length}</h2><div class="boss-meter">${BOSS_ROUNDS.map((_,i)=>`<span class="${i<=round?'on':''}"></span>`).join('')}</div>${bossNote}<p class="dialog-text">${esc(q.line)}</p><div class="answer-list">${answerButtons(q)}</div><p id="boss-feedback" class="feedback" hidden></p><button id="boss-next" class="primary dialog-next dialog-action" data-enter="true" hidden>${round===BOSS_ROUNDS.length-1?'Победить босса':'Следующий раунд'} <span>→</span></button><p class="dialog-hint">1–3 — ответ, Enter — следующий раунд</p>`,'running');
@@ -860,7 +1243,7 @@ function completeRegion(){
 function visitHQ(fromBoss=false){
  const data=regionData[state.region],done=npcs.filter(n=>n.done).length;
  if(data.completed){toast('Этот регион уже завершён. Можно выбрать другой маршрут справа.');return;}
- if(done<npcs.length){const transferred=data.pending;data.pending=0;updateUI();toast(transferred?`Передано промежуточно: ${transferred} ${plural(transferred,['анкета','анкеты','анкет'])}. Ещё ${npcs.length-done} ${plural(npcs.length-done,['житель ждёт','жителя ждут','жителей ждут'])} вас.`:`Штаб на связи. Осталось переписать ${npcs.length-done}.`);if(transferred)tone();return;}
+ if(done<npcs.length){const transferred=data.pending;data.pending=0;updateUI();toast(transferred?`Передано промежуточно: ${transferred} ${plural(transferred,['анкета','анкеты','анкет'])}. Ещё ${npcs.length-done} ${plural(npcs.length-done,['житель ждёт','жителя ждут','жителей ждут'])} вас.`:`Штаб на связи. Осталось переписать ${npcs.length-done}.`);if(transferred)tone('upload');return;}
  if(state.region===2&&!data.bossCleared&&!fromBoss){toast('Маршрут ещё не завершён: на карте остался один необычный житель.');return;}
  if(state.region===2&&data.bossCleared){data.quizCleared=true;checkAchievements();completeRegion();return;}
  if(!data.quizCleared){startRegionQuiz();return;}
@@ -871,33 +1254,22 @@ function bindRegionPicker(){document.querySelectorAll('[data-pick-region]').forE
 
 function recordStore(){try{return JSON.parse(localStorage.getItem('perepis2030Records')||'[]');}catch{return [];}}
 function writeRecords(records){try{localStorage.setItem('perepis2030Records',JSON.stringify(records.slice(0,30)));}catch{}}
-function saveRecord(record){let records=recordStore();const key=`${record.name}|${record.score}|${record.time}|${record.questionnaires}`;if(!records.some(r=>`${r.name}|${r.score}|${r.time}|${r.questionnaires}`===key))records.push(record);records.sort((a,b)=>b.score-a.score||a.time-b.time);writeRecords(records);return records.findIndex(r=>`${r.name}|${r.score}|${r.time}|${r.questionnaires}`===key)+1;}
+function saveRecord(record){let records=recordStore();if(record.runId){records=records.filter(r=>r.runId!==record.runId);records.push(record);records.sort((a,b)=>b.score-a.score||a.time-b.time);writeRecords(records);return records.findIndex(r=>r.runId===record.runId)+1;}const key=`${record.name}|${record.score}|${record.time}|${record.questionnaires}`;if(!records.some(r=>`${r.name}|${r.score}|${r.time}|${r.questionnaires}`===key))records.push(record);records.sort((a,b)=>b.score-a.score||a.time-b.time);writeRecords(records);return records.findIndex(r=>`${r.name}|${r.score}|${r.time}|${r.questionnaires}`===key)+1;}
 function encodeRecord(obj){const bytes=new TextEncoder().encode(JSON.stringify(obj));let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin);}
 function decodeRecord(str){const bin=atob(str),bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes));}
 function importSharedRecord(){
  if(!location.hash.startsWith('#record='))return;try{const r=decodeRecord(location.hash.slice(8));if(typeof r.name==='string'&&Number.isFinite(r.score)&&Number.isFinite(r.time)&&Number.isFinite(r.questionnaires)){r.name=r.name.slice(0,20);saveRecord(r);importedRecordName=r.name;}}catch{}finally{history.replaceState(null,'',location.pathname+location.search);}
 }
 function shareRecord(record,button){const link=`${location.origin}${location.pathname}#record=${encodeRecord(record)}`;const done=()=>{button.textContent='Ссылка скопирована ✓';setTimeout(()=>button.textContent='Поделиться результатом',1800);};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(link).then(done).catch(()=>window.prompt('Скопируйте ссылку результата:',link));else window.prompt('Скопируйте ссылку результата:',link);}
-function showLeaderboard(){
- if(dialog.open)return;const records=recordStore();const rows=records.length?records.slice(0,10).map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.name)}</td><td>${number(r.score)}</td><td>${timeString(r.time)}</td></tr>`).join(''):'<tr><td colspan="4">Пока рекордов нет. Завершите экспедицию или откройте ссылку результата коллеги.</td></tr>';
- openDialog(`${dialogHead('ТАБЛИЦА РЕКОРДОВ')}<h2 id="dialog-title" class="dialog-title">Кто лучший переписчик?</h2><p class="dialog-text">Рекорды сохраняются в браузере. После финиша можно отправить коллегам ссылку результата: открыв её, они добавят ваш результат в свою таблицу.</p><table class="leader-table"><thead><tr><th>№</th><th>Игрок</th><th>Очки</th><th>Время</th></tr></thead><tbody>${rows}</tbody></table>${state.lastRecord?'<div class="leader-actions"><button id="share-record" class="primary dialog-action">Поделиться результатом <span>↗</span></button></div>':''}`,'running');
- $('share-record')?.addEventListener('click',e=>shareRecord(state.lastRecord,e.currentTarget));
-}
-function finish(){
- state.mode='finished';checkAchievements('finish');const rec={name:state.playerName||'Переписчик',score:state.score,time:Math.round(state.elapsed),questionnaires:state.questionnaires,date:new Date().toISOString().slice(0,10)};state.lastRecord=rec;const rank=saveRecord(rec);
- const permanentNote=!state.educationSeen.has('permanent')?conceptNoteHTML('permanent'):'';const courseDone=regionData.filter((d,i)=>i===2?d.bossCleared:d.quizCleared).length;
- openDialog(`${dialogHead('ЭКСПЕДИЦИЯ ЗАВЕРШЕНА',false)}<span class="dialog-kicker">Шесть регионов · все маршруты закрыты</span><h2 id="dialog-title" class="dialog-title">Страна начинается<br>с людей.</h2><p class="dialog-text">Вы собрали ${state.questionnaires} ${plural(state.questionnaires,['анкету','анкеты','анкет'])}, прошли босса и передали результаты всех регионов.</p><div class="dialog-stats"><div class="dialog-stat"><strong>${number(state.score)}</strong><span>очков</span></div><div class="dialog-stat"><strong>${courseDone}/6</strong><span>тем пройдено</span></div><div class="dialog-stat"><strong>#${rank}</strong><span>место в таблице</span></div></div><p class="dialog-text" style="font-size:14px">Время экспедиции: ${timeString(state.elapsed)}. Ошибок: ${state.errors}. Лучшая серия без ошибок: ${state.bestStreak}×.</p>${permanentNote}<div class="leader-actions"><button id="share-finish" class="secondary">Поделиться результатом</button><button id="records-finish" class="secondary">Рекорды</button><button id="achievements-finish" class="secondary">Ачивки</button></div><button id="restart" class="primary dialog-next dialog-action" data-enter="true">Новая экспедиция <span>↻</span></button>`,'finished');
- $('restart').addEventListener('click',restart);$('records-finish').addEventListener('click',()=>{dialog.close();state.mode='running';showLeaderboard();});$('achievements-finish')?.addEventListener('click',()=>{dialog.close();state.mode='running';showAchievements();});$('share-finish').addEventListener('click',e=>shareRecord(rec,e.currentTarget));
-}
 function restart(){
- dialog.close();regionData.forEach(d=>Object.assign(d,{npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));Object.assign(state,{region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'running',lastRecord:null,goodEvents:0,badEvents:0,fieldWins:0,streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false});state.visitedRegions=new Set([0]);state.educationSeen=new Set();state.regionIntroSeen=new Set();loadRegion(0);$('clock').textContent='00:00';canvas.focus({preventScroll:true});toast('Новая экспедиция. Регионы снова можно проходить в любом порядке.');
+ currentRun=null;runFinished=false;runActiveSeconds=0;Sound.leaveHome();dialog.close();regionData.forEach(d=>Object.assign(d,{npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));Object.assign(state,{region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'running',lastRecord:null,goodEvents:0,badEvents:0,fieldWins:0,streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false});state.visitedRegions=new Set([0]);state.educationSeen=new Set();state.regionIntroSeen=new Set();loadRegion(0);beginRun();$('clock').textContent='00:00';canvas.focus({preventScroll:true});toast('Новая экспедиция. Регионы снова можно проходить в любом порядке.');
 }
 function showHelp(){
  if(dialog.open)return;
  openDialog(`${dialogHead('ПАМЯТКА ПЕРЕПИСЧИКА')}<h2 id="dialog-title" class="dialog-title">Как играть</h2><p class="dialog-text">Подойдите к жителю со знаком <strong>!</strong>. Сначала решите короткую ситуацию по концепции. Затем либо подтвердите переписной лист, уже отправленный человеком через Личный кабинет ГИС ЦАП, либо прочитайте рассказ человека и сами определите, какие значения внести в 2–3 разных поля мини-анкеты. Только после сохранения анкеты житель считается переписанным.</p><div class="help-controls"><kbd>W A S D / ↑ ← ↓ →</kbd><span>Движение</span><kbd>Клик мышью</kbd><span>Построить маршрут в точку; клик по жителю — подойти и начать разговор</span><kbd>1 2 3</kbd><span>Ответ в диалоге</span><kbd>E / Пробел</kbd><span>Разговор / штаб</span><kbd>Shift</kbd><span>Бег</span><kbd>R</kbd><span>Навигатор к ближайшему непройденному дому</span><kbd>Esc</kbd><span>Пауза / закрыть окно</span></div><p class="dialog-text" style="font-size:14px">Регионы справа кликабельны — проходите их в любом порядке. Перед сдачей маршрута в регионах могут появляться дополнительные игровые испытания.</p><p class="dialog-text" style="font-size:14px">У части жителей появятся <strong>сложные случаи</strong>: предзаполнение, ИИ-модель или чужие слова противоречат фактическому ответу. Нужно решить, что принять, что уточнить и чего нельзя додумывать.</p><p class="dialog-text" style="font-size:14px">В вопросах встречается ИИ-помощник — игровой «цифровой переписчик»: он помогает с голосовым заполнением, типовой поддержкой и поиском сигналов для проверки, но не отвечает за человека.</p><p class="dialog-text" style="font-size:14px">Во время маршрута случаются полевые ситуации: собака, проверка полиции, ливень, проблема с адресом, машина штаба, цветы или чай. В части событий нужно выбрать действие — решение влияет на очки, время и серию.</p><p class="dialog-kicker">Игровая мини-анкета использует реальные тематические блоки переписи — демографию, миграцию, образование, занятость, языки, домохозяйства и жилищные условия, но не является официальной формой переписи 2030 года.</p>${conceptNoteHTML('actual',false)}`);
 }
 function pause(){
- if(state.mode==='ready'){showHelp();return;}if(dialog.open){if(['running','ready'].includes(dialogReturn))closeDialog();return;}if(state.mode==='finished'){finish();return;}
+ if(state.mode==='ready'){showHelp();return;}if(dialog.open){if(['running','ready','finished'].includes(dialogReturn)&&$('dialog-content').querySelector('.close-button'))closeDialog();return;}if(state.mode==='finished'){finish();return;}
  openDialog(`${dialogHead('МОЖНО ПЕРЕВЕСТИ ДУХ')}<h2 id="dialog-title" class="dialog-title">Небольшой привал</h2><p class="dialog-text">Жители подождут. Время остановлено.</p><button id="resume" class="primary dialog-action" data-enter="true">Продолжить обход <span>→</span></button>`,'running');$('resume').addEventListener('click',closeDialog);
 }
 function act(){if(state.mode!=='running')return;if(nearest==='hq')visitHQ();else if(nearest?.boss){if(!npcs.every(n=>n.done)){toast('Этот житель настроен на большой разговор. Сначала завершите обычные контакты на маршруте.');return;}startBoss();}else if(nearest)talk(nearest);else toast('Подойдите к жителю со знаком ! или ко входу в штаб.');}
@@ -907,6 +1279,8 @@ function resize(){
 }
 function frame(t){
  const dt=last?Math.min((t-last)/1000,.05):0;last=t;
+ if(currentRun&&!runFinished&&!document.hidden&&state.mode!=='ready')runActiveSeconds+=dt;
+ Sound.footsteps();
  if(state.mode==='running'){
   let dx=0,dy=0,manual=false;if(keys.has('KeyA')||keys.has('ArrowLeft')||touch.has('left')){dx--;manual=true;}if(keys.has('KeyD')||keys.has('ArrowRight')||touch.has('right')){dx++;manual=true;}if(keys.has('KeyW')||keys.has('ArrowUp')||touch.has('up')){dy--;manual=true;}if(keys.has('KeyS')||keys.has('ArrowDown')||touch.has('down')){dy++;manual=true;}
   if(manual){mouseTarget=null;pathPoints=[];}else if(mouseTarget){
@@ -921,6 +1295,9 @@ function frame(t){
 }
 function dialogKeyboard(e){
  if(!dialog.open)return false;
+ const field=document.activeElement;
+ if(field&&['INPUT','TEXTAREA'].includes(field.tagName))return false;
+ if(field?.tagName==='SELECT'&&(e.code.startsWith('Arrow')||/^Digit/.test(e.code)))return false;
  if(/^Digit[1-9]$/.test(e.code)){const n=e.code.slice(5),b=dialog.querySelector(`[data-hotkey="${n}"]:not(:disabled)`);if(b){e.preventDefault();b.click();return true;}}
  if(e.code==='Enter'||e.code==='Space'){
   const active=document.activeElement;if(active&&['SELECT','INPUT','TEXTAREA'].includes(active.tagName)&&e.code==='Space')return false;
@@ -930,22 +1307,36 @@ function dialogKeyboard(e){
  return false;
 }
 
-$('start').addEventListener('click',()=>{state.playerName=($('player-name')?.value||localStorage.getItem('censusPlayerName')||'Переписчик').trim().slice(0,20)||'Переписчик';try{localStorage.setItem('censusPlayerName',state.playerName);}catch{}state.mode='running';$('start-screen').remove();canvas.focus({preventScroll:true});tone();toast(importedRecordName?`Результат игрока «${importedRecordName}» добавлен в таблицу. Теперь ваш ход!`:'Выберите регион справа или начните здесь. Клик по карте тоже управляет переписчиком.');setTimeout(()=>showRegionBriefing(state.region),550);});
+$('start').addEventListener('click',()=>{
+ const input=$('player-name'),name=input.value.trim();
+ if(!name){input.setCustomValidity('Укажите имя или псевдоним для результата.');input.reportValidity();input.focus();return;}
+ state.playerName=name.slice(0,20);state.playerTeam=$('player-team').value.trim().replace(/\s+/g,' ').slice(0,40);
+ try{localStorage.setItem('censusPlayerName',state.playerName);}catch{}
+ Sound.begin($('start-audio').checked);state.mode='running';beginRun();$('start-screen').remove();canvas.focus({preventScroll:true});tone();
+ toast('Добро пожаловать, '+state.playerName+'! Пройдите все регионы, чтобы открыть итоги переписи.');
+ setTimeout(()=>showRegionBriefing(state.region),550);
+});
+$('player-name').addEventListener('input',e=>e.target.setCustomValidity(''));
+$('monitor').addEventListener('click',()=>showMonitoring(state.completed===6?'population':'progress'));
 $('help').addEventListener('click',showHelp);$('pause').addEventListener('click',pause);$('leaderboard').addEventListener('click',showLeaderboard);$('achievements').addEventListener('click',showAchievements);$('achievements-side').addEventListener('click',showAchievements);$('touch-action').addEventListener('click',act);
-$('sound').addEventListener('click',()=>{soundEnabled=!soundEnabled;$('sound').setAttribute('aria-label',soundEnabled?'Выключить звук':'Включить звук');$('sound').setAttribute('aria-pressed',soundEnabled);$('sound').title=soundEnabled?'Выключить звук':'Включить звук';$('sound').querySelector('span').style.display=soundEnabled?'none':'inline';if(soundEnabled)tone();});
+$('sound').addEventListener('click',showSoundSettings);
 window.addEventListener('keydown',e=>{
- if(e.code==='Escape'){e.preventDefault();if(dialog.open){if(['running','ready'].includes(dialogReturn))closeDialog();}else pause();return;}
+ if(e.code==='Escape'){e.preventDefault();if(dialog.open){if(['running','ready','finished'].includes(dialogReturn)&&$('dialog-content').querySelector('.close-button'))closeDialog();}else pause();return;}
  if(dialogKeyboard(e))return;if(state.mode!=='running')return;
  if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space','KeyW','KeyA','KeyS','KeyD','KeyE','KeyR','ShiftLeft','ShiftRight'].includes(e.code)){e.preventDefault();keys.add(e.code);}if((e.code==='KeyE'||e.code==='Space')&&!e.repeat)act();if(e.code==='KeyR'&&!e.repeat)routeAssist();
 });
 window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>{keys.clear();touch.clear();if(player)player.moving=false;});document.addEventListener('visibilitychange',()=>{if(document.hidden){keys.clear();touch.clear();if(state.mode==='running')pause();}});
-dialog.addEventListener('cancel',e=>{e.preventDefault();if(['running','ready'].includes(dialogReturn))closeDialog();});
+dialog.addEventListener('cancel',e=>{e.preventDefault();if(['running','ready','finished'].includes(dialogReturn)&&$('dialog-content').querySelector('.close-button'))closeDialog();});
 document.querySelectorAll('[data-dir]').forEach(button=>{button.addEventListener('pointerdown',e=>{e.preventDefault();button.setPointerCapture(e.pointerId);touch.add(button.dataset.dir);mouseTarget=null;pathPoints=[];button.classList.add('pressed');});const release=()=>{touch.delete(button.dataset.dir);button.classList.remove('pressed');};button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('lostpointercapture',release);});
 canvas.addEventListener('pointerdown',e=>{
  canvas.focus({preventScroll:true});if(state.mode!=='running')return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)/view.zoom+view.camX,y=(e.clientY-r.top)/view.zoom+view.camY;
  const hq=world.layout.hq;let chosen=null,best=42;for(const n of npcs){const d=Math.hypot(x-n.x,y-n.y);if(d<best){best=d;chosen=n;}}if(chosen){setDestination(chosen.x-25,chosen.y+18,24,chosen);return;}if(state.region===2&&!regionData[2].bossCleared&&Math.hypot(x-BOSS_ACTOR.x,y-BOSS_ACTOR.y)<72){setDestination(BOSS_ACTOR.x-55,BOSS_ACTOR.y+22,50,BOSS_ACTOR);return;}if(Math.hypot(x-hq.x,y-hq.y)<48){setDestination(hq.x+28,hq.y+15,25,'hq');return;}setDestination(x,y,8,null);
 });
-new ResizeObserver(resize).observe(canvas);importSharedRecord();try{$('player-name').value=localStorage.getItem('censusPlayerName')||'';}catch{}updateAchievementUI();loadRegion(0);requestAnimationFrame(frame);
+new ResizeObserver(resize).observe(canvas);importSharedRecord();
+try{$('player-name').value=profile.name||localStorage.getItem('censusPlayerName')||'';}catch{}
+$('player-team').value=profile.team||'';$('start-audio').checked=Sound.enabled;Sound.updateSoundButton();
+$('save-notice').textContent=CensusCloud.configured?'Нажимая «Отправиться», вы отправляете организатору имя, команду, ход игры и результат. Имя и команда появятся в общем рейтинге после финиша.':'Имя и команда запомнятся в этом браузере. Общий рейтинг пока не подключён.';
+updateAchievementUI();loadRegion(0);CensusCloud.flush();requestAnimationFrame(frame);
 
 })();
 
