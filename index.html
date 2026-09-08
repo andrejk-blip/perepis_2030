@@ -82,6 +82,38 @@
 @media (max-width:760px){html,body{height:auto;overflow:auto}}
 </style>
 
+
+<style id="v11-readability">
+/* v11 — readable typography scales with screen size without giving up the one-screen layout */
+@media (min-width:761px){
+  body{font-size:15px}
+  .spoiled-sheet{margin:18px 0;padding:18px;border:2px dashed #d47b67;border-radius:8px;text-align:center;font-size:22px;font-weight:800;letter-spacing:3px;color:#e9a28f;background:#402d2d}
+  dialog{position:relative}
+  .achievement-modal-message{position:fixed;top:22px;left:50%;transform:translateX(-50%);width:min(480px,calc(100vw - 40px));padding:13px 16px;border-radius:10px;border:1px solid #d7b75e;background:#172d34f7;box-shadow:0 18px 55px #0009;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;z-index:50;animation:achievementIn .22s ease-out}
+  .achievement-modal-message>span{font-size:28px;text-align:center}.achievement-modal-message small{display:block;color:var(--yellow);font-size:10px;letter-spacing:1.4px}.achievement-modal-message strong{display:block;font-size:17px;margin-top:3px}.achievement-modal-message em{display:block;font-style:normal;color:#b9c8ca;font-size:12px;line-height:1.35;margin-top:3px}
+  @keyframes achievementIn{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}
+}
+@media (min-width:761px) and (min-height:761px){
+  .eyebrow{font-size:10px}.brand strong{font-size:19px}.brand small{font-size:9px}.expedition-label{font-size:11px}.expedition-label span{font-size:12px}
+  h1{font-size:clamp(25px,1.8vw,31px)}.shift-clock strong{font-size:21px}
+  .control-strip{font-size:11px}.control-strip kbd{font-size:10px}
+  .assignment h2{font-size:17px}.assignment p{font-size:12px;line-height:1.4}.progress-line{font-size:12px}.task{font-size:11px!important}.bag strong{font-size:12px}.bag small{font-size:9px!important}
+  .regions li{font-size:11px}.leaderboard-button,.achievement-summary{font-size:11px!important}.combo-card>div small{font-size:9px}.combo-card>div span{font-size:8px}
+  .map-tags>span{font-size:9px}.map-tags .connection{font-size:9px}.map-caption{font-size:8px}.interaction-prompt{font-size:14px}
+  dialog{width:min(540px,calc(100% - 28px))}.dialog-title{font-size:29px}.dialog-text{font-size:17px}.answer{font-size:15px}.feedback{font-size:15px}.census-story{font-size:16px!important;line-height:1.55!important}.census-row label{font-size:14px!important}.census-select{font-size:15px!important}.dialog-hint,.question-count{font-size:12px!important}
+}
+@media (min-width:1450px) and (min-height:850px){
+  body{font-size:17px}.topbar{height:78px;min-height:78px}.stage-header{height:56px;min-height:56px}
+  main{grid-template-columns:minmax(0,1fr) 300px;gap:22px}.sidebar{gap:10px}.assignment{padding:14px 15px 13px}.assignment h2{font-size:19px}.assignment p{font-size:13px}.progress-line{font-size:13px}.task{font-size:12px!important}.regions li{font-size:12px}.score-card strong{font-size:27px}.combo-card strong{font-size:20px}
+  .leaderboard-button,.achievement-summary{font-size:12px!important}.control-strip{font-size:12px}.map-tags>span{font-size:10px}
+  dialog{width:min(600px,calc(100% - 32px))}.dialog-title{font-size:31px}.dialog-text{font-size:18px}.answer{font-size:16px;padding:14px 16px}.feedback{font-size:16px}.census-story{font-size:17px!important}.census-row label{font-size:15px!important}.census-select{font-size:16px!important}
+}
+@media (min-width:1900px) and (min-height:1000px){
+  body{font-size:18px}.app{max-width:1780px}.topbar{height:84px;min-height:84px}.brand strong{font-size:22px}.brand small{font-size:10px}.expedition-label{font-size:12px}.expedition-label span{font-size:13px}
+  main{grid-template-columns:minmax(0,1fr) 330px;gap:26px}.stage-header{height:62px;min-height:62px}h1{font-size:34px}.assignment h2{font-size:21px}.assignment p{font-size:14px}.regions li{font-size:13px}.task{font-size:13px!important}.control-strip{font-size:13px}
+}
+</style>
+
 </head>
 <body>
   <div class="app">
@@ -120,7 +152,7 @@
 const REGIONS = [
  {name:'Владимирская область',short:'Владимирская обл.',terrain:'СРЕДНЯЯ ПОЛОСА',place:'Тихий посёлок',mission:'Найти тех, кого легко пропустить',description:'Проверьте полноту учёта: найдите жителей, уточните фактическое проживание, заполните анкеты и сдайте региональный зачёт.',goal:8,theme:'Полнота учёта и фактическое проживание',themeShort:'ПОЛНОТА УЧЁТА',lessonId:'coverage',twist:'Идеальная серия контактов быстро разгоняет бонус к очкам.',grass:['#73935c','#779760','#70905a','#7c9b64'],path:'#ccb887',water:'#619ba0',roof:'#9e5644',wall:'#d5c18c',tree:'#375e45',accent:'#edce70',note:'Важно не просто собрать анкеты,\nа не потерять ни одного жителя.',offline:false},
  {name:'Республика Карелия',short:'Карелия',terrain:'ОЗЁРНЫЙ КРАЙ',place:'Посёлок у озера',mission:'Связь есть не везде',description:'Работайте на планшете без сети, накопите анкеты и синхронизируйте их через штаб. В конце — короткий зачёт по офлайн-сбору.',goal:9,theme:'Офлайн-сбор и синхронизация',themeShort:'ОФЛАЙН-СБОР',lessonId:'offline',twist:'За передачу 5+ офлайн-анкет одной пачкой — дополнительный бонус.',grass:['#73947a','#799981','#6e8e75','#7e9b83'],path:'#c2ba9e',water:'#538eaa',roof:'#805749',wall:'#b9a381',tree:'#315e52',accent:'#cae1bf',note:'Нет сети — не значит\nнет переписи.',offline:true},
- {name:'Республика Татарстан',short:'Татарстан',terrain:'БЕРЕГА ВОЛГИ',place:'Городской квартал',mission:'Один человек — одна запись',description:'Разбирайтесь с онлайн-ответами и составом домохозяйств. После обычного обхода в штабе ждёт БОСС — домохозяйство 12А.',goal:10,theme:'Домохозяйства и недопущение повторного учёта',themeShort:'ДОМОХОЗЯЙСТВА',lessonId:'household',twist:'Региональный зачёт здесь заменён четырёхраундовым БОССОМ.',grass:['#8c9d68','#90a16c','#869963','#94a671'],path:'#d3c29e',water:'#62999c',roof:'#3e8b79',wall:'#e3d3ac',tree:'#52754b',accent:'#f3da8f',note:'Адрес — это место.\nДомохозяйство — это люди.',offline:false},
+ {name:'Республика Татарстан',short:'Татарстан',terrain:'БЕРЕГА ВОЛГИ',place:'Городской квартал',mission:'Один человек — одна запись',description:'Разбирайтесь с онлайн-ответами, повторным учётом и фактическим составом домохозяйств.',goal:10,theme:'Домохозяйства и недопущение повторного учёта',themeShort:'ДОМОХОЗЯЙСТВА',lessonId:'household',twist:'Внимательно отделяйте адрес, регистрацию и фактический состав домохозяйства.',grass:['#8c9d68','#90a16c','#869963','#94a671'],path:'#d3c29e',water:'#62999c',roof:'#3e8b79',wall:'#e3d3ac',tree:'#52754b',accent:'#f3da8f',note:'Адрес — это место.\nДомохозяйство — это люди.',offline:false},
  {name:'Иркутская область',short:'Иркутская обл.',terrain:'ПРИБАЙКАЛЬЕ',place:'Прибрежный посёлок',mission:'Адрес должен вести к человеку',description:'Исследуйте оба берега, сверяйте маршрут с фактической ситуацией и не теряйте существующие дома, даже если адрес требует уточнения.',goal:10,theme:'Адресная база и маршрутизация',themeShort:'АДРЕСА И МАРШРУТЫ',lessonId:'routes',twist:'Навигатор R особенно полезен на разорванной береговой карте.',grass:['#7d9771','#829c75','#77916a','#879f7a'],path:'#c6b998',water:'#4d9eb1',roof:'#735b53',wall:'#c4a57b',tree:'#355e4b',accent:'#cce3c3',note:'Хороший маршрут начинается\nс хорошей адресной основы.',offline:true},
  {name:'Республика Саха (Якутия)',short:'Якутия',terrain:'СЕВЕРНЫЕ ПРОСТОРЫ',place:'Снежный посёлок',mission:'Переписчик помогает, а не просто спрашивает',description:'Отработайте новую роль полевого сотрудника: установить контакт, проверить полноту, помочь с цифровым участием и провести опрос, когда это действительно нужно.',goal:11,theme:'Переписчик как «аудитор-мотиватор»',themeShort:'РОЛЬ ПЕРЕПИСЧИКА',lessonId:'role',twist:'Чистые контакты ценнее спешки: серия без ошибок приносит растущий бонус.',grass:['#d4e0dd','#d9e4e0','#cddbd8','#dce7e3'],path:'#b0c1be',water:'#90b9c4',roof:'#666d76',wall:'#b3a294',tree:'#658d83',accent:'#ebd383',note:'Контакт должен быть\nкоротким, понятным и полезным.',offline:true},
  {name:'Камчатский край',short:'Камчатский край',terrain:'У ТИХОГО ОКЕАНА',place:'Посёлок у вулкана',mission:'От анкеты — к динамической модели',description:'Закройте последний маршрут и соберите целостную картину: реестровые сведения помогают, но фактические ответы людей уточняют модель населения.',goal:12,theme:'Динамическая модель и «перманентная перепись»',themeShort:'ДИНАМИЧЕСКАЯ МОДЕЛЬ',lessonId:'permanent',twist:'Финальный зачёт связывает все механики экспедиции в одну модель.',grass:['#7e9980','#849e85','#78937b','#89a28a'],path:'#bbb7a1',water:'#648f9f',roof:'#706461',wall:'#c6b7a4',tree:'#365d4d',accent:'#ebd383',note:'Данные ценны, когда они\nактуальны и проверены человеком.',offline:true}
@@ -148,6 +180,7 @@ const SCENARIOS = [
  {type:'digital',line:'«Цифровой переписчик» — ИИ-помощник в Личном кабинете — не смог ответить на нестандартный вопрос пользователя. Что дальше?',answers:['Придумать наиболее вероятный ответ','Завершить обращение без ответа','Передать обращение на следующую линию поддержки'],correct:2,feedback:'ИИ-помощник — первая линия для типовых вопросов. Сложные обращения должны передаваться специалистам поддержки.'}
 ];
 const NAMES=['Алексей','Мария','Виктор','Анна','Ирина','Михаил','Ольга','Сергей','Елена','Николай','Татьяна','Дмитрий'];
+const BOSS_ACTOR={id:98,x:958,y:694,dir:'down',done:false,moving:false,name:'Домохозяйство 12А',boss:true};
 const REGION_SCENARIO_TYPES=[
  ['review','interview','trust','ai'],
  ['offline','help','trust','digital'],
@@ -427,21 +460,32 @@ class World{
    const yy=y-63+(p.done?0:Math.sin(time*2+p.id)*2);rect(c,x-9,yy,18,19,p.done?'#bce3c6':'#f0d278');rect(c,x-2,yy+19,4,3,p.done?'#bce3c6':'#f0d278');label(c,p.done?'✓':'!',x,yy+14,p.done?'#355e4b':'#4b553d',14);
   }
  }
- render(c,view,player,npcs,time,nearest,allDone,reduced,coarse=false){
+ drawBoss(c,p,time){
+  const pulse=1+(Math.sin(time*3)*.035),scale=2.15*pulse;
+  c.save();c.translate(p.x,p.y);c.scale(scale,scale);
+  this.drawPerson(c,{...p,x:0,y:0,id:4,done:false,moving:false},time,false);
+  // crown and a heavier ground shadow make the special resident readable without explaining him in the level text
+  poly(c,[[-12,-48],[-7,-58],[-1,-51],[5,-60],[11,-48]],'#edce70');rect(c,-12,-48,23,5,'#d3ad4b');
+  c.restore();
+  c.strokeStyle='#edce70';c.lineWidth=3;c.setLineDash([7,5]);c.beginPath();c.ellipse(p.x,p.y+8,38,16,0,0,Math.PI*2);c.stroke();c.setLineDash([]);
+  label(c,'12А',p.x,p.y-117,'#fff0a9',14);
+ }
+ render(c,view,player,npcs,time,nearest,allDone,reduced,coarse=false,boss=null){
   const {w,h,zoom,camX,camY}=view;c.imageSmoothingEnabled=false;c.clearRect(0,0,w,h);
   c.save();c.scale(zoom,zoom);c.translate(-camX,-camY);c.drawImage(this.ground,0,0);
-  const items=[...this.objects,...npcs.map(n=>({...n,kind:'person'})),{...player,kind:'player'}].sort((a,b)=>a.y-b.y);
+  const items=[...this.objects,...npcs.map(n=>({...n,kind:'person'})),...(boss?[{...boss,kind:'boss'}]:[]),{...player,kind:'player'}].sort((a,b)=>a.y-b.y);
   for(const o of items){
    if(o.x<camX-150||o.x>camX+w/zoom+150||o.y<camY-90||o.y>camY+h/zoom+140)continue;
    if(o.kind==='house')this.drawHouse(c,o);
    if(o.kind==='tree')this.drawTree(c,o);
    if(o.kind==='person'||o.kind==='player')this.drawPerson(c,o,reduced?0:time,o.kind==='player');
+   if(o.kind==='boss')this.drawBoss(c,o,reduced?0:time);
    if(o.kind==='sign'){rect(c,o.x-2,o.y-31,4,33,'#726f4d');rect(c,o.x-17,o.y-34,34,14,'#d9c998');label(c,'→',o.x,o.y-22,'#687355',13);}
    if(o.kind==='bench'){rect(c,o.x-16,o.y-15,35,8,'#b39c71');rect(c,o.x-16,o.y-5,35,7,'#c6b388');rect(c,o.x-13,o.y,4,8,'#6c7154');rect(c,o.x+13,o.y,4,8,'#6c7154');}
    if(o.kind==='van'){rect(c,o.x-27,o.y-15,54,22,'#27412f40');rect(c,o.x-26,o.y-38,51,33,'#e9dab0');rect(c,o.x-21,o.y-36,25,28,'#466d74');rect(c,o.x+6,o.y-33,14,13,'#8bb2aa');rect(c,o.x-27,o.y-9,54,5,'#d1b254');rect(c,o.x-19,o.y-5,9,7,'#34483c');rect(c,o.x+14,o.y-5,9,7,'#34483c');label(c,'П',o.x-9,o.y-17,'#f0d171',16);}
   }
-  if(nearest){const target=nearest==='hq'?this.layout.hq:nearest;c.strokeStyle='#f6e6a7';c.lineWidth=2;c.setLineDash([4,4]);c.beginPath();c.ellipse(target.x,target.y+4,23,10,0,0,Math.PI*2);c.stroke();c.setLineDash([]);}
-  if(allDone){const hx=this.layout.hq.x,hy=this.layout.hq.y-124+(reduced?0:Math.sin(time*3)*5);label(c,'↓ В ШТАБ',hx,hy,'#fff3b1',14);}
+  if(nearest){const target=nearest==='hq'?this.layout.hq:nearest;c.strokeStyle='#f6e6a7';c.lineWidth=2;c.setLineDash([4,4]);c.beginPath();c.ellipse(target.x,target.y+4,target.boss?43:23,target.boss?18:10,0,0,Math.PI*2);c.stroke();c.setLineDash([]);}
+  if(allDone&&!boss){const hx=this.layout.hq.x,hy=this.layout.hq.y-124+(reduced?0:Math.sin(time*3)*5);label(c,'↓ В ШТАБ',hx,hy,'#fff3b1',14);}
   if(!reduced){
    for(let i=0;i<(this.snow?48:10);i++){const x=(i*137+time*(this.snow?7:13))%WIDTH,y=(i*93+time*(this.snow?19:9))%HEIGHT;rect(c,x,y,this.snow?2:3,2,this.snow?'#ffffffa0':'#e8e8bd60');}
    for(let i=0;i<18;i++){const y=(i*49+time*8)%HEIGHT;if(![236,466,656].some(v=>Math.abs(y-v)<34))rect(c,805+(i*11)%49,y,10,1,'#d8e9d238');}
@@ -450,7 +494,7 @@ class World{
   // A live minimap keeps every resident discoverable on small screens.
   const mw=116,mh=78,mx=w-mw-15,my=coarse?58:h-mh-28,scale=mw/WIDTH;
   rect(c,mx-5,my-5,mw+10,mh+10,'#16362bd9');c.globalAlpha=.68;c.drawImage(this.ground,mx,my,mw,mh);c.globalAlpha=1;
-  for(const p of npcs){rect(c,mx+p.x*scale-2,my+p.y*(mh/HEIGHT)-2,4,4,p.done?'#b8ddad':'#f4d169');}
+  for(const p of npcs){rect(c,mx+p.x*scale-2,my+p.y*(mh/HEIGHT)-2,4,4,p.done?'#b8ddad':'#f4d169');}if(boss){rect(c,mx+boss.x*scale-4,my+boss.y*(mh/HEIGHT)-4,8,8,'#edce70');label(c,'♛',mx+boss.x*scale,my+boss.y*(mh/HEIGHT)+3,'#27362e',7);}
   rect(c,mx+this.layout.hq.x*scale-3,my+this.layout.hq.y*mh/HEIGHT-3,6,6,'#c6e6df');rect(c,mx+player.x*scale-3,my+player.y*mh/HEIGHT-3,6,6,'#ffffff');
   c.strokeStyle='#ffffdd80';c.lineWidth=1;c.strokeRect(mx+camX*scale,my+camY*mh/HEIGHT,Math.min(mw,w/zoom*scale),Math.min(mh,h/zoom*mh/HEIGHT));
  }
@@ -468,7 +512,7 @@ function movePlayer(world,player,dx,dy,dt,fast=false){
 
 const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d'),dialog=$('dialog');
 const regionData=REGIONS.map(()=>({npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));
-const state={region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'ready',playerName:'Переписчик',lastRecord:null,visitedRegions:new Set([0]),goodEvents:0,badEvents:0,fieldWins:0,educationSeen:new Set(),regionIntroSeen:new Set(),streak:0,bestStreak:0,perfectForms:0,autoForms:0};
+const state={region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'ready',playerName:'Переписчик',lastRecord:null,visitedRegions:new Set([0]),goodEvents:0,badEvents:0,fieldWins:0,educationSeen:new Set(),regionIntroSeen:new Set(),streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false};
 let world,npcs,player,nearest=null,last=0,toastTimer,achievementTimer,conceptTimer,dialogReturn='running',soundEnabled=false,audioCtx,mouseTarget=null,pathPoints=[],importedRecordName='';
 const keys=new Set(),touch=new Set(),view={w:960,h:640,zoom:1,camX:0,camY:0};
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -482,7 +526,7 @@ function achievementStore(){try{return JSON.parse(localStorage.getItem('perepis2
 function writeAchievementStore(data){try{localStorage.setItem('perepis2030Achievements',JSON.stringify(data));}catch{}}
 function unlockedAchievements(){const data=achievementStore();return ACHIEVEMENTS.filter(a=>data[a.id]);}
 function updateAchievementUI(){const n=unlockedAchievements().length;$('achievement-count').textContent=n;$('achievement-side-count').textContent=`${n} / ${ACHIEVEMENTS.length}`;$('achievement-count').style.display=n?'grid':'none';}
-function unlockAchievement(id){const a=ACHIEVEMENTS.find(x=>x.id===id);if(!a)return false;const data=achievementStore();if(data[id])return false;data[id]={date:new Date().toISOString(),player:state.playerName||'Переписчик'};writeAchievementStore(data);updateAchievementUI();clearTimeout(achievementTimer);$('achievement-popup-icon').textContent=a.icon;$('achievement-popup-title').textContent=a.title;$('achievement-popup-text').textContent=a.description;$('achievement-popup').classList.add('show');achievementTimer=setTimeout(()=>$('achievement-popup').classList.remove('show'),4300);tone('complete');return true;}
+function unlockAchievement(id){const a=ACHIEVEMENTS.find(x=>x.id===id);if(!a)return false;const data=achievementStore();if(data[id])return false;data[id]={date:new Date().toISOString(),player:state.playerName||'Переписчик'};writeAchievementStore(data);updateAchievementUI();clearTimeout(achievementTimer);$('achievement-popup-icon').textContent=a.icon;$('achievement-popup-title').textContent=a.title;$('achievement-popup-text').textContent=a.description;$('achievement-popup').classList.add('show');document.querySelector('.achievement-modal-message')?.remove();if(dialog.open){const msg=document.createElement('div');msg.className='achievement-modal-message';msg.innerHTML=`<span>${a.icon}</span><div><small>ДОСТИЖЕНИЕ ПОЛУЧЕНО</small><strong>${esc(a.title)}</strong><em>${esc(a.description)}</em></div>`;dialog.appendChild(msg);setTimeout(()=>msg.remove(),4800);}achievementTimer=setTimeout(()=>$('achievement-popup').classList.remove('show'),4800);tone('complete');return true;}
 function checkAchievements(context=''){
  if(state.questionnaires>=1)unlockAchievement('first');
  if(state.questionnaires>=10)unlockAchievement('ten');
@@ -609,10 +653,10 @@ function updateUI(){
  $('progress').setAttribute('aria-valuenow',done);$('progress').setAttribute('aria-valuemax',goal);$('progress').firstElementChild.style.width=`${done/goal*100}%`;
  $('task-residents').classList.toggle('completed',done===goal);$('task-residents').querySelector('.task-check').textContent=done===goal?'✓':'1';
  $('task-hq').classList.toggle('completed',data.completed);$('task-hq').querySelector('.task-check').textContent=data.completed?'✓':'2';
- $('regions').innerHTML=REGIONS.map((r,i)=>{const d=regionData[i],cls=`${d.completed?'done ':''}${i===state.region?'current':''}`.trim();return `<li class="${cls}"><button type="button" data-region="${i}" aria-label="Перейти: ${esc(r.name)}"><span class="region-index">${d.completed?'✓':String(i+1).padStart(2,'0')}</span><span class="region-label">${esc(r.short)}</span>${i===2?'<span class="region-boss">БОСС</span>':''}${i===state.region?'<span class="region-badge">ЗДЕСЬ</span>':''}</button></li>`;}).join('');
+ $('regions').innerHTML=REGIONS.map((r,i)=>{const d=regionData[i],cls=`${d.completed?'done ':''}${i===state.region?'current':''}`.trim();return `<li class="${cls}"><button type="button" data-region="${i}" aria-label="Перейти: ${esc(r.name)}"><span class="region-index">${d.completed?'✓':String(i+1).padStart(2,'0')}</span><span class="region-label">${esc(r.short)}</span>${i===state.region?'<span class="region-badge">ЗДЕСЬ</span>':''}</button></li>`;}).join('');
  document.querySelectorAll('[data-region]').forEach(b=>b.addEventListener('click',()=>switchRegion(Number(b.dataset.region))));
  if(data.completed){$('mission-title').textContent='Регион завершён';$('mission-description').textContent='Можно осмотреть карту ещё раз или выбрать любой другой регион в списке справа.';}
- else if(done===goal){$('mission-title').textContent=state.region===2&&!data.bossCleared?'Все жители переписаны. Но впереди босс!':'Все жители переписаны';$('mission-description').textContent=state.region===2&&!data.bossCleared?'Вернитесь в штаб. Там вас ждёт сложное домохозяйство 12А.':'Вернитесь в штаб с синим флагом и передайте результаты.';}
+ else if(done===goal){$('mission-title').textContent='Все жители переписаны';$('mission-description').textContent=state.region===2&&!data.bossCleared?'Осмотрите карту: остался необычный контакт.':'Вернитесь в штаб с синим флагом и передайте результаты.';}
 }
 function toast(text){$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),4500);}
 function conceptNoteHTML(id,mark=true){const f=EDU_FACTS[id];if(!f)return '';if(mark)state.educationSeen.add(id);return `<div class="concept-note"><small>СПРАВКА · КОНЦЕПЦИЯ 2030</small><strong>${esc(f.title)}</strong><p>${esc(f.text)}</p></div>`;}
@@ -635,7 +679,7 @@ function buildRoutePath(tx,ty){
 }
 function setDestination(x,y,stop=8,act=null){pathPoints=buildRoutePath(x,y);mouseTarget={x,y,stop,act};if(!pathPoints.length)pathPoints=[{x,y}];}
 function routeAssist(){
- if(state.mode!=='running')return;const targets=npcs.filter(n=>!n.done);if(!targets.length){toast('Все жители этого региона уже переписаны — пора в штаб.');return;}
+ if(state.mode!=='running')return;const targets=npcs.filter(n=>!n.done);if(!targets.length){if(state.region===2&&!regionData[2].bossCleared){const data=regionData[state.region];data.guideUses++;const cost=data.guideUses===1?0:10;if(cost)state.score=Math.max(0,state.score-cost);setDestination(BOSS_ACTOR.x-55,BOSS_ACTOR.y+22,50,BOSS_ACTOR);updateUI();toast(cost?'Навигатор ведёт к необычному жителю. Повторная подсказка: −10 очков.':'На карте остался необычный житель. Навигатор ведёт к нему.');return;}toast('Все жители этого региона уже переписаны — пора в штаб.');return;}
  const target=targets.reduce((best,n)=>Math.hypot(player.x-n.x,player.y-n.y)<Math.hypot(player.x-best.x,player.y-best.y)?n:best,targets[0]);const data=regionData[state.region];data.guideUses++;const cost=data.guideUses===1?0:10;if(cost)state.score=Math.max(0,state.score-cost);setDestination(target.x-25,target.y+18,24,target);updateUI();toast(cost?`Навигатор строит путь к ${target.name}. Повторная подсказка: −10 очков.`:`Навигатор ведёт к ближайшему непройденному дому. Первая подсказка в регионе бесплатна.`);
 }
 
@@ -692,14 +736,17 @@ function showAutomaticQuestionnaire(npc){
 
 function showQuestionnaire(npc){
  const d=npc.census,opts=(q)=>`<option value="">— выбрать —</option>${q.options.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('')}`;
- let attempts=npc.formMistakes||0;
+ let attempts=npc.sheetAttempts||0;const showHint=!state.questionnaireHintShown;if(showHint)state.questionnaireHintShown=true;
+ const hint=showHint?`<div class="decode-banner"><span>🧠</span><span><b>Игровая задача:</b> не копируйте готовые пункты — поймите смысл рассказа. Например, фраза «зарегистрирован в другом городе, но живу здесь пятнадцать месяцев» означает обычное проживание здесь.</span></div>`:'';
  const rows=d.questions.map((q,i)=>`<div class="census-row"><small>${esc(q.section)} · ПОЛЕ ${i+1}</small><label for="f-${i}">${esc(q.label)}</label><select class="census-select" id="f-${i}">${opts(q)}</select></div>`).join('');
- openDialog(`${dialogHead('ПЕРЕПИСНОЙ ЛИСТ')}<span class="dialog-kicker">Мини-анкета · ${esc(npc.name)}</span><h2 id="dialog-title" class="dialog-title">Выделите главное из рассказа</h2><p class="dialog-text">В реальной переписи вопросы охватывают демографию, миграцию, образование, занятость, языки, домохозяйства и жилищные условия. Здесь — короткая игровая выборка.</p><div class="census-card"><strong>${esc(npc.name)} рассказывает:</strong><p class="census-story">${esc(d.story)}</p></div><div class="decode-banner"><span>🧠</span><span><b>Игровая задача:</b> не копируйте готовые пункты — поймите смысл рассказа. Например, фраза «зарегистрирован в другом городе, но живу здесь пятнадцать месяцев» означает обычное проживание здесь.</span></div><div class="census-form">${rows}</div><p class="feedback" id="form-feedback" role="status" aria-live="polite" hidden></p><button id="save-form" class="primary dialog-next dialog-action" data-enter="true">Сохранить анкету <span>✓</span></button><p class="question-count">Нужно заполнить ${d.questions.length} ${plural(d.questions.length,['поле','поля','полей'])}. За безошибочную расшифровку — бонус.</p><p class="dialog-hint">Tab — перейти к следующему полю · стрелки — выбрать ответ · Enter — сохранить</p>`,'running');
+ openDialog(`${dialogHead('ПЕРЕПИСНОЙ ЛИСТ')}<span class="dialog-kicker">Мини-анкета · ${esc(npc.name)}</span><h2 id="dialog-title" class="dialog-title">Выделите главное из рассказа</h2><p class="dialog-text">В реальной переписи вопросы охватывают демографию, миграцию, образование, занятость, языки, домохозяйства и жилищные условия. Здесь — короткая игровая выборка.</p><div class="census-card"><strong>${esc(npc.name)} рассказывает:</strong><p class="census-story">${esc(d.story)}</p></div>${hint}<div class="census-form">${rows}</div><p class="feedback" id="form-feedback" role="status" aria-live="polite" hidden></p><button id="save-form" class="primary dialog-next dialog-action" data-enter="true">Сохранить анкету <span>✓</span></button><p class="question-count">Нужно заполнить ${d.questions.length} ${plural(d.questions.length,['поле','поля','полей'])}. За безошибочную расшифровку — бонус.</p><p class="dialog-hint">Tab — перейти к следующему полю · стрелки — выбрать ответ · Enter — сохранить</p>`,'running');
  $('save-form').addEventListener('click',()=>{
   let wrong=0;d.questions.forEach((q,i)=>{const el=$(`f-${i}`),bad=el.value!==q.answer;el.classList.toggle('form-error',bad);if(bad)wrong++;});
-  if(wrong){attempts++;npc.formMistakes=attempts;state.errors+=wrong;regionData[state.region].mistakes+=wrong;state.streak=0;updateUI();$('form-feedback').hidden=false;$('form-feedback').textContent=`В ${wrong} ${plural(wrong,['поле','полях','полях'])} смысл рассказа распознан неверно. Перечитайте слова жителя и исправьте только спорные поля.`;tone('error');return;}
-  if(attempts===0){state.perfectForms++;checkAchievements();}
-  completeQuestionnaire(npc,attempts,'manual');
+  if(wrong){attempts++;npc.sheetAttempts=attempts;npc.formMistakes=(npc.formMistakes||0)+1;state.errors+=wrong;regionData[state.region].mistakes+=wrong;state.streak=0;updateUI();tone('error');
+   if(attempts>=3){npc.sheetAttempts=0;state.spoiledForms=(state.spoiledForms||0)+1;state.score=Math.max(0,state.score-150);updateUI();openDialog(`${dialogHead('АНКЕТА ИСПОРЧЕНА',false)}<span class="dialog-kicker">${esc(npc.name)} · слишком много исправлений</span><h2 id="dialog-title" class="dialog-title">Этот бланк больше не принимается</h2><p class="dialog-text">Три попытки подряд закончились ошибками. Анкета помечена как испорченная, серия сброшена и начислен штраф <strong>−150 очков</strong>.</p><div class="spoiled-sheet">✕ ИСПОРЧЕНО</div><button id="new-sheet" class="primary dialog-action" data-enter="true">Взять новый бланк <span>↻</span></button>`,'running');$('new-sheet').addEventListener('click',()=>showQuestionnaire(npc));return;}
+   $('form-feedback').hidden=false;$('form-feedback').textContent=`В ${wrong} ${plural(wrong,['поле','полях','полях'])} смысл рассказа распознан неверно. Осталось попыток до порчи бланка: ${3-attempts}.`;return;}
+  npc.sheetAttempts=0;if((npc.formMistakes||0)===0){state.perfectForms++;checkAchievements();}
+  completeQuestionnaire(npc,npc.formMistakes||0,'manual');
  });
 }
 
@@ -716,7 +763,7 @@ function completeQuestionnaire(npc,formMistakes,source='manual'){
  const title=isAuto?'Онлайн-участие подтверждено':'Человек переписан';
  const detail=isAuto?`Переписной лист из Личного кабинета ГИС ЦАП учтён без повторного опроса. +${earned} очков.`:`Мини-анкета сохранена на планшете. +${earned} очков.${decodeBonus?` +${decodeBonus} за точную расшифровку.`:''}${comboBonus?` +${comboBonus} за серию ${state.streak}×.`:''}`;
  openDialog(`${dialogHead('АНКЕТА СОХРАНЕНА',false)}<span class="dialog-kicker">${esc(npc.name)} · № ${state.questionnaires}</span><h2 id="dialog-title" class="dialog-title">${title}</h2><p class="dialog-text">${detail}</p><div class="dialog-stats"><div class="dialog-stat"><strong>${state.questionnaires}</strong><span>анкет собрано</span></div><div class="dialog-stat"><strong>${isAuto?'AUTO':state.streak+'×'}</strong><span>${isAuto?'цифровой канал':'серия'}</span></div><div class="dialog-stat"><strong>${npcs.filter(n=>n.done).length}/${npcs.length}</strong><span>в регионе</span></div></div><button id="continue-walk" class="primary dialog-action" data-enter="true">Продолжить обход <span>→</span></button>`,'running');
- $('continue-walk').addEventListener('click',()=>{const qn=state.questionnaires,stage=data.stageQuestionnaires;closeDialog();if(npcs.every(n=>n.done))toast(state.region===2&&!data.bossCleared?'Все жители переписаны. Возвращайтесь в штаб — там БОСС.':'Все жители переписаны. Пора вернуться в штаб!');setTimeout(()=>{const lesson=REGIONS[state.region].lessonId;if(['ai','digital'].includes(npc.scenario.type)&&!state.educationSeen.has('ai'))showConceptFact('ai');else if(qn===1)showConceptFact('actual');else if(stage===Math.ceil(REGIONS[state.region].goal/2))showConceptFact(lesson);else if(qn===10)showConceptFact('prefill');else maybeFieldEvent();},180);});
+ $('continue-walk').addEventListener('click',()=>{const qn=state.questionnaires,stage=data.stageQuestionnaires;closeDialog();if(npcs.every(n=>n.done))toast(state.region===2&&!data.bossCleared?'Обычный обход завершён. На карте остался один необычный контакт.':'Все жители переписаны. Пора вернуться в штаб!');setTimeout(()=>{const lesson=REGIONS[state.region].lessonId;if(['ai','digital'].includes(npc.scenario.type)&&!state.educationSeen.has('ai'))showConceptFact('ai');else if(qn===1)showConceptFact('actual');else if(stage===Math.ceil(REGIONS[state.region].goal/2))showConceptFact(lesson);else if(qn===10)showConceptFact('prefill');else maybeFieldEvent();},180);});
 }
 
 const FIELD_EVENTS=[
@@ -814,12 +861,12 @@ function visitHQ(fromBoss=false){
  const data=regionData[state.region],done=npcs.filter(n=>n.done).length;
  if(data.completed){toast('Этот регион уже завершён. Можно выбрать другой маршрут справа.');return;}
  if(done<npcs.length){const transferred=data.pending;data.pending=0;updateUI();toast(transferred?`Передано промежуточно: ${transferred} ${plural(transferred,['анкета','анкеты','анкет'])}. Ещё ${npcs.length-done} ${plural(npcs.length-done,['житель ждёт','жителя ждут','жителей ждут'])} вас.`:`Штаб на связи. Осталось переписать ${npcs.length-done}.`);if(transferred)tone();return;}
- if(state.region===2&&!data.bossCleared&&!fromBoss){startBoss();return;}
+ if(state.region===2&&!data.bossCleared&&!fromBoss){toast('Маршрут ещё не завершён: на карте остался один необычный житель.');return;}
  if(state.region===2&&data.bossCleared){data.quizCleared=true;checkAchievements();completeRegion();return;}
  if(!data.quizCleared){startRegionQuiz();return;}
  completeRegion();
 }
-function regionPickerHTML(){return `<div class="region-picker">${REGIONS.map((r,i)=>`<button class="region-pick dialog-action ${regionData[i].completed?'done':''} ${i===state.region?'current':''}" data-pick-region="${i}">${i+1}. ${esc(r.short)}${i===2?' · БОСС':''}${regionData[i].completed?' ✓':''}</button>`).join('')}</div>`;}
+function regionPickerHTML(){return `<div class="region-picker">${REGIONS.map((r,i)=>`<button class="region-pick dialog-action ${regionData[i].completed?'done':''} ${i===state.region?'current':''}" data-pick-region="${i}">${i+1}. ${esc(r.short)}${regionData[i].completed?' ✓':''}</button>`).join('')}</div>`;}
 function bindRegionPicker(){document.querySelectorAll('[data-pick-region]').forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.pickRegion);dialog.close();loadRegion(i);state.mode='running';canvas.focus({preventScroll:true});toast(`Следующий маршрут: ${REGIONS[i].short}.`);setTimeout(()=>showRegionBriefing(i),260);}));}
 
 function recordStore(){try{return JSON.parse(localStorage.getItem('perepis2030Records')||'[]');}catch{return [];}}
@@ -843,17 +890,17 @@ function finish(){
  $('restart').addEventListener('click',restart);$('records-finish').addEventListener('click',()=>{dialog.close();state.mode='running';showLeaderboard();});$('achievements-finish')?.addEventListener('click',()=>{dialog.close();state.mode='running';showAchievements();});$('share-finish').addEventListener('click',e=>shareRecord(rec,e.currentTarget));
 }
 function restart(){
- dialog.close();regionData.forEach(d=>Object.assign(d,{npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));Object.assign(state,{region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'running',lastRecord:null,goodEvents:0,badEvents:0,fieldWins:0,streak:0,bestStreak:0,perfectForms:0,autoForms:0});state.visitedRegions=new Set([0]);state.educationSeen=new Set();state.regionIntroSeen=new Set();loadRegion(0);$('clock').textContent='00:00';canvas.focus({preventScroll:true});toast('Новая экспедиция. Регионы снова можно проходить в любом порядке.');
+ dialog.close();regionData.forEach(d=>Object.assign(d,{npcs:null,completed:false,bossCleared:false,quizCleared:false,quizMistakes:0,pending:0,eventCount:0,stageQuestionnaires:0,mistakes:0,guideUses:0}));Object.assign(state,{region:0,score:0,total:0,questionnaires:0,confirmed:0,errors:0,elapsed:0,completed:0,stageMistakes:0,mode:'running',lastRecord:null,goodEvents:0,badEvents:0,fieldWins:0,streak:0,bestStreak:0,perfectForms:0,autoForms:0,spoiledForms:0,questionnaireHintShown:false});state.visitedRegions=new Set([0]);state.educationSeen=new Set();state.regionIntroSeen=new Set();loadRegion(0);$('clock').textContent='00:00';canvas.focus({preventScroll:true});toast('Новая экспедиция. Регионы снова можно проходить в любом порядке.');
 }
 function showHelp(){
  if(dialog.open)return;
- openDialog(`${dialogHead('ПАМЯТКА ПЕРЕПИСЧИКА')}<h2 id="dialog-title" class="dialog-title">Как играть</h2><p class="dialog-text">Подойдите к жителю со знаком <strong>!</strong>. Сначала решите короткую ситуацию по концепции. Затем либо подтвердите переписной лист, уже отправленный человеком через Личный кабинет ГИС ЦАП, либо прочитайте рассказ человека и сами определите, какие значения внести в 2–3 разных поля мини-анкеты. Только после сохранения анкеты житель считается переписанным.</p><div class="help-controls"><kbd>W A S D / ↑ ← ↓ →</kbd><span>Движение</span><kbd>Клик мышью</kbd><span>Построить маршрут в точку; клик по жителю — подойти и начать разговор</span><kbd>1 2 3</kbd><span>Ответ в диалоге</span><kbd>E / Пробел</kbd><span>Разговор / штаб</span><kbd>Shift</kbd><span>Бег</span><kbd>R</kbd><span>Навигатор к ближайшему непройденному дому</span><kbd>Esc</kbd><span>Пауза / закрыть окно</span></div><p class="dialog-text" style="font-size:14px">Регионы справа кликабельны — проходите их в любом порядке. На 3-м уровне в Татарстане после обхода ждёт БОСС: сложное домохозяйство 12А. В остальных регионах перед сдачей маршрута есть короткий тематический зачёт.</p><p class="dialog-text" style="font-size:14px">У части жителей появятся <strong>сложные случаи</strong>: предзаполнение, ИИ-модель или чужие слова противоречат фактическому ответу. Нужно решить, что принять, что уточнить и чего нельзя додумывать.</p><p class="dialog-text" style="font-size:14px">В вопросах встречается ИИ-помощник — игровой «цифровой переписчик»: он помогает с голосовым заполнением, типовой поддержкой и поиском сигналов для проверки, но не отвечает за человека.</p><p class="dialog-text" style="font-size:14px">Во время маршрута случаются полевые ситуации: собака, проверка полиции, ливень, проблема с адресом, машина штаба, цветы или чай. В части событий нужно выбрать действие — решение влияет на очки, время и серию.</p><p class="dialog-kicker">Игровая мини-анкета использует реальные тематические блоки переписи — демографию, миграцию, образование, занятость, языки, домохозяйства и жилищные условия, но не является официальной формой переписи 2030 года.</p>${conceptNoteHTML('actual',false)}`);
+ openDialog(`${dialogHead('ПАМЯТКА ПЕРЕПИСЧИКА')}<h2 id="dialog-title" class="dialog-title">Как играть</h2><p class="dialog-text">Подойдите к жителю со знаком <strong>!</strong>. Сначала решите короткую ситуацию по концепции. Затем либо подтвердите переписной лист, уже отправленный человеком через Личный кабинет ГИС ЦАП, либо прочитайте рассказ человека и сами определите, какие значения внести в 2–3 разных поля мини-анкеты. Только после сохранения анкеты житель считается переписанным.</p><div class="help-controls"><kbd>W A S D / ↑ ← ↓ →</kbd><span>Движение</span><kbd>Клик мышью</kbd><span>Построить маршрут в точку; клик по жителю — подойти и начать разговор</span><kbd>1 2 3</kbd><span>Ответ в диалоге</span><kbd>E / Пробел</kbd><span>Разговор / штаб</span><kbd>Shift</kbd><span>Бег</span><kbd>R</kbd><span>Навигатор к ближайшему непройденному дому</span><kbd>Esc</kbd><span>Пауза / закрыть окно</span></div><p class="dialog-text" style="font-size:14px">Регионы справа кликабельны — проходите их в любом порядке. Перед сдачей маршрута в регионах могут появляться дополнительные игровые испытания.</p><p class="dialog-text" style="font-size:14px">У части жителей появятся <strong>сложные случаи</strong>: предзаполнение, ИИ-модель или чужие слова противоречат фактическому ответу. Нужно решить, что принять, что уточнить и чего нельзя додумывать.</p><p class="dialog-text" style="font-size:14px">В вопросах встречается ИИ-помощник — игровой «цифровой переписчик»: он помогает с голосовым заполнением, типовой поддержкой и поиском сигналов для проверки, но не отвечает за человека.</p><p class="dialog-text" style="font-size:14px">Во время маршрута случаются полевые ситуации: собака, проверка полиции, ливень, проблема с адресом, машина штаба, цветы или чай. В части событий нужно выбрать действие — решение влияет на очки, время и серию.</p><p class="dialog-kicker">Игровая мини-анкета использует реальные тематические блоки переписи — демографию, миграцию, образование, занятость, языки, домохозяйства и жилищные условия, но не является официальной формой переписи 2030 года.</p>${conceptNoteHTML('actual',false)}`);
 }
 function pause(){
  if(state.mode==='ready'){showHelp();return;}if(dialog.open){if(['running','ready'].includes(dialogReturn))closeDialog();return;}if(state.mode==='finished'){finish();return;}
  openDialog(`${dialogHead('МОЖНО ПЕРЕВЕСТИ ДУХ')}<h2 id="dialog-title" class="dialog-title">Небольшой привал</h2><p class="dialog-text">Жители подождут. Время остановлено.</p><button id="resume" class="primary dialog-action" data-enter="true">Продолжить обход <span>→</span></button>`,'running');$('resume').addEventListener('click',closeDialog);
 }
-function act(){if(state.mode!=='running')return;if(nearest==='hq')visitHQ();else if(nearest)talk(nearest);else toast('Подойдите к жителю со знаком ! или ко входу в штаб.');}
+function act(){if(state.mode!=='running')return;if(nearest==='hq')visitHQ();else if(nearest?.boss){if(!npcs.every(n=>n.done)){toast('Этот житель настроен на большой разговор. Сначала завершите обычные контакты на маршруте.');return;}startBoss();}else if(nearest)talk(nearest);else toast('Подойдите к жителю со знаком ! или ко входу в штаб.');}
 
 function resize(){
  const bounds=canvas.getBoundingClientRect();view.w=Math.max(1,bounds.width);view.h=Math.max(1,bounds.height);const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(view.w*dpr);canvas.height=Math.round(view.h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);view.zoom=view.w<600?Math.max(view.w/580,view.h/HEIGHT):Math.max(view.w/WIDTH,view.h/HEIGHT);
@@ -867,10 +914,10 @@ function frame(t){
    else{const ddx=mouseTarget.x-player.x,ddy=mouseTarget.y-player.y,dist=Math.hypot(ddx,ddy);if(dist<mouseTarget.stop){const a=mouseTarget.act;mouseTarget=null;if(a){nearest=a;setTimeout(act,0);}}else{dx=ddx;dy=ddy;}}
   }
   movePlayer(world,player,dx,dy,dt,keys.has('ShiftLeft')||keys.has('ShiftRight'));state.elapsed+=dt;$('clock').textContent=timeString(state.elapsed);
-  const hq=world.layout.hq;let min=57;nearest=null;for(const n of npcs){const d=Math.hypot(player.x-n.x,player.y-n.y);if(d<min){min=d;nearest=n;}}if(!nearest&&Math.hypot(player.x-hq.x,player.y-hq.y)<58)nearest='hq';
-  $('interaction').hidden=!nearest;$('interaction').lastElementChild.textContent=nearest==='hq'?'Передать результаты':nearest?.done?'Поблагодарить жителя':'Поговорить / переписать';
+  const hq=world.layout.hq;let min=57;nearest=null;for(const n of npcs){const d=Math.hypot(player.x-n.x,player.y-n.y);if(d<min){min=d;nearest=n;}}if(state.region===2&&!regionData[2].bossCleared&&Math.hypot(player.x-BOSS_ACTOR.x,player.y-BOSS_ACTOR.y)<86)nearest=BOSS_ACTOR;if(!nearest&&Math.hypot(player.x-hq.x,player.y-hq.y)<58)nearest='hq';
+  $('interaction').hidden=!nearest;$('interaction').lastElementChild.textContent=nearest==='hq'?'Передать результаты':nearest?.boss?'Поговорить с необычным жителем':nearest?.done?'Поблагодарить жителя':'Поговорить / переписать';
  }else{$('interaction').hidden=true;player.moving=false;}
- view.camX=Math.max(0,Math.min(WIDTH-view.w/view.zoom,player.x-view.w/view.zoom/2));view.camY=Math.max(0,Math.min(HEIGHT-view.h/view.zoom,player.y-view.h/view.zoom/2));world.render(ctx,view,player,npcs,t/1000,nearest,npcs.every(n=>n.done),reduced,coarse);requestAnimationFrame(frame);
+ view.camX=Math.max(0,Math.min(WIDTH-view.w/view.zoom,player.x-view.w/view.zoom/2));view.camY=Math.max(0,Math.min(HEIGHT-view.h/view.zoom,player.y-view.h/view.zoom/2));world.render(ctx,view,player,npcs,t/1000,nearest,npcs.every(n=>n.done),reduced,coarse,state.region===2&&!regionData[2].bossCleared?BOSS_ACTOR:null);requestAnimationFrame(frame);
 }
 function dialogKeyboard(e){
  if(!dialog.open)return false;
@@ -896,7 +943,7 @@ dialog.addEventListener('cancel',e=>{e.preventDefault();if(['running','ready'].i
 document.querySelectorAll('[data-dir]').forEach(button=>{button.addEventListener('pointerdown',e=>{e.preventDefault();button.setPointerCapture(e.pointerId);touch.add(button.dataset.dir);mouseTarget=null;pathPoints=[];button.classList.add('pressed');});const release=()=>{touch.delete(button.dataset.dir);button.classList.remove('pressed');};button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('lostpointercapture',release);});
 canvas.addEventListener('pointerdown',e=>{
  canvas.focus({preventScroll:true});if(state.mode!=='running')return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)/view.zoom+view.camX,y=(e.clientY-r.top)/view.zoom+view.camY;
- const hq=world.layout.hq;let chosen=null,best=42;for(const n of npcs){const d=Math.hypot(x-n.x,y-n.y);if(d<best){best=d;chosen=n;}}if(chosen){setDestination(chosen.x-25,chosen.y+18,24,chosen);return;}if(Math.hypot(x-hq.x,y-hq.y)<48){setDestination(hq.x+28,hq.y+15,25,'hq');return;}setDestination(x,y,8,null);
+ const hq=world.layout.hq;let chosen=null,best=42;for(const n of npcs){const d=Math.hypot(x-n.x,y-n.y);if(d<best){best=d;chosen=n;}}if(chosen){setDestination(chosen.x-25,chosen.y+18,24,chosen);return;}if(state.region===2&&!regionData[2].bossCleared&&Math.hypot(x-BOSS_ACTOR.x,y-BOSS_ACTOR.y)<72){setDestination(BOSS_ACTOR.x-55,BOSS_ACTOR.y+22,50,BOSS_ACTOR);return;}if(Math.hypot(x-hq.x,y-hq.y)<48){setDestination(hq.x+28,hq.y+15,25,'hq');return;}setDestination(x,y,8,null);
 });
 new ResizeObserver(resize).observe(canvas);importSharedRecord();try{$('player-name').value=localStorage.getItem('censusPlayerName')||'';}catch{}updateAchievementUI();loadRegion(0);requestAnimationFrame(frame);
 
