@@ -1,0 +1,22 @@
+{
+  "project": "Перепись: Большая экспедиция",
+  "version": "14.0",
+  "build": "PBE-AK-2026-v14.0",
+  "author": "Андрей Костюк",
+  "release_date": "2026-09-10",
+  "baseline": "first protected public version",
+  "save_compatibility": "v13 schema retained",
+  "files": [
+    ".gitignore",
+    ".nojekyll",
+    "CHANGELOG.md",
+    "DEPLOY_GITHUB_PAGES.md",
+    "LICENSE",
+    "README.md",
+    "RELEASE_MANIFEST.json",
+    "RIGHTS.md",
+    "VERSION",
+    "index.html",
+    "SHA256SUMS.txt"
+  ]
+}
