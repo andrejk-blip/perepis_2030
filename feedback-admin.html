@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10272d">
+<title>Обратная связь · Админка</title>
+<style>
+:root{color-scheme:dark;--bg:#0d2026;--panel:#142c32;--panel2:#19363c;--line:#355058;--text:#eef4ef;--muted:#9db0b2;--yellow:#edce70;--mint:#bce3c6;--danger:#e5a38e;--blue:#9bcbd8}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1500px;margin:0 auto;padding:24px 28px 42px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.brand{display:flex;gap:13px;align-items:center}.brand-mark{width:42px;height:42px;border:1px solid #5d756e;border-radius:12px;display:grid;place-items:center;color:var(--yellow);font-weight:800;font-size:20px}.brand h1{font-size:20px;line-height:1.2;margin:0}.brand p{margin:5px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:#1a353c;color:var(--text);padding:10px 13px;border-radius:9px;font-weight:700}.btn:hover{border-color:#607a7e;background:#203e45}.btn.primary{background:var(--yellow);border-color:var(--yellow);color:#172c2e}.btn.ghost{background:transparent}.btn.danger{color:#ffd9cf;border-color:#785c58;background:#392b2a}.btn:disabled{opacity:.5;cursor:default}.login-wrap{min-height:70vh;display:grid;place-items:center}.login-card{width:min(440px,100%);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 30px 100px #0005}.login-card .eyebrow,.eyebrow{font-size:10px;letter-spacing:1.6px;color:var(--yellow);font-weight:800}.login-card h2{font-size:28px;margin:11px 0 8px}.login-card p{color:var(--muted);line-height:1.55;margin:0 0 20px}.field{display:grid;gap:7px;margin-top:13px}.field label{font-size:12px;color:#c7d4d2;font-weight:700}.input,.select,.textarea{width:100%;background:#10282e;border:1px solid #48626a;color:var(--text);border-radius:9px;padding:11px 12px;outline:none}.input:focus,.select:focus,.textarea:focus{border-color:var(--yellow);box-shadow:0 0 0 2px #edce7022}.textarea{resize:vertical;min-height:116px;line-height:1.5}.login-error{min-height:20px;color:#ffb9a5;font-size:12px;margin-top:10px}.dashboard[hidden],.login-wrap[hidden]{display:none!important}.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 16px}.stat span{font-size:11px;color:var(--muted);letter-spacing:.6px}.stat strong{display:block;margin-top:6px;font-size:29px;font-variant-numeric:tabular-nums}.stat.new strong{color:var(--yellow)}.stat.progress strong{color:var(--blue)}.stat.fixed strong{color:var(--mint)}.filters{display:grid;grid-template-columns:minmax(240px,1.6fr) repeat(3,minmax(140px,.7fr)) auto auto;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:12px;border-radius:12px;margin-bottom:14px}.table-card{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}.table-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}.table-head strong{font-size:16px}.table-head span{font-size:12px;color:var(--muted)}.table-wrap{overflow:auto}.feedback-table{width:100%;border-collapse:collapse;min-width:1040px}.feedback-table th{position:sticky;top:0;background:#173138;z-index:1;color:#9fb2b4;text-align:left;font-size:11px;letter-spacing:.55px;font-weight:700;padding:11px 12px;border-bottom:1px solid var(--line)}.feedback-table td{padding:11px 12px;border-bottom:1px solid #29434a;vertical-align:middle;font-size:13px}.feedback-table tr:last-child td{border-bottom:0}.feedback-table tbody tr{cursor:pointer}.feedback-table tbody tr:hover{background:#1a383e}.feedback-table .date{white-space:nowrap;color:#cbd8d6}.feedback-table .person strong{display:block;font-size:14px}.feedback-table .person small,.feedback-table .region small{display:block;margin-top:3px;color:var(--muted);font-size:11px}.message-cell{max-width:440px}.message-cell p{margin:0;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.badge{display:inline-flex;align-items:center;white-space:nowrap;border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800;letter-spacing:.35px;border:1px solid #4a6068;background:#20373d}.badge.new{color:#ffe28a;border-color:#756735;background:#3b3525}.badge.in_progress{color:#c7eaf3;border-color:#3f6974;background:#203a42}.badge.fixed{color:#d9f6df;border-color:#4c755a;background:#203b2d}.badge.closed{color:#adbabd}.kind{font-size:11px;color:#cbd8d6}.thumb{width:72px;height:45px;border:1px solid #4a6268;border-radius:7px;background:#0c2025;display:grid;place-items:center;overflow:hidden;color:#83989a;font-size:10px}.thumb img{width:100%;height:100%;object-fit:cover}.empty{padding:48px;text-align:center;color:var(--muted)}.loading{padding:40px;text-align:center;color:var(--muted)}dialog{border:1px solid #526c72;background:#122a31;color:var(--text);border-radius:14px;padding:0;width:min(1120px,calc(100vw - 24px));max-height:calc(100dvh - 24px);box-shadow:0 30px 140px #0009}dialog::backdrop{background:#06171dcc;backdrop-filter:blur(5px)}.detail{display:grid;grid-template-rows:auto minmax(0,1fr) auto;max-height:calc(100dvh - 24px)}.detail-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid var(--line)}.detail-head h2{font-size:22px;line-height:1.25;margin:5px 0 0}.detail-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#18343a;color:var(--text);font-size:20px}.detail-body{overflow:auto;padding:18px 20px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.7fr);gap:18px;overscroll-behavior:contain}.shot{min-height:360px;border:1px solid var(--line);border-radius:12px;background:#0a1c21;display:grid;place-items:center;overflow:hidden;position:relative}.shot img{display:block;max-width:100%;max-height:70vh;object-fit:contain}.shot-empty{color:var(--muted);font-size:13px}.shot-loading{color:var(--muted);font-size:13px}.detail-side{display:grid;align-content:start;gap:12px}.card{background:#18343a;border:1px solid #38545b;border-radius:11px;padding:14px}.card h3{font-size:13px;margin:0 0 10px;color:#dce8e4}.message-full{font-size:15px;line-height:1.6;white-space:pre-wrap;margin:0}.meta-grid{display:grid;grid-template-columns:auto 1fr;gap:7px 10px;font-size:12px}.meta-grid dt{color:#879b9e}.meta-grid dd{margin:0;word-break:break-word}.context{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;line-height:1.45;white-space:pre-wrap;max-height:180px;overflow:auto;color:#b8c9c5}.detail-foot{border-top:1px solid var(--line);padding:12px 20px;display:grid;grid-template-columns:minmax(200px,.55fr) minmax(300px,1fr) auto;gap:10px;align-items:end;background:#142d33}.detail-foot .field{margin:0}.toast{position:fixed;right:22px;bottom:22px;z-index:100;background:#17383a;border:1px solid #5e7f73;border-radius:10px;padding:12px 14px;box-shadow:0 15px 50px #0008;font-size:13px;transform:translateY(15px);opacity:0;pointer-events:none;transition:.18s}.toast.show{transform:none;opacity:1}.denied{color:#ffcabd}.footer-note{margin-top:12px;color:#7f9396;font-size:11px;line-height:1.5}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1100px){.summary{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr 1fr 1fr}.filters .wide{grid-column:1/-1}.detail-body{grid-template-columns:1fr}.detail-foot{grid-template-columns:1fr}.shot{min-height:300px}}
+@media(max-width:700px){.shell{padding:16px 12px 28px}.topbar{align-items:flex-start}.brand p{display:none}.summary{grid-template-columns:1fr 1fr}.stat{padding:12px}.stat strong{font-size:24px}.filters{grid-template-columns:1fr 1fr}.filters .wide{grid-column:1/-1}.filters .btn{width:100%}.detail-head{padding:15px}.detail-body{padding:14px}.detail-foot{padding:12px 14px}.shot{min-height:230px}.login-card{padding:22px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">↳</div><div><h1>Обратная связь · Админка</h1><p>Перепись: Большая экспедиция · закрытый просмотр обращений</p></div></div>
+    <div id="top-actions" class="top-actions" hidden><button id="refresh" class="btn ghost">Обновить</button><button id="logout" class="btn ghost">Выйти</button></div>
+  </header>
+
+  <section id="login" class="login-wrap">
+    <form id="login-form" class="login-card" autocomplete="on">
+      <span class="eyebrow">ДОСТУП РАЗРАБОТЧИКА</span>
+      <h2>Вход в админку</h2>
+      <p>Используйте отдельную email/password учётную запись, добавленную в <code>census_admins</code>.</p>
+      <div class="field"><label for="email">Email</label><input class="input" id="email" name="email" type="email" required autocomplete="username"></div>
+      <div class="field"><label for="password">Пароль</label><input class="input" id="password" name="password" type="password" required autocomplete="current-password"></div>
+      <div id="login-error" class="login-error" aria-live="polite"></div>
+      <button id="login-button" class="btn primary" type="submit" style="width:100%;margin-top:8px">Войти</button>
+    </form>
+  </section>
+
+  <main id="dashboard" class="dashboard" hidden>
+    <section class="summary" aria-label="Сводка">
+      <div class="stat new"><span>НОВЫЕ</span><strong id="count-new">0</strong></div>
+      <div class="stat progress"><span>В РАБОТЕ</span><strong id="count-progress">0</strong></div>
+      <div class="stat fixed"><span>ИСПРАВЛЕНО</span><strong id="count-fixed">0</strong></div>
+      <div class="stat"><span>ВСЕГО</span><strong id="count-all">0</strong></div>
+    </section>
+
+    <section class="filters" aria-label="Фильтры">
+      <input id="search" class="input wide" type="search" placeholder="Поиск по сообщению, игроку, региону…">
+      <select id="filter-status" class="select"><option value="">Все статусы</option><option value="new">Новое</option><option value="in_progress">В работе</option><option value="fixed">Исправлено</option><option value="closed">Закрыто</option></select>
+      <select id="filter-kind" class="select"><option value="">Все типы</option><option value="bug">Ошибка</option><option value="ui">Интерфейс</option><option value="content">Контент</option><option value="idea">Идея</option><option value="other">Другое</option></select>
+      <select id="filter-region" class="select"><option value="">Все регионы</option></select>
+      <button id="export" class="btn ghost" type="button">CSV</button>
+      <button id="clear-filters" class="btn ghost" type="button">Сбросить</button>
+    </section>
+
+    <section class="table-card">
+      <div class="table-head"><strong>Обращения тестировщиков</strong><span id="table-count">Загрузка…</span></div>
+      <div id="table-wrap" class="table-wrap"><div class="loading">Загружаем обращения…</div></div>
+    </section>
+    <p class="footer-note">Снимки хранятся в приватном bucket Supabase. Админка запрашивает временную ссылку только после проверки серверной роли администратора.</p>
+  </main>
+</div>
+
+<dialog id="detail-dialog">
+  <div class="detail">
+    <div class="detail-head"><div><span class="eyebrow">ОБРАЩЕНИЕ <span id="detail-id"></span></span><h2 id="detail-title">Обратная связь</h2><p id="detail-subtitle"></p></div><button id="detail-close" class="icon-btn" aria-label="Закрыть">×</button></div>
+    <div class="detail-body">
+      <div id="detail-shot" class="shot"><span class="shot-empty">Снимка нет</span></div>
+      <aside class="detail-side">
+        <section class="card"><h3>Сообщение</h3><p id="detail-message" class="message-full"></p></section>
+        <section class="card"><h3>Контекст</h3><dl id="detail-meta" class="meta-grid"></dl></section>
+        <details class="card"><summary style="cursor:pointer;font-weight:700;font-size:13px">Технический context JSON</summary><pre id="detail-context" class="context"></pre></details>
+      </aside>
+    </div>
+    <div class="detail-foot">
+      <div class="field"><label for="detail-status">Статус</label><select id="detail-status" class="select"><option value="new">Новое</option><option value="in_progress">В работе</option><option value="fixed">Исправлено</option><option value="closed">Закрыто</option></select></div>
+      <div class="field"><label for="detail-note">Внутренняя заметка разработчика</label><textarea id="detail-note" class="textarea" placeholder="Что проверено, что исправить, номер коммита…"></textarea></div>
+      <button id="detail-save" class="btn primary">Сохранить</button>
+    </div>
+  </div>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+
+<script>
+'use strict';
+const CFG=Object.freeze({
+  url:'https://ecnyesvlqukmbjuivucq.supabase.co',
+  publicKey:'sb_publishable_CVQXmDciR6Sy_TIK0ALNpQ___6AA4nb',
+  tournament:'colleagues-2026'
+});
+const $=id=>document.getElementById(id);
+const STATUS={new:'Новое',in_progress:'В работе',fixed:'Исправлено',closed:'Закрыто'};
+const KIND={bug:'Ошибка',ui:'Интерфейс',content:'Контент',idea:'Идея',other:'Другое'};
+const SESSION_KEY='perepisAdminSessionV1';
+let session=null,rows=[],activeId=null,thumbObserver=null;const objectUrls=new Set();
+
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function dateText(v){if(!v)return '—';const d=new Date(v);return Number.isNaN(d.getTime())?'—':d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'});}
+function short(v,n=120){const s=String(v||'').trim();return s.length>n?s.slice(0,n-1)+'…':s;}
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2200);}
+function storeSession(s){session=s;if(s)sessionStorage.setItem(SESSION_KEY,JSON.stringify(s));else sessionStorage.removeItem(SESSION_KEY);}
+function loadSession(){try{return JSON.parse(sessionStorage.getItem(SESSION_KEY)||'null');}catch{return null;}}
+function authHeaders(token=session?.access_token){return {'apikey':CFG.publicKey,'Authorization':`Bearer ${token||''}`,'Content-Type':'application/json'};}
+function isExpired(){return !session?.access_token || (Number(session.expires_at||0)*1000-Date.now()<45000);}
+
+async function refreshSession(){
+ if(!session?.refresh_token)throw new Error('Сессия истекла');
+ const res=await fetch(`${CFG.url}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:{'apikey':CFG.publicKey,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:session.refresh_token})});
+ if(!res.ok)throw new Error('Не удалось обновить сессию');
+ const data=await res.json();data.expires_at=Math.floor(Date.now()/1000)+Number(data.expires_in||3600);storeSession(data);return data;
+}
+async function ensureSession(){if(isExpired())await refreshSession();return session.access_token;}
+async function rpc(name,body={},retry=true){
+ await ensureSession();
+ const res=await fetch(`${CFG.url}/rest/v1/rpc/${name}`,{method:'POST',headers:{...authHeaders(),'Accept':'application/json'},body:JSON.stringify(body)});
+ if(res.status===401&&retry){await refreshSession();return rpc(name,body,false);}
+ if(!res.ok){const t=await res.text();throw new Error(t||`RPC ${name}: ${res.status}`);}
+ const t=await res.text();return t?JSON.parse(t):null;
+}
+async function signIn(email,password){
+ const res=await fetch(`${CFG.url}/auth/v1/token?grant_type=password`,{method:'POST',headers:{'apikey':CFG.publicKey,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data?.msg||data?.error_description||data?.message||'Не удалось войти');
+ data.expires_at=Math.floor(Date.now()/1000)+Number(data.expires_in||3600);storeSession(data);return data;
+}
+async function signOut(){
+ try{if(session?.access_token)await fetch(`${CFG.url}/auth/v1/logout`,{method:'POST',headers:authHeaders()});}catch{}
+ storeSession(null);rows=[];showLogin();
+}
+async function assertAdmin(){const ok=await rpc('census_is_admin',{});if(ok!==true)throw new Error('Учётная запись не добавлена в census_admins');}
+
+function showLogin(message=''){$('dashboard').hidden=true;$('top-actions').hidden=true;$('login').hidden=false;$('login-error').textContent=message;setTimeout(()=>$('email').focus(),50);}
+function showDashboard(){$('login').hidden=true;$('dashboard').hidden=false;$('top-actions').hidden=false;}
+
+async function loadFeedback(){
+ $('table-count').textContent='Загрузка…';$('table-wrap').innerHTML='<div class="loading">Загружаем обращения…</div>';
+ rows=await rpc('census_admin_feedback_list',{p_status:null,p_kind:null,p_limit:500,p_offset:0});
+ if(!Array.isArray(rows))rows=[];
+ populateRegions();renderAll();
+}
+function populateRegions(){
+ const current=$('filter-region').value;
+ const vals=[...new Set(rows.map(r=>r.region_name).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ru'));
+ $('filter-region').innerHTML='<option value="">Все регионы</option>'+vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+ if(vals.includes(current))$('filter-region').value=current;
+}
+function filteredRows(){
+ const q=$('search').value.trim().toLowerCase(),status=$('filter-status').value,kind=$('filter-kind').value,region=$('filter-region').value;
+ return rows.filter(r=>(!status||r.status===status)&&(!kind||r.kind===kind)&&(!region||r.region_name===region)&&(!q||[r.message,r.nickname,r.region_name,r.build,r.admin_note,KIND[r.kind],STATUS[r.status]].some(v=>String(v||'').toLowerCase().includes(q))));
+}
+function renderSummary(){
+ $('count-new').textContent=rows.filter(r=>r.status==='new').length;
+ $('count-progress').textContent=rows.filter(r=>r.status==='in_progress').length;
+ $('count-fixed').textContent=rows.filter(r=>r.status==='fixed').length;
+ $('count-all').textContent=rows.length;
+}
+function renderAll(){renderSummary();renderTable();}
+function renderTable(){
+ const list=filteredRows();$('table-count').textContent=`Показано ${list.length} из ${rows.length}`;
+ if(!list.length){$('table-wrap').innerHTML='<div class="empty">По текущим фильтрам обращений нет.</div>';return;}
+ $('table-wrap').innerHTML=`<table class="feedback-table"><thead><tr><th>Дата</th><th>Игрок</th><th>Регион</th><th>Тип</th><th>Сообщение</th><th>Статус</th><th>Снимок</th></tr></thead><tbody>${list.map(r=>`<tr data-id="${r.id}"><td class="date">${esc(dateText(r.created_at))}</td><td class="person"><strong>${esc(r.nickname||'Переписчик')}</strong><small>${esc(r.build||r.game_version||'—')}</small></td><td class="region">${esc(r.region_name||'—')}<small>${esc(r.mode||'')}</small></td><td><span class="kind">${esc(KIND[r.kind]||r.kind||'—')}</span></td><td class="message-cell"><p>${esc(r.message||'Без комментария')}</p></td><td><span class="badge ${esc(r.status)}">${esc(STATUS[r.status]||r.status)}</span></td><td>${r.screenshot_path?`<div class="thumb" data-thumb-id="${r.id}" title="Открыть снимок">снимок</div>`:'<span style="color:#74898c;font-size:11px">—</span>'}</td></tr>`).join('')}</tbody></table>`;
+ $('table-wrap').querySelectorAll('tbody tr').forEach(tr=>tr.addEventListener('click',e=>{if(e.target.closest('a'))return;openDetail(Number(tr.dataset.id));}));
+ setupThumbs();
+}
+function setupThumbs(){
+ if(thumbObserver)thumbObserver.disconnect();
+ thumbObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){thumbObserver.unobserve(entry.target);loadThumb(entry.target);}}),{root:$('table-wrap'),rootMargin:'160px'});
+ document.querySelectorAll('[data-thumb-id]').forEach(el=>thumbObserver.observe(el));
+}
+async function privateImageUrl(path){
+ await ensureSession();
+ const encoded=String(path).split('/').map(encodeURIComponent).join('/');
+ const request=()=>fetch(`${CFG.url}/storage/v1/object/authenticated/census-feedback/${encoded}`,{headers:{'apikey':CFG.publicKey,'Authorization':`Bearer ${session.access_token}`}});
+ let res=await request();
+ if(res.status===401){await refreshSession();res=await request();}
+ if(!res.ok)throw new Error('Не удалось открыть снимок');
+ const blob=await res.blob();
+ const url=URL.createObjectURL(blob);objectUrls.add(url);return url;
+}
+async function loadThumb(el){
+ const row=rows.find(r=>r.id===Number(el.dataset.thumbId));if(!row?.screenshot_path)return;
+ try{const url=await privateImageUrl(row.screenshot_path);el.innerHTML=`<img src="${esc(url)}" alt="Снимок обращения ${row.id}">`;}catch{el.textContent='нет доступа';}
+}
+async function openDetail(id){
+ const r=rows.find(x=>x.id===id);if(!r)return;activeId=id;
+ $('detail-id').textContent='#'+id;$('detail-title').textContent=r.nickname||'Переписчик';$('detail-subtitle').textContent=`${dateText(r.created_at)} · ${r.region_name||'регион не указан'} · ${KIND[r.kind]||r.kind}`;$('detail-message').textContent=r.message||'Без комментария';$('detail-status').value=r.status||'new';$('detail-note').value=r.admin_note||'';
+ $('detail-meta').innerHTML='';const meta=[['Версия',r.build||r.game_version],['Режим',r.mode],['Турнир',r.tournament],['Run ID',r.run_id],['Создано',dateText(r.created_at)],['Обновлено',dateText(r.updated_at)],['Screenshot path',r.screenshot_path]];
+ meta.forEach(([k,v])=>{const dt=document.createElement('dt');dt.textContent=k;const dd=document.createElement('dd');dd.textContent=v||'—';$('detail-meta').append(dt,dd);});
+ $('detail-context').textContent=JSON.stringify(r.context||{},null,2);
+ const shot=$('detail-shot');shot.innerHTML=r.screenshot_path?'<span class="shot-loading">Загружаем снимок…</span>':'<span class="shot-empty">Снимка нет</span>';
+ $('detail-dialog').showModal();
+ if(r.screenshot_path){try{const url=await privateImageUrl(r.screenshot_path);if(activeId!==id)return;shot.innerHTML='';const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.title='Открыть изображение в новой вкладке';const img=document.createElement('img');img.src=url;img.alt=`Снимок обращения ${id}`;a.append(img);shot.append(a);}catch(e){shot.innerHTML=`<span class="shot-empty">${esc(e.message)}</span>`;}}
+}
+async function saveDetail(){
+ if(!activeId)return;const btn=$('detail-save');btn.disabled=true;const status=$('detail-status').value,note=$('detail-note').value;
+ try{await rpc('census_admin_feedback_update',{p_id:activeId,p_status:status,p_admin_note:note});const r=rows.find(x=>x.id===activeId);if(r){r.status=status;r.admin_note=note;r.updated_at=new Date().toISOString();}renderAll();toast('Обращение сохранено');$('detail-dialog').close();}
+ catch(e){toast('Ошибка сохранения: '+e.message);}
+ finally{btn.disabled=false;}
+}
+function exportCsv(){
+ const list=filteredRows(),cols=['id','created_at','nickname','region_name','kind','status','message','admin_note','build','run_id','screenshot_path'];
+ const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const csv='\ufeff'+[cols.join(';'),...list.map(r=>cols.map(c=>q(r[c])).join(';'))].join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`census-feedback-${new Date().toISOString().slice(0,10)}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+
+$('login-form').addEventListener('submit',async e=>{e.preventDefault();const btn=$('login-button');btn.disabled=true;$('login-error').textContent='';try{await signIn($('email').value.trim(),$('password').value);await assertAdmin();showDashboard();await loadFeedback();}catch(err){storeSession(null);$('login-error').textContent=err.message||'Ошибка входа';}finally{btn.disabled=false;}});
+$('logout').addEventListener('click',signOut);$('refresh').addEventListener('click',()=>loadFeedback().catch(e=>toast('Ошибка: '+e.message)));$('export').addEventListener('click',exportCsv);$('clear-filters').addEventListener('click',()=>{$('search').value='';$('filter-status').value='';$('filter-kind').value='';$('filter-region').value='';renderTable();});
+['search','filter-status','filter-kind','filter-region'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',renderTable));
+$('detail-close').addEventListener('click',()=>$('detail-dialog').close());$('detail-save').addEventListener('click',saveDetail);$('detail-dialog').addEventListener('click',e=>{if(e.target===$('detail-dialog'))$('detail-dialog').close();});
+
+(async()=>{session=loadSession();if(!session){showLogin();return;}try{await assertAdmin();showDashboard();await loadFeedback();}catch(e){storeSession(null);showLogin(e.message==='Сессия истекла'?'Сессия истекла. Войдите снова.':e.message);}})().catch(()=>{});
+</script>
+</body>
+</html>
