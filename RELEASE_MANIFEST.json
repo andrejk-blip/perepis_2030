@@ -1,22 +1,15 @@
 {
   "project": "Перепись: Большая экспедиция",
-  "version": "14.0",
-  "build": "PBE-AK-2026-v14.0",
-  "author": "Андрей Костюк",
-  "release_date": "2026-09-10",
-  "baseline": "first protected public version",
-  "save_compatibility": "v13 schema retained",
-  "files": [
-    ".gitignore",
-    ".nojekyll",
-    "CHANGELOG.md",
-    "DEPLOY_GITHUB_PAGES.md",
-    "LICENSE",
-    "README.md",
-    "RELEASE_MANIFEST.json",
-    "RIGHTS.md",
-    "VERSION",
-    "index.html",
-    "SHA256SUMS.txt"
-  ]
+  "version": "v14.9",
+  "build": "PBE-AK-2026-v14.9",
+  "entrypoint": "index.html",
+  "tournament": "colleagues-2026",
+  "game_version": "expedition-12.1",
+  "release_kind": "final-publication",
+  "database_steps": [
+    "00_SUPABASE_PRECHECK.sql",
+    "01_SUPABASE_FINAL_MIGRATION.sql",
+    "02_SUPABASE_VERIFY.sql"
+  ],
+  "notes": "Consolidated final publication package based on v14.8.4; no gameplay architecture changes in v14.9."
 }
